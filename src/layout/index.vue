@@ -2,6 +2,7 @@
   <div class="mt-100px">
     {{ count }}
     <el-button @click="count++">+</el-button>
+    <Sidebar />
     <RouterLink to="/">Home</RouterLink>
     <RouterLink to="/about">About</RouterLink>
     <AppMain />
@@ -9,7 +10,7 @@
 </template>
 
 <script lang="ts" setup>
-import { AppMain } from "./components";
+import { Sidebar, AppMain } from "./components";
 const count = ref(0);
 </script>
 
