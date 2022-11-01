@@ -7,11 +7,11 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
-    ElButton: typeof import('element-plus/es')['ElButton']
+    ElButton: typeof import("element-plus/es")["ElButton"]
     ElIcon: typeof import('element-plus/es')['ElIcon']
     ElMenu: typeof import('element-plus/es')['ElMenu']
     ElMenuItem: typeof import('element-plus/es')['ElMenuItem']
-    ElMenuItemGroup: typeof import('element-plus/es')['ElMenuItemGroup']
+    ElMenuItemGroup: typeof import("element-plus/es")["ElMenuItemGroup"]
     ElSubMenu: typeof import('element-plus/es')['ElSubMenu']
     HelloWorld: typeof import('./../components/HelloWorld.vue')['default']
     IconCommunity: typeof import('./../components/icons/IconCommunity.vue')['default']
@@ -20,7 +20,7 @@ declare module '@vue/runtime-core' {
     IconSupport: typeof import('./../components/icons/IconSupport.vue')['default']
     IconTooling: typeof import('./../components/icons/IconTooling.vue')['default']
     IEpLocation: typeof import('~icons/ep/location')['default']
-    IEpSearch: typeof import('~icons/ep/search')['default']
+    IEpSearch: typeof import("~icons/ep/search")["default"]
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     TheWelcome: typeof import('./../components/TheWelcome.vue')['default']
