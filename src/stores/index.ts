@@ -3,9 +3,9 @@ import { createPinia } from "pinia";
 
 /** setup vue store plugin: pinia. */
 export function setupStore(app: App) {
-	const store = createPinia();
+  const store = createPinia();
 
-	app.use(store);
+  app.use(store);
 }
 
 export * from "./modules";

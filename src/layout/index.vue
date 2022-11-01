@@ -1,12 +1,12 @@
 <template>
-	<div class="flex h-1/1">
-		<!-- {{ count }}
+  <div class="flex h-full">
+    <!-- {{ count }}
     <el-button @click="count++">+</el-button> -->
-		<Sidebar />
-		<!-- <RouterLink to="/">Home</RouterLink>
+    <Sidebar />
+    <!-- <RouterLink to="/">Home</RouterLink>
     <RouterLink to="/about">About</RouterLink> -->
-		<AppMain />
-	</div>
+    <AppMain />
+  </div>
 </template>
 
 <script lang="ts" setup>

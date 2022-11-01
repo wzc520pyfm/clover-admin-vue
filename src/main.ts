@@ -6,19 +6,19 @@ import { setupAssets } from "./plugins";
 import { setupStore } from "./stores";
 
 async function setupApp() {
-	// import assets: js, css, images, fonts, etc.
-	setupAssets();
+  // import assets: js, css, images, fonts, etc.
+  setupAssets();
 
-	const app = createApp(App);
+  const app = createApp(App);
 
-	// setup vue store plugin: pinia.
-	setupStore(app);
+  // setup vue store plugin: pinia.
+  setupStore(app);
 
-	// vue router
-	await setupRouter(app);
+  // vue router
+  await setupRouter(app);
 
-	// mount app
-	app.mount("#app");
+  // mount app
+  app.mount("#app");
 }
 
 setupApp();
