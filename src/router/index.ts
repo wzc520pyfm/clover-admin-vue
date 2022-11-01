@@ -28,6 +28,18 @@ const router = createRouter({
         },
       ],
     },
+    {
+      path: "/map",
+      component: Layout,
+      redirect: "/map/index",
+      children: [
+        {
+          path: "index",
+          name: "mapView",
+          component: () => import("@/views/plugin/map/index.vue"),
+        },
+      ],
+    },
   ],
 });
 

@@ -15,6 +15,7 @@
       </template>
       <el-menu-item index="/home">Home</el-menu-item>
       <el-menu-item index="/about">About</el-menu-item>
+      <el-menu-item index="/map">Map</el-menu-item>
     </el-sub-menu>
   </el-menu>
 </template>

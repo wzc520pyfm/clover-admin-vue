@@ -1,6 +1,5 @@
 <template>
-  <div class="app-main overflow-auto w-full">
-    APP_MAIN
+  <div class="app-main overflow-auto w-full p-5">
     <RouterView />
   </div>
 </template>

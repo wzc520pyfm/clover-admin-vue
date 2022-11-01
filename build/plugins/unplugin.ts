@@ -34,7 +34,7 @@ export default function unplugin(): PluginOption[] {
       ],
     }),
 
-    Icons({
+    Icons({ // 自动导入图标组件
       autoInstall: true,
     }),
   ];
