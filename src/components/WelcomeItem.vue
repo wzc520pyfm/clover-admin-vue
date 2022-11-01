@@ -20,7 +20,7 @@
 
 .details {
   flex: 1;
-  margin-left: 1rem;
+  margin-left: 6rem;
 }
 
 i {
@@ -48,7 +48,7 @@ h3 {
 
   i {
     top: calc(50% - 25px);
-    left: -26px;
+    /* left: -26px; */
     position: absolute;
     border: 1px solid var(--color-border);
     background: var(--color-background);

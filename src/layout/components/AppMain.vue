@@ -1,5 +1,5 @@
 <template>
-  <div class="app-main">
+  <div class="app-main overflow-auto w-1/1">
     APP_MAIN
     <RouterView />
   </div>
