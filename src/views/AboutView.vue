@@ -4,6 +4,13 @@
   </div>
 </template>
 
+<script setup lang="ts">
+import { createOSSClient } from "@/sdk";
+
+const client = await createOSSClient();
+console.log(client);
+</script>
+
 <style>
 @media (min-width: 1024px) {
   .about {

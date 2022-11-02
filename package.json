@@ -20,6 +20,7 @@
   "dependencies": {
     "@element-plus/icons-vue": "^2.0.10",
     "@vueuse/core": "^9.4.0",
+    "ali-oss": "^6.17.1",
     "element-plus": "^2.2.19",
     "pinia": "^2.0.23",
     "vue": "^3.2.41",
@@ -29,6 +30,7 @@
     "@amap/amap-jsapi-types": "^0.0.10",
     "@iconify/json": "^2.1.131",
     "@rushstack/eslint-patch": "^1.1.4",
+    "@types/ali-oss": "^6.16.6",
     "@types/jsdom": "^20.0.0",
     "@types/node": "^16.11.68",
     "@unocss/preset-uno": "^0.46.1",
