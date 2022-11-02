@@ -1,3 +1,1 @@
-import createOSSClient from "./oss";
-
-export { createOSSClient };
+export * from "./oss";
