@@ -103,6 +103,7 @@ const deleteFile = async (index: number, row: ObjectMeta) => {
 onMounted(() => {
   getFiles();
 });
+
 </script>
 
 <style scope>

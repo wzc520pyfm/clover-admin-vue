@@ -6,23 +6,23 @@
     class="min-w-50"
     router
   >
+    <el-menu-item index="/home">Home</el-menu-item>
     <el-sub-menu index="/">
       <template #title>
         <el-icon>
           <i-ep-location />
         </el-icon>
-        <span>Navigator One</span>
+        <span>Plugin</span>
       </template>
-      <el-menu-item index="/home">Home</el-menu-item>
-      <el-menu-item index="/about">About</el-menu-item>
-      <el-menu-item index="/map">Map</el-menu-item>
+      <el-menu-item index="/plugin/about">About</el-menu-item>
+      <el-menu-item index="/plugin/map">Map</el-menu-item>
     </el-sub-menu>
   </el-menu>
 </template>
 
 <script lang="ts" setup>
 const router = useRouter();
-console.log(router.getRoutes());
+console.log("index", router.getRoutes());
 </script>
 
 <style scoped></style>

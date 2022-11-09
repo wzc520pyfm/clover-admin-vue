@@ -10,13 +10,17 @@ function getSTS(): Promise<Credentials> {
       .then((res) => res.json())
       .then((result) => {
         resolve(result);
+      })
+      .catch(e => {
+        console.log(e);
+        reject(e)
       });
   });
 }
 
 // 构建OSS客户端
 async function createOSSClient() {
-  const sts = await getSTS();
+  const sts = await getSTS().catch(console.log);
   if (!sts) return null;
   return new OSS({
     // 使用自定义域名作为Endpoint。
