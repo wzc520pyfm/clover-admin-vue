@@ -59,8 +59,12 @@
   font-weight: normal;
 }
 
+html {
+  height: 100%;
+}
+
 body {
-  min-height: 100vh;
+  height: 100%;
   color: var(--color-text);
   background: var(--color-background);
   transition: color 0.5s, background-color 0.5s;

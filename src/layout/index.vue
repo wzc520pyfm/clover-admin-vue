@@ -1,18 +1,16 @@
 <template>
-  <div class="mt-100px">
-    {{ count }}
-    <el-button @click="count++">+</el-button>
-    <RouterLink to="/">Home</RouterLink>
-    <RouterLink to="/about">About</RouterLink>
+  <div class="flex h-full">
+    <!-- {{ count }}
+    <el-button @click="count++">+</el-button> -->
+    <Sidebar />
+    <!-- <RouterLink to="/">Home</RouterLink>
+    <RouterLink to="/about">About</RouterLink> -->
     <AppMain />
   </div>
 </template>
 
 <script lang="ts" setup>
-import { AppMain } from "./components";
-const count = ref(0);
+import { Sidebar, AppMain } from "./components";
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>
