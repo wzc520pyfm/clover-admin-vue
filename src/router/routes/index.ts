@@ -1,3 +1,4 @@
+import Layout from "@/layout/index.vue";
 /** 跟路由 */
 export const ROOT_ROUTE = {
   name: "root",
@@ -20,7 +21,7 @@ export const constantRoutes = [
   {
     name: "not-found-page",
     path: "/:pathMatch(.*)*",
-    component: "blank",
+    component: Layout,
     meta: {
       title: "未找到",
       singleLayout: "blank",

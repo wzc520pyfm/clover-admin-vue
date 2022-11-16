@@ -27,13 +27,9 @@ export const useRouteStore = defineStore("route-store", {
      */
     handleAuthRoutes(routes: RouteRecordRaw[]) {
       this.menus = routes; // TODO: 将权限路由经处理赋值给菜单
-      console.log('routes', routes);
       const vueRoutes = routes.flat(1); // TODO: 将权限路由转换为vue-router的路由
-      console.log('vueRoutes', vueRoutes);
-      console.log("挂载");
       vueRoutes.forEach((route) => {
         // 挂载路由
-        console.log("挂载的路由", route);
         router.addRoute(route);
       });
       router.addRoute({
