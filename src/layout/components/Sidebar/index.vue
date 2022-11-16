@@ -21,8 +21,13 @@
 </template>
 
 <script lang="ts" setup>
+import { useRouteStore } from "@/stores";
+
 const router = useRouter();
 console.log("index", router.getRoutes());
+const routeStore = useRouteStore();
+const menus = routeStore.menus;
+console.log("menus", menus);
 </script>
 
 <style scoped></style>

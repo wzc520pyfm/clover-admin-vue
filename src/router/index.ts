@@ -8,45 +8,7 @@ import { setupRouterGuard } from "./guard";
 
 export const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
-  routes: [
-    ...constantRoutes,
-    {
-      path: "/home",
-      component: Layout,
-      redirect: "/home/index",
-      children: [
-        {
-          path: "index",
-          name: "home",
-          component: () => import("@/views/HomeView.vue"),
-        },
-      ],
-    },
-    // {
-    //   path: "/about",
-    //   component: Layout,
-    //   redirect: "/about/index",
-    //   children: [
-    //     {
-    //       path: "index",
-    //       name: "about",
-    //       component: () => import("@/views/AboutView.vue"),
-    //     },
-    //   ],
-    // },
-    // {
-    //   path: "/map",
-    //   component: Layout,
-    //   redirect: "/map/index",
-    //   children: [
-    //     {
-    //       path: "index",
-    //       name: "mapView",
-    //       component: () => import("@/views/plugin/map/index.vue"),
-    //     },
-    //   ],
-    // },
-  ],
+  routes: [...constantRoutes],
 });
 
 /** setup vue router. */

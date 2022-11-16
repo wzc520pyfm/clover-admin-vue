@@ -6,7 +6,7 @@ const modules = import.meta.glob("./**/*.ts", { eager: true }) as Record<
 >;
 
 const routes: RouteRecordRaw[] = [];
-
+console.log('modules', modules)
 Object.keys(modules).forEach((key) => {
   const route = modules[key].default;
   routes.push(route);

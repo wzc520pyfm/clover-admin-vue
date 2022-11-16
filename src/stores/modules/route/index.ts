@@ -1,4 +1,5 @@
 import { router, routes as staticRoutes } from "@/router";
+import type { RouteRecordRaw } from "vue-router";
 
 interface RouteState {
   /**
@@ -24,10 +25,11 @@ export const useRouteStore = defineStore("route-store", {
      * 处理权限路由
      * @param routes - 权限路由
      */
-    handleAuthRoutes(routes: any[]) {
+    handleAuthRoutes(routes: RouteRecordRaw[]) {
       this.menus = routes; // TODO: 将权限路由经处理赋值给菜单
-
+      console.log('routes', routes);
       const vueRoutes = routes.flat(1); // TODO: 将权限路由转换为vue-router的路由
+      console.log('vueRoutes', vueRoutes);
       console.log("挂载");
       vueRoutes.forEach((route) => {
         // 挂载路由
