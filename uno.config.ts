@@ -14,6 +14,13 @@ export default defineConfig({
     "./stats.html",
   ],
   presets: [presetUno()],
-  shortcuts: {},
+  shortcuts: {
+    "wh-full": "w-full h-full",
+    "flex-center": "flex justify-center items-center",
+    "flex-x-center": "flex justify-center",
+    "flex-y-center": "flex items-center",
+    "flex-1-hidden": "flex-1 overflow-hidden",
+    "flex-col": "flex flex-col",
+  },
   theme: {},
 });

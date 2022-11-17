@@ -3,7 +3,7 @@
     active-text-color="#ffd04b"
     background-color="#545c64"
     text-color="#fff"
-    class="min-w-50"
+    class="min-w-220px h-full"
     router
   >
     <el-menu-item index="/home">Home</el-menu-item>
@@ -23,11 +23,11 @@
 <script lang="ts" setup>
 import { useRouteStore } from "@/stores";
 
-const router = useRouter();
-console.log("index", router.getRoutes());
+// const router = useRouter();
+// console.log("index", router.getRoutes());
 const routeStore = useRouteStore();
 const menus = routeStore.menus;
-console.log("menus", menus);
+console.log("menus", menus); // TODO 将menus渲染为侧边菜单
 </script>
 
 <style scoped></style>
