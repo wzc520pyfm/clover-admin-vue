@@ -1,6 +1,5 @@
 <template>
   <div class="h-full flex-col">
-    <div class="w-220px h-56px bg-#545c64 flex-center c-white">Clover管理系统</div>
     <el-menu
       active-text-color="#ffd04b"
       background-color="#545c64"
@@ -9,6 +8,7 @@
       class="flex-1 b-0"
       router
     >
+      <div class="h-56px bg-#545c64 flex-center c-white">Clover管理系统</div>
       <el-menu-item index="/home">Home</el-menu-item>
       <el-sub-menu index="/">
         <template #title>
@@ -36,4 +36,8 @@ const menus = routeStore.menus;
 console.log("menus", menus); // TODO 将menus渲染为侧边菜单
 </script>
 
-<style scoped></style>
+<style scoped>
+.el-menu:not(.el-menu--collapse) {
+  width: 220px;
+}
+</style>

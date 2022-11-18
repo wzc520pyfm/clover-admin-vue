@@ -21,6 +21,7 @@ export default defineConfig({
     "flex-y-center": "flex items-center",
     "flex-1-hidden": "flex-1 overflow-hidden",
     "flex-col": "flex flex-col",
+    "base-transition": "transition-all duration-300 ease-in-out",
   },
   rules: [
     [

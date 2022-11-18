@@ -5,7 +5,7 @@ interface AppState {
 
 export const useAppStore = defineStore("app-store", {
   state: (): AppState => ({
-    sidebarCollapse: false,
+    sidebarCollapse: true,
   }),
   actions: {
     /** 切换侧边栏折叠状态 */

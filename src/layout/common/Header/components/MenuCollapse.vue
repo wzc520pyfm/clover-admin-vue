@@ -13,6 +13,4 @@ import { useAppStore } from "@/stores";
 const { sidebarCollapse, toggleSidebarCollapse } = $(useAppStore());
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>
