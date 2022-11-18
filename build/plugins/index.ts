@@ -8,7 +8,14 @@ import unplugin from "./unplugin";
  * vite插件
  */
 export function setupVitePlugins(): (PluginOption | PluginOption[])[] {
-  const plugins = [vue(), vueJsx(), ...unplugin(), unocss()];
+  const plugins = [
+    vue({
+      reactivityTransform: true,
+    }),
+    vueJsx(),
+    ...unplugin(),
+    unocss(),
+  ];
 
   return plugins;
 }

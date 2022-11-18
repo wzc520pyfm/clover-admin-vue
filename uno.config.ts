@@ -22,5 +22,14 @@ export default defineConfig({
     "flex-1-hidden": "flex-1 overflow-hidden",
     "flex-col": "flex flex-col",
   },
+  rules: [
+    [
+      /^wh-(\d+)px$/,
+      ([, d]) => ({
+        width: `${d}px`,
+        height: `${d}px`,
+      }),
+    ],
+  ],
   theme: {},
 });

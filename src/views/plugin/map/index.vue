@@ -1,13 +1,19 @@
 <template>
   <div class="h-full">
-    <el-card class="box-card h-full flex-col">
+    <el-card class="h-full flex-col">
       <template #header>
         <div class="card-header">
           <span>地图插件</span>
         </div>
       </template>
-      <el-tabs model-value="gaode" class="demo-tabs h-full flex-col">
-        <el-tab-pane v-for="item in maps" :key="item.id" :label="item.label" :name="item.id">
+      <el-tabs model-value="gaode" class="h-full flex-col">
+        <el-tab-pane
+          class="h-full"
+          v-for="item in maps"
+          :key="item.id"
+          :label="item.label"
+          :name="item.id"
+        >
           <div class="h-full">
             <component :is="item.component" />
           </div>
@@ -34,7 +40,8 @@ const maps: Array<Map> = [
 </script>
 
 <style scoped>
-.el-card >>> .el-card__body, .el-tabs >>> .el-tabs__content {
+:deep(.el-card__body),
+:deep(.el-tabs__content) {
   flex: 1;
 }
 </style>

@@ -1,14 +1,16 @@
 <template>
-  <div class="global-header h-full flex-y-center pl-20px pr-20px">
+  <div class="global-header h-full flex-y-center pl-10px pr-15px">
     <div class="flex-1-hidden flex-y-center h-full">
-      <div>收缩菜单按钮</div>
+      <MenuCollapse />
       <div>面包屑</div>
     </div>
     <div class="flex-y-center justify-end h-full">右侧展示栏</div>
   </div>
 </template>
 
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import { MenuCollapse } from "./components";
+</script>
 
 <style scoped>
 .global-header {
