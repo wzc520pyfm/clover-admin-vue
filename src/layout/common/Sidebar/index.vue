@@ -29,8 +29,6 @@ import { useAppStore, useRouteStore } from "@/stores";
 
 const { sidebarCollapse } = $(useAppStore());
 
-// const router = useRouter();
-// console.log("index", router.getRoutes());
 const routeStore = useRouteStore();
 const menus = routeStore.menus;
 console.log("menus", menus); // TODO 将menus渲染为侧边菜单

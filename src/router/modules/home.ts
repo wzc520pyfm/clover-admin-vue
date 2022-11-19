@@ -6,11 +6,15 @@ const home = [
     path: "/home",
     component: Layout,
     redirect: "/home/index",
+    meta: { title: "首页", hidden: true },
     children: [
       {
         path: "index",
         name: "home_index",
         component: () => import("@/views/HomeView.vue"),
+        meta: {
+          title: "首页",
+        },
       },
     ],
   },
