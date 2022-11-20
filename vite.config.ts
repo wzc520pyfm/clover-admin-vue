@@ -6,7 +6,7 @@ import { setupVitePlugins } from "./build";
 export default defineConfig({
   plugins: [setupVitePlugins()],
   server: {
-    port: 5574
+    port: 5574,
   },
   resolve: {
     alias: {

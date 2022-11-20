@@ -1,4 +1,5 @@
 import type { PluginOption } from "vite";
+import VueMacros from "unplugin-vue-macros/vite";
 import AutoImport from "unplugin-auto-import/vite";
 import Components from "unplugin-vue-components/vite";
 import Icons from "unplugin-icons/vite";
@@ -7,6 +8,7 @@ import { ElementPlusResolver } from "unplugin-vue-components/resolvers";
 
 export default function unplugin(): PluginOption[] {
   return [
+    VueMacros(),
     AutoImport({
       imports: ["vue", "vue/macros", "vue-router", "pinia"], // 自动导入vue和vue-router相关函数
       dts: "src/typings/auto-import.d.ts", // 生成 `auto-import.d.ts` 全局声明
@@ -34,7 +36,8 @@ export default function unplugin(): PluginOption[] {
       ],
     }),
 
-    Icons({ // 自动导入图标组件
+    Icons({
+      // 自动导入图标组件
       autoInstall: true,
     }),
   ];

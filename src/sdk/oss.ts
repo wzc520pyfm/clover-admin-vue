@@ -11,9 +11,9 @@ function getSTS(): Promise<Credentials> {
       .then((result) => {
         resolve(result);
       })
-      .catch(e => {
+      .catch((e) => {
         console.log(e);
-        reject(e)
+        reject(e);
       });
   });
 }

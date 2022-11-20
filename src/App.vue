@@ -1,9 +1,9 @@
 <script setup lang="ts">
 // 捕获错误
-onErrorCaptured(function(err, instance, info){
-  console.log('[errorCaptured]', err, instance, info)
+onErrorCaptured(function (err, instance, info) {
+  console.log("[errorCaptured]", err, instance, info);
   return false; // 终止传播
-})
+});
 </script>
 
 <template>
@@ -24,6 +24,4 @@ onErrorCaptured(function(err, instance, info){
   </RouterView>
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>
