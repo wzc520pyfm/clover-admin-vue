@@ -9,6 +9,7 @@
       router
     >
       <div class="h-56px bg-#545c64 flex-center c-white">Clover管理系统</div>
+      <SidebarItem v-for="menu in menus" :key="menu.name" :menu="menu" />
       <el-menu-item index="/home">Home</el-menu-item>
       <el-sub-menu index="/">
         <template #title>
@@ -25,13 +26,14 @@
 </template>
 
 <script lang="ts" setup>
+import { SidebarItem } from "./components";
 import { useAppStore, useRouteStore } from "@/stores";
 
 const { sidebarCollapse } = $(useAppStore());
 
 const routeStore = useRouteStore();
-const menus = routeStore.menus;
-console.log("menus", menus); // TODO 将menus渲染为侧边菜单
+const menus = routeStore.menus.flat(1);
+console.log("menus", menus[0]); // TODO 将menus渲染为侧边菜单
 </script>
 
 <style scoped>

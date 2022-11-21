@@ -5,6 +5,7 @@ module.exports = {
   root: true,
   globals: {
     AMap: "readonly",
+    defineOptions: "readonly",
   },
   extends: [
     "plugin:vue/vue3-essential",
