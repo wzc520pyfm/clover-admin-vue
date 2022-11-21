@@ -10,7 +10,7 @@
     >
       <div class="h-56px bg-#545c64 flex-center c-white">Clover管理系统</div>
       <SidebarItem v-for="menu in menus" :key="menu.name" :menu="menu" />
-      <el-menu-item index="/home">Home</el-menu-item>
+      <!-- <el-menu-item index="/home">Home</el-menu-item>
       <el-sub-menu index="/">
         <template #title>
           <el-icon>
@@ -20,7 +20,7 @@
         </template>
         <el-menu-item index="/plugin/about">About</el-menu-item>
         <el-menu-item index="/plugin/map">Map</el-menu-item>
-      </el-sub-menu>
+      </el-sub-menu> -->
     </el-menu>
   </div>
 </template>
