@@ -11,7 +11,7 @@ interface RouteState {
   /** 是否初始化了权限路由 */
   isInitAuthRoute: boolean;
   /** 菜单 */
-  menus: any[]; // 类型待定
+  menus: RouteRecordRaw[]; // 类型待定
 }
 
 export const useRouteStore = defineStore("route-store", {

@@ -28,11 +28,12 @@
 <script lang="ts" setup>
 import { SidebarItem } from "./components";
 import { useAppStore, useRouteStore } from "@/stores";
+import type { RouteRecordRaw } from "vue-router";
 
 const { sidebarCollapse } = $(useAppStore());
 
 const routeStore = useRouteStore();
-const menus = routeStore.menus.flat(1);
+const menus: RouteRecordRaw[] = routeStore.menus.flat(1);
 console.log("menus", menus[0]); // TODO 将menus渲染为侧边菜单
 </script>
 
