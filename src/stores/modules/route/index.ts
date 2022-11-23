@@ -1,5 +1,7 @@
 import { router, routes as staticRoutes } from "@/router";
+import { transformRouteToMenu } from "@/utils";
 import type { RouteRecordRaw } from "vue-router";
+import type { AuthRoute } from "@/typings/route";
 
 interface RouteState {
   /**
@@ -11,7 +13,7 @@ interface RouteState {
   /** 是否初始化了权限路由 */
   isInitAuthRoute: boolean;
   /** 菜单 */
-  menus: RouteRecordRaw[]; // 类型待定
+  menus: GlobalMenuOption[]; // 类型待定
 }
 
 export const useRouteStore = defineStore("route-store", {
@@ -25,12 +27,12 @@ export const useRouteStore = defineStore("route-store", {
      * 处理权限路由
      * @param routes - 权限路由
      */
-    handleAuthRoutes(routes: RouteRecordRaw[]) {
-      this.menus = routes; // TODO: 将权限路由经处理赋值给菜单
+    handleAuthRoutes(routes: AuthRoute.Route[]) {
+      this.menus = transformRouteToMenu(routes.flat(1)); // TODO: 将权限路由经处理赋值给菜单
       const vueRoutes = routes.flat(1); // TODO: 将权限路由转换为vue-router的路由
       vueRoutes.forEach((route) => {
         // 挂载路由
-        router.addRoute(route);
+        router.addRoute(route as unknown as RouteRecordRaw);
       });
       router.addRoute({
         path: "/:catchAll(.*)",

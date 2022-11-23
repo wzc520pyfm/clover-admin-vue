@@ -9,7 +9,7 @@
       router
     >
       <div class="h-56px bg-#545c64 flex-center c-white">Clover管理系统</div>
-      <SidebarItem v-for="menu in menus" :key="menu.name" :menu="menu" />
+      <SidebarItem v-for="menu in menus" :key="menu.key" :menu="menu" />
       <!-- <el-menu-item index="/home">Home</el-menu-item>
       <el-sub-menu index="/">
         <template #title>
@@ -28,12 +28,11 @@
 <script lang="ts" setup>
 import { SidebarItem } from "./components";
 import { useAppStore, useRouteStore } from "@/stores";
-import type { RouteRecordRaw } from "vue-router";
 
 const { sidebarCollapse } = $(useAppStore());
 
 const routeStore = useRouteStore();
-const menus: RouteRecordRaw[] = routeStore.menus.flat(1);
+const menus: GlobalMenuOption[] = routeStore.menus.flat(1);
 console.log("menus", menus[0]); // TODO 将menus渲染为侧边菜单
 </script>
 

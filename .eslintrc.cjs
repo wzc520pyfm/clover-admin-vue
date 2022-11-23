@@ -4,8 +4,10 @@ require("@rushstack/eslint-patch/modern-module-resolution");
 module.exports = {
   root: true,
   globals: {
+    /** when you use globals by ts, you need specifying globals for eslint!  */
     AMap: "readonly",
     defineOptions: "readonly",
+    GlobalMenuOption: true,
   },
   extends: [
     "plugin:vue/vue3-essential",
@@ -22,5 +24,9 @@ module.exports = {
   ],
   parserOptions: {
     ecmaVersion: "latest",
+  },
+  rules: {
+    /** why off? see: https://github.com/vuejs/eslint-plugin-vue/issues/1793 */
+    "vue/no-setup-props-destructure": "off",
   },
 };

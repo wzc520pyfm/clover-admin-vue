@@ -4,6 +4,9 @@ export const ROOT_ROUTE = {
   name: "root",
   path: "/",
   redirect: "/home/index",
+  meta: {
+    title: "Root",
+  },
 };
 
 /** 固定路由 */

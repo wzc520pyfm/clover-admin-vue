@@ -12,10 +12,10 @@ export function getBreadcrumbByRouteKey(activeKey: any, menus: any) {
 function getBreadcrumbMenu(activeKey: any, menus: any) {
   const breadcrumbMenu: any[] = [];
   menus.some((menu: any) => {
-    console.log("menu", menu[0]);
-    const flag = activeKey.includes(menu[0].name);
+    console.log("menu", menu);
+    const flag = activeKey.includes(menu.routeName);
     if (flag) {
-      breadcrumbMenu.push(...getBreadcrumbMenuItem(activeKey, menu[0]));
+      breadcrumbMenu.push(...getBreadcrumbMenuItem(activeKey, menu));
     }
     return flag;
   });
@@ -27,20 +27,20 @@ function getBreadcrumbMenu(activeKey: any, menus: any) {
  */
 function getBreadcrumbMenuItem(activeKey: any, menu: any) {
   const breadcrumbMenu: any[] = [];
-  if (activeKey === menu.name && !menu.meta.hidden) {
+  if (activeKey === menu.routeName /** && !menu.meta.hidden */) {
     breadcrumbMenu.push({
-      key: menu.name,
-      path: menu.path,
-      title: menu.meta.title,
+      key: menu.routeName,
+      path: menu.routePath,
+      title: menu.label,
     });
   }
-  if (activeKey.includes(menu.name) && menu.children && menu.children.length) {
-    !menu.meta.hidden &&
-      breadcrumbMenu.push({
-        key: menu.name,
-        path: menu.path,
-        title: menu.meta.title,
-      });
+  if (activeKey.includes(menu.routeName) && menu.children && menu.children.length) {
+    /** !menu.meta.hidden && */
+    breadcrumbMenu.push({
+      key: menu.routeName,
+      path: menu.routePath,
+      title: menu.label,
+    });
     breadcrumbMenu.push(
       ...menu.children.map((item: any) => getBreadcrumbMenuItem(activeKey, item)).flat(1)
     );
