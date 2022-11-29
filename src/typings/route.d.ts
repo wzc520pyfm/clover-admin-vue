@@ -5,6 +5,8 @@ declare namespace AuthRoute {
   interface RouteMeta {
     /** 路由标题 */
     title: string;
+    /** 是否在菜单中隐藏此项, 其子菜单不受影响 */
+    hidden?: boolean;
   }
 
   /** 路由类型结构 */
@@ -21,5 +23,7 @@ declare namespace AuthRoute {
     children?: Route[];
     /** 路由属性 */
     meta: RouteMeta;
+    /** 是否在菜单中完全隐藏, 其子菜单也将隐藏 */
+    hidden?: boolean;
   }
 }

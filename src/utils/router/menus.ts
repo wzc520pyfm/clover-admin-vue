@@ -1,6 +1,19 @@
 import type { AuthRoute } from "@/typings/route";
 
 /**
+ * 路由不转换为菜单, 其子路由也不转换
+ */
+function hiddenMenu(route: AuthRoute.Route) {
+  return Boolean(route.hidden);
+}
+/**
+ * 当前路由不转换为菜单, 子路由不受影响
+ */
+function hiddenMenuCurrent(route: AuthRoute.Route) {
+  return Boolean(route.meta.hidden);
+}
+
+/**
  * 权限路由转换为菜单
  * @param routes - 路由
  */
@@ -23,7 +36,13 @@ export function transformRouteToMenu(
       routePath: fullPath,
       children: menuChildren,
     };
-    globalMenu.push(menuItem);
+    if (!hiddenMenu(route)) {
+      if (!hiddenMenuCurrent(route)) {
+        globalMenu.push(menuItem);
+      } else {
+        globalMenu.push(...(menuChildren as GlobalMenuOption[]));
+      }
+    }
   });
 
   return globalMenu;
