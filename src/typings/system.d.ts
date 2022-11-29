@@ -6,3 +6,7 @@ type GlobalMenuOption = {
   routePath: string;
   children?: Array<GlobalMenuOption>;
 };
+
+/** 多页签Tab路由 */
+interface GlobalTabRoute
+  extends Pick<import("vue-router").RouteLocationNormalizedLoaded, "name" | "fullPath" | "meta"> {}

@@ -8,6 +8,7 @@ module.exports = {
     AMap: "readonly",
     defineOptions: "readonly",
     GlobalMenuOption: true,
+    GlobalTabRoute: true,
   },
   extends: [
     "plugin:vue/vue3-essential",

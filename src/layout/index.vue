@@ -6,10 +6,16 @@
     >
       <Header />
     </div>
+    <div
+      class="fixed w-full h-44px z1000 bg-white base-transition"
+      :style="{ paddingLeft: `${!sidebarCollapse ? 220 : 64}px`, top: '56px' }"
+    >
+      <Tab />
+    </div>
     <div class="h-full z-1003">
       <Sidebar />
     </div>
-    <div class="pt-56px pb-48px w-full overflow-auto">
+    <div class="pt-100px pb-48px w-full overflow-auto">
       <AppMain />
     </div>
     <div
@@ -22,7 +28,7 @@
 </template>
 
 <script lang="ts" setup>
-import { Header, Sidebar, AppMain, Footer } from "./common";
+import { Header, Tab, Sidebar, AppMain, Footer } from "./common";
 import { useAppStore } from "@/stores";
 
 const { sidebarCollapse } = $(useAppStore());

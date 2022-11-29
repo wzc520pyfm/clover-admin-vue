@@ -2,6 +2,7 @@ import { router, routes as staticRoutes } from "@/router";
 import { transformRouteToMenu } from "@/utils";
 import type { RouteRecordRaw } from "vue-router";
 import type { AuthRoute } from "@/typings/route";
+import { useTabStore } from "../tab";
 
 interface RouteState {
   /**
@@ -12,6 +13,8 @@ interface RouteState {
   authRouteMode: "static" | "dynamic";
   /** 是否初始化了权限路由 */
   isInitAuthRoute: boolean;
+  /** 路由首页name */
+  routeHomeName: string;
   /** 菜单 */
   menus: GlobalMenuOption[]; // 类型待定
 }
@@ -20,6 +23,7 @@ export const useRouteStore = defineStore("route-store", {
   state: (): RouteState => ({
     authRouteMode: "static", // 权限路由模式(此字段预留): 前端静态指定/后端动态获取
     isInitAuthRoute: false,
+    routeHomeName: "home_index",
     menus: [],
   }),
   actions: {
@@ -48,12 +52,16 @@ export const useRouteStore = defineStore("route-store", {
     },
     /** 初始化权限路由 */
     async initAuthRoute() {
+      const { initHomeTab } = useTabStore();
+
       const isDynamicRoute = this.authRouteMode === "static";
       if (isDynamicRoute) {
         await this.initStaticRoute();
       } else {
         // await this.initDynamicRoute();
       }
+
+      initHomeTab(this.routeHomeName, router);
 
       this.isInitAuthRoute = true;
     },
