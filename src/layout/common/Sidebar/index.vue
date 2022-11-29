@@ -7,20 +7,10 @@
       :collapse="sidebarCollapse"
       class="flex-1 b-0"
       router
+      :default-active="activeRoute"
     >
       <div class="h-56px bg-#545c64 flex-center c-white">Clover管理系统</div>
       <SidebarItem v-for="menu in menus" :key="menu.key" :menu="menu" />
-      <!-- <el-menu-item index="/home">Home</el-menu-item>
-      <el-sub-menu index="/">
-        <template #title>
-          <el-icon>
-            <i-ep-location />
-          </el-icon>
-          <span>Plugin</span>
-        </template>
-        <el-menu-item index="/plugin/about">About</el-menu-item>
-        <el-menu-item index="/plugin/map">Map</el-menu-item>
-      </el-sub-menu> -->
     </el-menu>
   </div>
 </template>
@@ -31,9 +21,10 @@ import { useAppStore, useRouteStore } from "@/stores";
 
 const { sidebarCollapse } = $(useAppStore());
 
+const route = useRoute();
 const routeStore = useRouteStore();
 const menus: GlobalMenuOption[] = routeStore.menus.flat(1);
-console.log("menus", menus[0]); // TODO 将menus渲染为侧边菜单
+const activeRoute = computed(() => route.path);
 </script>
 
 <style scoped>
