@@ -1,3 +1,4 @@
+import { useRouterPush } from "@/composables";
 import type { RouteLocationNormalized, Router } from "vue-router";
 import { getTabRouteByVueRoute, isInTabRoutes } from "./helpers";
 interface TabState {
@@ -30,6 +31,13 @@ export const useTabStore = defineStore("tab-store", {
   },
   actions: {
     /**
+     * 设置激活的页签
+     * @param fullPath - 路由fullPath
+     */
+    setActiveTab(fullPath: string) {
+      this.activeTab = fullPath;
+    },
+    /**
      * 添加多页签
      * @param route - 路由
      */
@@ -41,6 +49,18 @@ export const useTabStore = defineStore("tab-store", {
       }
 
       this.tabs.push(tab);
+    },
+    /**
+     * 点击单个tab
+     * @param fullPath - 路由fullPath
+     */
+    handleClickTab(fullPath: string) {
+      const { routerPush } = useRouterPush(false);
+      const isActive = this.activeTab === fullPath;
+      if (!isActive) {
+        this.setActiveTab(fullPath);
+        routerPush(fullPath);
+      }
     },
     /**
      * 初始化首页页签路由

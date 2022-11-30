@@ -1,10 +1,16 @@
 <template>
-  <el-tabs type="card" tab-position="bottom" class="tabs h-full pl-20px flex-y-center">
+  <el-tabs
+    v-model="tab.activeTab"
+    type="card"
+    tab-position="bottom"
+    class="tabs h-full pl-20px flex-y-center"
+    @tab-click="handleClickTab"
+  >
     <el-tab-pane
       v-for="item in tab.tabs"
       :key="item.fullPath"
       :label="item.meta.title"
-      :name="item.name"
+      :name="item.fullPath"
       :closable="Boolean(item.meta.key !== 'root')"
     ></el-tab-pane>
   </el-tabs>
@@ -12,11 +18,15 @@
 
 <script lang="ts" setup>
 import { useTabStore } from "@/stores";
+import type { TabsPaneContext } from "element-plus";
 
 defineOptions({ name: "TabDetail" });
 
 const tab = useTabStore();
-console.log("tab", tab);
+
+const handleClickTab = (pane: TabsPaneContext) => {
+  tab.handleClickTab(pane.props.name as string);
+};
 </script>
 
 <style scoped>
