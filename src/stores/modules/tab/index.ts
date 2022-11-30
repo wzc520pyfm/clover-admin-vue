@@ -51,6 +51,22 @@ export const useTabStore = defineStore("tab-store", {
       this.tabs.push(tab);
     },
     /**
+     * 删除多页签
+     * @param fullPath - 路由fullPath
+     */
+    removeTab(fullPath: string) {
+      const { routerPush } = useRouterPush(false);
+
+      const isActive = this.activeTab === fullPath;
+      const updateTabs = this.tabs.filter((tab) => tab.fullPath !== fullPath);
+      this.tabs = updateTabs;
+      if (isActive && updateTabs.length) {
+        const activePath = updateTabs[updateTabs.length - 1].fullPath;
+        this.setActiveTab(activePath);
+        routerPush(activePath);
+      }
+    },
+    /**
      * 点击单个tab
      * @param fullPath - 路由fullPath
      */

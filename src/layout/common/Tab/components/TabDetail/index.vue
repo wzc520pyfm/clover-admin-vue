@@ -5,6 +5,7 @@
     tab-position="bottom"
     class="tabs h-full pl-20px flex-y-center"
     @tab-click="handleClickTab"
+    @tab-remove="removeTab"
   >
     <el-tab-pane
       v-for="item in tab.tabs"
@@ -18,7 +19,7 @@
 
 <script lang="ts" setup>
 import { useTabStore } from "@/stores";
-import type { TabsPaneContext } from "element-plus";
+import type { TabPaneName, TabsPaneContext } from "element-plus";
 
 defineOptions({ name: "TabDetail" });
 
@@ -26,6 +27,9 @@ const tab = useTabStore();
 
 const handleClickTab = (pane: TabsPaneContext) => {
   tab.handleClickTab(pane.props.name as string);
+};
+const removeTab = (name: TabPaneName) => {
+  tab.removeTab(name as string);
 };
 </script>
 
