@@ -14,6 +14,7 @@ const home = [
         component: () => import("@/views/HomeView.vue"),
         meta: {
           title: "首页",
+          key: "root",
         },
       },
     ],

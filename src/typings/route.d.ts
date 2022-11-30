@@ -7,6 +7,8 @@ declare namespace AuthRoute {
     title: string;
     /** 是否在菜单中隐藏此项, 其子菜单不受影响 */
     hidden?: boolean;
+    /** 唯一标识, 独立于name的标识, 可用于标识主页路由 */
+    key?: string;
   }
 
   /** 路由类型结构 */
