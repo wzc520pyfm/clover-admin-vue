@@ -21,6 +21,7 @@ watch(
   () => route.fullPath,
   () => {
     tab.addTab(route);
+    tab.setActiveTab(route.fullPath);
   }
 );
 
