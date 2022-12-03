@@ -14,7 +14,7 @@ const route = useRoute();
 const tab = useTabStore();
 
 function init() {
-  tab.initTabStore();
+  tab.initTabStore(route);
 }
 
 watch(

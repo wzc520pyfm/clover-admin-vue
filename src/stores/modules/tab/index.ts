@@ -1,5 +1,5 @@
 import { useRouterPush } from "@/composables";
-import type { RouteLocationNormalized, Router } from "vue-router";
+import type { RouteLocationNormalized, RouteLocationNormalizedLoaded, Router } from "vue-router";
 import { getTabRouteByVueRoute, isInTabRoutes } from "./helpers";
 interface TabState {
   /** 多页签数据 */
@@ -92,11 +92,23 @@ export const useTabStore = defineStore("tab-store", {
       }
     },
     /** 初始化Tab状态 */
-    initTabStore() {
+    initTabStore(currentRoute: RouteLocationNormalizedLoaded) {
       const tabs: GlobalTabRoute[] = [];
       tabs.unshift(this.homeTab);
 
+      const isHome = currentRoute.fullPath === this.homeTab.fullPath;
+      if (!isHome) {
+        // 第一次进入的页面不是home
+        const currentTab = getTabRouteByVueRoute(currentRoute);
+        const hasCurrent = isInTabRoutes(tabs, currentRoute.fullPath);
+        if (!hasCurrent) {
+          // 当前页不在多页签里
+          tabs.push(currentTab);
+        }
+      }
+
       this.tabs = tabs;
+      this.setActiveTab(currentRoute.fullPath); // 设置激活的tab页签
     },
   },
 });
