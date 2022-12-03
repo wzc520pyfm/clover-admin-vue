@@ -3,9 +3,7 @@
 </template>
 
 <script lang="ts" setup>
-// defineOptions({
-//   name: "Footer",
-// });
+defineOptions({ name: "GlobalFooter" });
 </script>
 
 <style scoped></style>

@@ -10,6 +10,8 @@
 
 <script lang="ts" setup>
 import { MenuCollapse, Breadcrumb } from "./components";
+
+defineOptions({ name: "GlobalHeader" });
 </script>
 
 <style scoped>

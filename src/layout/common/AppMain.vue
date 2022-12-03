@@ -4,6 +4,8 @@
   </div>
 </template>
 
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+defineOptions({ name: "GlobalMain" });
+</script>
 
 <style scoped></style>

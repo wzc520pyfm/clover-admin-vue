@@ -19,6 +19,8 @@
 import { SidebarItem } from "./components";
 import { useAppStore, useRouteStore } from "@/stores";
 
+defineOptions({ name: "GlobalSidebar" });
+
 const { sidebarCollapse } = $(useAppStore());
 
 const route = useRoute();
