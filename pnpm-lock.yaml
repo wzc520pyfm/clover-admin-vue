@@ -30,6 +30,7 @@ specifiers:
   typescript: ~4.7.4
   unocss: ^0.46.1
   unplugin-auto-import: ^0.11.4
+  unplugin-element-plus: ^0.4.1
   unplugin-icons: ^0.14.12
   unplugin-vue-components: ^0.22.9
   unplugin-vue-macros: ^0.16.4
@@ -73,6 +74,7 @@ devDependencies:
   typescript: 4.7.4
   unocss: 0.46.1_vite@3.2.1
   unplugin-auto-import: 0.11.4_@vueuse+core@9.4.0
+  unplugin-element-plus: registry.npmmirror.com/unplugin-element-plus/0.4.1_vite@3.2.1
   unplugin-icons: 0.14.12
   unplugin-vue-components: 0.22.9_vue@3.2.41
   unplugin-vue-macros: registry.npmmirror.com/unplugin-vue-macros/0.16.4_t6hi7gfpb2xbr7pq7lqythfxhu
@@ -5605,6 +5607,12 @@ packages:
       fsevents: registry.npmmirror.com/fsevents/2.3.2
     dev: true
 
+  registry.npmmirror.com/es-module-lexer/0.10.5:
+    resolution: {integrity: sha512-+7IwY/kiGAacQfY+YBhKMvEmyAJnw5grTUgjG85Pe7vcUI/6b7pZjZG8nQ7+48YhzEAEqrEgD2dCz/JIK+AYvw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/es-module-lexer/-/es-module-lexer-0.10.5.tgz}
+    name: es-module-lexer
+    version: 0.10.5
+    dev: true
+
   registry.npmmirror.com/esbuild-android-64/0.15.12:
     resolution: {integrity: sha512-MJKXwvPY9g0rGps0+U65HlTsM1wUs9lbjt5CU19RESqycGFDRijMDQsh68MtbzkqWSRdEtiKS1mtPzKneaAI0Q==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/esbuild-android-64/-/esbuild-android-64-0.15.12.tgz}
     name: esbuild-android-64
@@ -6022,6 +6030,24 @@ packages:
       vite: 3.2.1
     dev: true
 
+  registry.npmmirror.com/unplugin-element-plus/0.4.1_vite@3.2.1:
+    resolution: {integrity: sha512-x8L35sppkbtnAf+aSPXNsLPjCUrM0mWKgujqMIgrHiDQaGbpMlNnbN2kjP5CMclykNOw8fUCreEhtxPyzg8tmw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/unplugin-element-plus/-/unplugin-element-plus-0.4.1.tgz}
+    id: registry.npmmirror.com/unplugin-element-plus/0.4.1
+    name: unplugin-element-plus
+    version: 0.4.1
+    engines: {node: '>=14.19.0'}
+    dependencies:
+      '@rollup/pluginutils': registry.npmmirror.com/@rollup/pluginutils/4.2.1
+      es-module-lexer: registry.npmmirror.com/es-module-lexer/0.10.5
+      magic-string: registry.npmmirror.com/magic-string/0.26.7
+      unplugin: registry.npmmirror.com/unplugin/0.7.2_vite@3.2.1
+    transitivePeerDependencies:
+      - esbuild
+      - rollup
+      - vite
+      - webpack
+    dev: true
+
   registry.npmmirror.com/unplugin-vue-define-options/0.12.8:
     resolution: {integrity: sha512-/5NjICUI9Ick6LI31pc0jTh7DUdEBerLS3UKor3AanldLtqKWYd0lzjHjgg4JXUvuOEkpDf7e0f3jpqE362mKA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/unplugin-vue-define-options/-/unplugin-vue-define-options-0.12.8.tgz}
     name: unplugin-vue-define-options
@@ -6073,6 +6099,33 @@ packages:
     dependencies:
       acorn: registry.npmmirror.com/acorn/8.8.1
       chokidar: registry.npmmirror.com/chokidar/3.5.3
+      webpack-sources: registry.npmmirror.com/webpack-sources/3.2.3
+      webpack-virtual-modules: registry.npmmirror.com/webpack-virtual-modules/0.4.6
+    dev: true
+
+  registry.npmmirror.com/unplugin/0.7.2_vite@3.2.1:
+    resolution: {integrity: sha512-m7thX4jP8l5sETpLdUASoDOGOcHaOVtgNyrYlToyQUvILUtEzEnngRBrHnAX3IKqooJVmXpoa/CwQ/QqzvGaHQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/unplugin/-/unplugin-0.7.2.tgz}
+    id: registry.npmmirror.com/unplugin/0.7.2
+    name: unplugin
+    version: 0.7.2
+    peerDependencies:
+      esbuild: '>=0.13'
+      rollup: ^2.50.0
+      vite: ^2.3.0 || ^3.0.0-0
+      webpack: 4 || 5
+    peerDependenciesMeta:
+      esbuild:
+        optional: true
+      rollup:
+        optional: true
+      vite:
+        optional: true
+      webpack:
+        optional: true
+    dependencies:
+      acorn: registry.npmmirror.com/acorn/8.8.1
+      chokidar: registry.npmmirror.com/chokidar/3.5.3
+      vite: 3.2.1
       webpack-sources: registry.npmmirror.com/webpack-sources/3.2.3
       webpack-virtual-modules: registry.npmmirror.com/webpack-virtual-modules/0.4.6
     dev: true

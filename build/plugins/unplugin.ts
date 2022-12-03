@@ -5,6 +5,7 @@ import Components from "unplugin-vue-components/vite";
 import Icons from "unplugin-icons/vite";
 import IconsResolver from "unplugin-icons/resolver";
 import { ElementPlusResolver } from "unplugin-vue-components/resolvers";
+import ElementPlus from "unplugin-element-plus/vite";
 
 export default function unplugin(): PluginOption[] {
   return [
@@ -40,5 +41,6 @@ export default function unplugin(): PluginOption[] {
       // 自动导入图标组件
       autoInstall: true,
     }),
+    ElementPlus(), // 当需要手动导入Element组件时, 此plugin可帮助你自动导入其样式
   ];
 }
