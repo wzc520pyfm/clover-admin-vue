@@ -14,6 +14,7 @@ const about = [
         component: () => import("@/views/about/index.vue"),
         meta: {
           title: "关于",
+          icon: "Warning",
         },
       },
     ],

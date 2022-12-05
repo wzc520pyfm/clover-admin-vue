@@ -5,6 +5,8 @@ declare namespace AuthRoute {
   interface RouteMeta {
     /** 路由标题 */
     title: string;
+    /** 图标 */
+    icon?: string;
     /** 是否在菜单中隐藏此项, 其子菜单不受影响 */
     hidden?: boolean;
     /** 唯一标识, 独立于name的标识, 可用于标识主页路由 */

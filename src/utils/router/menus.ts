@@ -34,6 +34,7 @@ export function transformRouteToMenu(
       label: meta.title,
       routeName: name,
       routePath: fullPath,
+      icon: meta.icon,
       children: menuChildren,
     };
     if (!hiddenMenu(route)) {

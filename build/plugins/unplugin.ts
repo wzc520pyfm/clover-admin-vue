@@ -30,7 +30,7 @@ export default function unplugin(): PluginOption[] {
       dts: "src/typings/components.d.ts",
       resolvers: [
         IconsResolver({
-          // 自动注册图标组件
+          // 自动注册图标组件 how to use: <i-ep-location />
           enabledCollections: ["ep"],
         }),
         ElementPlusResolver(), // 自动导入element-plus相关组件

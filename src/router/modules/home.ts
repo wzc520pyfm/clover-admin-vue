@@ -15,6 +15,7 @@ const home = [
         meta: {
           title: "首页",
           key: "root",
+          icon: "House",
         },
       },
     ],

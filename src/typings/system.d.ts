@@ -4,6 +4,7 @@ type GlobalMenuOption = {
   label: string;
   routeName: string | symbol;
   routePath: string;
+  icon?: string;
   children?: Array<GlobalMenuOption>;
 };
 
