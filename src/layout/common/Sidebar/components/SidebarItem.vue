@@ -1,16 +1,19 @@
 <template>
-  <div>
-    <el-menu-item v-if="!menu.children" :index="menu.routePath">
+  <el-menu-item v-if="!menu.children" :index="menu.routePath">
+    <i-ep-location />
+    <template #title>
       <span>{{ menu.label }}</span>
-    </el-menu-item>
-    <el-sub-menu v-else :index="menu.routePath" :key="menu.key">
-      <template #title>
-        <i-ep-location />
-        <span>{{ menu.label }}</span>
-      </template>
+    </template>
+  </el-menu-item>
+  <el-sub-menu v-else :index="menu.routePath" :key="menu.key">
+    <template #title>
+      <i-ep-location />
+      <span>{{ menu.label }}</span>
+    </template>
+    <el-menu-item-group>
       <SidebarItem v-for="item in menu.children" :key="item.key" :menu="item" />
-    </el-sub-menu>
-  </div>
+    </el-menu-item-group>
+  </el-sub-menu>
 </template>
 
 <script lang="ts" setup>
