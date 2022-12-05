@@ -9,6 +9,8 @@ declare namespace AuthRoute {
     hidden?: boolean;
     /** 唯一标识, 独立于name的标识, 可用于标识主页路由 */
     key?: string;
+    /** 路由顺序, 调整菜单排序 */
+    order?: number;
   }
 
   /** 路由类型结构 */

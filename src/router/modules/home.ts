@@ -6,7 +6,7 @@ const home = [
     path: "/home",
     component: Layout,
     redirect: "/home/index",
-    meta: { title: "首页", hidden: true },
+    meta: { title: "首页", hidden: true, order: 1 },
     children: [
       {
         path: "index",

@@ -6,12 +6,12 @@ const plugin = [
     path: "/plugin",
     component: Layout,
     redirect: "/plugin/about",
-    meta: { title: "插件" },
+    meta: { title: "插件", order: 2 },
     children: [
       {
         path: "about",
         name: "plugin_about",
-        component: () => import("@/views/AboutView.vue"),
+        component: () => import("@/views/plugin/oss/index.vue"),
         meta: { title: "OSS" },
       },
       {
