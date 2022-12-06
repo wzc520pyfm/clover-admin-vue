@@ -41,6 +41,7 @@ const activeRoute = computed(() => route.path);
   width: 220px;
 }
 .el-menu {
+  --active-color: #409eff;
   --el-menu-item-height: 42px;
   --el-menu-sub-item-height: var(--el-menu-item-height);
 }
@@ -51,5 +52,8 @@ const activeRoute = computed(() => route.path);
 }
 :deep(.el-menu-item).is-active {
   background-color: #e7f4ff;
+}
+:deep(.el-menu-item).is-active span {
+  font-weight: bold;
 }
 </style>
