@@ -19,7 +19,7 @@
       <slot></slot>
     </div>
     <div
-      class="fixed flex-center z-998 h-48px w-full bottom-0 bg-white base-transition"
+      class="fixed z-998 h-48px w-full bottom-0 bg-white base-transition"
       :style="{ paddingLeft: `${!sidebarCollapse ? 220 : 64}px` }"
     >
       <slot name="footer"></slot>
