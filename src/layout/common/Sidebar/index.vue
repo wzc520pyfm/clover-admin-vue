@@ -7,7 +7,7 @@
       router
       :default-active="activeRoute"
     >
-      <div class="h-56px flex-center c-#29aefe text-16px font-bold">Clover管理系统</div>
+      <GlobalLogo :show-title="!sidebarCollapse" class="h-56px" />
       <SidebarItem v-for="menu in menus" :key="menu.key" :menu="menu" />
     </el-menu>
   </div>
@@ -15,6 +15,7 @@
 
 <script lang="ts" setup>
 import { SidebarItem } from "./components";
+import { GlobalLogo } from "../../common";
 import { useAppStore, useRouteStore } from "@/stores";
 
 defineOptions({ name: "GlobalSidebar" });

@@ -1,0 +1,23 @@
+<template>
+  <router-link :to="routeHomePath" class="flex-center">
+    <el-icon :size="32"><IconLogo /></el-icon>
+    <h2 v-show="showTitle" class="pl-5px c-#1890ff text-16px font-bold">Clover管理系统</h2>
+  </router-link>
+</template>
+
+<script lang="ts" setup>
+export interface Props {
+  /** 显示名字 */
+  showTitle: boolean;
+}
+
+import IconLogo from "@/components/icons/IconLogo.vue";
+
+defineOptions({ name: "GlobalLogo" });
+
+defineProps<Props>();
+
+const routeHomePath = "/home";
+</script>
+
+<style scoped></style>
