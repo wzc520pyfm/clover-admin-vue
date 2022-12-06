@@ -1,11 +1,16 @@
 <template>
-  <div class="app-main overflow-auto wh-full p-5 bg-#f8fafb">
+  <div class="app-main overflow-auto wh-full p-5" :class="`bg-${COLORS.GREEN}`">
     <RouterView />
   </div>
 </template>
 
 <script lang="ts" setup>
 defineOptions({ name: "GlobalMain" });
+
+const COLORS = {
+  BLUE: "#f6f9ff",
+  GREEN: "#f8fafb",
+};
 </script>
 
 <style scoped></style>

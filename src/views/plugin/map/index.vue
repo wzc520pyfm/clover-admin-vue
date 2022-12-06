@@ -40,6 +40,9 @@ const maps: Array<Map> = [
 </script>
 
 <style scoped>
+.el-card {
+  --el-box-shadow-light: none;
+}
 :deep(.el-card__body),
 :deep(.el-tabs__content) {
   flex: 1;
