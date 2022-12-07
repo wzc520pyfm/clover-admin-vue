@@ -1,5 +1,9 @@
 <template>
-  <div class="app-main overflow-auto wh-full p-5" :class="`bg-${COLORS.GREEN}`">
+  <div
+    ref="el"
+    class="app-main overflow-auto wh-full p-5"
+    :style="{ backgroundColor: COLORS.GREEN }"
+  >
     <RouterView />
   </div>
 </template>
