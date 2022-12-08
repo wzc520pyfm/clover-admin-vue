@@ -6,7 +6,7 @@ const about = [
     path: "/about",
     component: Layout,
     redirect: "/about/index",
-    meta: { title: "关于", hidden: true, order: 3 },
+    meta: { title: "关于", hidden: true, order: 4 },
     children: [
       {
         path: "index",

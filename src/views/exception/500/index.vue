@@ -1,5 +1,5 @@
 <template>
-  <exception-base type="404" />
+  <exception-base type="500" />
 </template>
 
 <script lang="ts" setup></script>
