@@ -5,9 +5,18 @@ import Components from "unplugin-vue-components/vite";
 import Icons from "unplugin-icons/vite";
 import IconsResolver from "unplugin-icons/resolver";
 import { ElementPlusResolver } from "unplugin-vue-components/resolvers";
+import { FileSystemIconLoader } from "unplugin-icons/loaders";
 import ElementPlus from "unplugin-element-plus/vite";
+import { createSvgIconsPlugin } from "vite-plugin-svg-icons";
+import { getSrcPath } from "../utils";
 
 export default function unplugin(): PluginOption[] {
+  const srcPath = getSrcPath();
+  const localIconPath = `${srcPath}/assets/svg-icon`;
+
+  /** 本地svg图标集合名称 */
+  const collectionName = "local";
+
   return [
     VueMacros(),
     AutoImport({
@@ -32,6 +41,9 @@ export default function unplugin(): PluginOption[] {
         IconsResolver({
           // 自动注册图标组件 how to use: <i-ep-location />
           enabledCollections: ["ep"],
+          // 本地svg图标集合
+          customCollections: [collectionName],
+          componentPrefix: "icon",
         }),
         ElementPlusResolver(), // 自动导入element-plus相关组件
       ],
@@ -40,6 +52,20 @@ export default function unplugin(): PluginOption[] {
     Icons({
       // 自动导入图标组件
       autoInstall: true,
+      // 本地图标
+      compiler: "vue3",
+      customCollections: {
+        [collectionName]: FileSystemIconLoader(localIconPath),
+      },
+      scale: 1,
+      defaultClass: "inline-block",
+    }),
+    // 封装本地svg图标
+    createSvgIconsPlugin({
+      iconDirs: [localIconPath],
+      symbolId: `icon-local-[dir]-[name]`,
+      inject: "body-last",
+      customDomId: "__SVG_ICON_LOCAL__",
     }),
     ElementPlus(), // 当需要手动导入Element组件时, 此plugin可帮助你自动导入其样式
   ];
