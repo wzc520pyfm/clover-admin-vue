@@ -10,7 +10,7 @@
       <GlobalLogo :show-title="!sidebarCollapse" class="h-56px" />
       <SidebarItem v-for="menu in menus" :key="menu.key" :menu="menu" />
     </el-menu>
-    <div>
+    <div v-show="!sidebarCollapse">
       <Vue3Lottie :animationData="ManagementJSON" :speed="0.7" :height="220" :width="220" />
     </div>
   </div>

@@ -43,7 +43,7 @@ export default function unplugin(): PluginOption[] {
           enabledCollections: ["ep"],
           // 本地svg图标集合
           customCollections: [collectionName],
-          componentPrefix: "icon",
+          // componentPrefix: "icon", // 与element-plus的prefix配置冲突(本地图标使用: <i-local-iconName />)
         }),
         ElementPlusResolver(), // 自动导入element-plus相关组件
       ],
