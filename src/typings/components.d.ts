@@ -27,6 +27,7 @@ declare module '@vue/runtime-core' {
     ElTabPane: typeof import('element-plus/es')['ElTabPane']
     ElTabs: typeof import('element-plus/es')['ElTabs']
     ElUpload: typeof import('element-plus/es')['ElUpload']
+    GlobalProvider: typeof import('./../components/common/GlobalProvider.vue')['default']
     HelloWorld: typeof import('./../components/HelloWorld.vue')['default']
     IconCommunity: typeof import('./../components/icons/IconCommunity.vue')['default']
     IconDocumentation: typeof import('./../components/icons/IconDocumentation.vue')['default']
