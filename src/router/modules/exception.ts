@@ -26,6 +26,12 @@ const exception = [
         component: () => import("@/views/exception/500/index.vue"),
         meta: { title: "500", icon: "CircleCloseFilled" },
       },
+      {
+        path: "other",
+        name: "exception_other",
+        component: () => import("@/views/exception/other/index.vue"),
+        meta: { title: "other", icon: "MoreFilled" },
+      },
     ],
   },
 ];
