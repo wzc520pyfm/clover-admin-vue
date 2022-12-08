@@ -10,6 +10,9 @@
       <GlobalLogo :show-title="!sidebarCollapse" class="h-56px" />
       <SidebarItem v-for="menu in menus" :key="menu.key" :menu="menu" />
     </el-menu>
+    <div>
+      <Vue3Lottie :animationData="ManagementJSON" :speed="0.7" :height="220" :width="220" />
+    </div>
   </div>
 </template>
 
@@ -17,6 +20,9 @@
 import { SidebarItem } from "./components";
 import { GlobalLogo } from "../../common";
 import { useAppStore, useRouteStore } from "@/stores";
+import { Vue3Lottie } from "vue3-lottie";
+import "vue3-lottie/dist/style.css";
+import ManagementJSON from "@/assets/animation/management.json";
 
 defineOptions({ name: "GlobalSidebar" });
 
