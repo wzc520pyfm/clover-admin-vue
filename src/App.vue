@@ -16,7 +16,7 @@ onErrorCaptured(function (err, instance, info) {
             <component :is="Component"></component>
 
             <!-- 加载中状态 -->
-            <template #fallback> 正在加载... </template>
+            <template #fallback><Loading /></template>
           </Suspense>
         </KeepAlive>
       </Transition>

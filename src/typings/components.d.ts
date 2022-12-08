@@ -37,6 +37,7 @@ declare module '@vue/runtime-core' {
     IEpExpand: typeof import('~icons/ep/expand')['default']
     IEpFold: typeof import('~icons/ep/fold')['default']
     IEpLocation: typeof import('~icons/ep/location')['default']
+    Loading: typeof import('./../components/business/Loading.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     TheWelcome: typeof import('./../components/TheWelcome.vue')['default']
