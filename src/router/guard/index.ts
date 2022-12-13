@@ -8,12 +8,12 @@ import { handleRoutePermission } from "./permission";
 export function setupRouterGuard(router: Router) {
   router.beforeEach(async (to, from, next) => {
     // 开始loading
-    // ...
+    window.$loadingBar?.start();
     // 页面跳转权限处理
     await handleRoutePermission(to, from, next);
   });
   router.afterEach((to, from) => {
     // 结束loading
-    // ...
+    window.$loadingBar?.done();
   });
 }
