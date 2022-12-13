@@ -4,7 +4,13 @@
     class="app-main overflow-auto wh-full p-5"
     :style="{ backgroundColor: COLORS.GREEN }"
   >
-    <RouterView />
+    <RouterView v-slot="{ Component, route }">
+      <Transition name="fade" mode="out-in" :appear="true">
+        <KeepAlive>
+          <component :is="Component" :key="route.fullPath"></component>
+        </KeepAlive>
+      </Transition>
+    </RouterView>
   </div>
 </template>
 

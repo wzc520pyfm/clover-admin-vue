@@ -3,7 +3,7 @@
 </template>
 
 <script lang="ts" setup>
-defineOptions({ name: "GlobalProvider" });
+defineOptions({ name: "ElementProvider" });
 </script>
 
 <style scoped></style>

@@ -1,4 +1,6 @@
-<template>关于</template>
+<template>
+  <div>关于</div>
+</template>
 
 <script lang="ts" setup></script>
 

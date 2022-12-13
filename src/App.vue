@@ -7,21 +7,23 @@ onErrorCaptured(function (err, instance, info) {
 </script>
 
 <template>
-  <RouterView v-slot="{ Component }">
-    <template v-if="Component">
-      <Transition mode="out-in">
-        <KeepAlive>
+  <el-config-provider>
+    <ElementProvider>
+      <RouterView v-slot="{ Component }">
+        <template v-if="Component">
           <Suspense>
             <!-- 主要内容 -->
             <component :is="Component"></component>
 
             <!-- 加载中状态 -->
-            <template #fallback><Loading /></template>
+            <template #fallback>
+              <Loading />
+            </template>
           </Suspense>
-        </KeepAlive>
-      </Transition>
-    </template>
-  </RouterView>
+        </template>
+      </RouterView>
+    </ElementProvider>
+  </el-config-provider>
 </template>
 
 <style scoped></style>
