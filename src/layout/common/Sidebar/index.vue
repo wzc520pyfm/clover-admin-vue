@@ -1,15 +1,17 @@
 <template>
   <div class="global-sidebar h-full flex-col">
-    <el-menu
-      popper-effect="light"
-      :collapse="sidebarCollapse"
-      class="flex-1 b-0 p-5px"
-      router
-      :default-active="activeRoute"
-    >
-      <GlobalLogo :show-title="!sidebarCollapse" class="h-56px" />
-      <SidebarItem v-for="menu in menus" :key="menu.key" :menu="menu" />
-    </el-menu>
+    <GlobalLogo :show-title="!sidebarCollapse" class="h-56px py-10px px-5px" />
+    <el-scrollbar>
+      <el-menu
+        popper-effect="light"
+        :collapse="sidebarCollapse"
+        class="flex-1 b-0 p-5px"
+        router
+        :default-active="activeRoute"
+      >
+        <SidebarItem v-for="menu in menus" :key="menu.key" :menu="menu" />
+      </el-menu>
+    </el-scrollbar>
     <div v-show="!sidebarCollapse">
       <Vue3Lottie :animationData="ManagementJSON" :speed="0.7" :height="220" :width="220" />
     </div>
