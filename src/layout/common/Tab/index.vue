@@ -1,12 +1,13 @@
 <template>
-  <div class="global-tab flex-1-hidden h-full">
+  <div class="global-tab flex-1-hidden h-full flex justify-between">
     <tab-detail />
+    <ReloadButton />
   </div>
 </template>
 
 <script lang="ts" setup>
 import { useTabStore } from "@/stores";
-import { TabDetail } from "./components";
+import { TabDetail, ReloadButton } from "./components";
 
 defineOptions({ name: "GlobalTab" });
 

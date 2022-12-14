@@ -37,6 +37,9 @@ const maps: Array<Map> = [
   { id: "gaode", label: "高德地图", component: GaodeMap },
   { id: "baidu", label: "百度地图", component: BaiduMap },
 ];
+
+onMounted(() => console.log("地图加载了"));
+onActivated(() => console.log("地图活了"));
 </script>
 
 <style scoped>

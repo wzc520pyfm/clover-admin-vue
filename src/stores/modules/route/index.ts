@@ -35,7 +35,7 @@ export const useRouteStore = defineStore("route-store", {
      */
     handleAuthRoutes(routes: AuthRoute.Route[]) {
       this.menus = transformRouteToMenu(routes.flat(1)); // 将权限路由经处理赋值给菜单
-      const vueRoutes = routes.flat(1); // TODO: 将权限路由转换为vue-router的路由
+      const vueRoutes = routes.flat(1); // 将权限路由转换为vue-router的路由
       vueRoutes.forEach((route) => {
         // 挂载路由
         router.addRoute(route as unknown as RouteRecordRaw);

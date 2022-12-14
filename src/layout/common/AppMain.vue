@@ -7,7 +7,7 @@
     <RouterView v-slot="{ Component, route }">
       <Transition name="fade" mode="out-in" :appear="true">
         <KeepAlive>
-          <component :is="Component" :key="route.fullPath"></component>
+          <component :is="Component" v-if="app.reloadFlag" :key="route.fullPath"></component>
         </KeepAlive>
       </Transition>
     </RouterView>
@@ -15,12 +15,16 @@
 </template>
 
 <script lang="ts" setup>
+import { useAppStore } from "@/stores";
+
 defineOptions({ name: "GlobalMain" });
 
 const COLORS = {
   BLUE: "#f6f9ff",
   GREEN: "#f8fafb",
 };
+
+const app = useAppStore();
 </script>
 
 <style scoped></style>

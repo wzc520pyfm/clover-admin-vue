@@ -50,6 +50,8 @@ declare module '@vue/runtime-core' {
     IEpExpand: typeof import('~icons/ep/expand')['default']
     IEpFold: typeof import('~icons/ep/fold')['default']
     IEpLocation: typeof import('~icons/ep/location')['default']
+    IEpRefreshLeft: typeof import('~icons/ep/refresh-left')['default']
+    IEpRefreshRight: typeof import('~icons/ep/refresh-right')['default']
     ILocal403: typeof import('~icons/local/403')['default']
     ILocal404: typeof import('~icons/local/404')['default']
     ILocal500: typeof import('~icons/local/500')['default']
