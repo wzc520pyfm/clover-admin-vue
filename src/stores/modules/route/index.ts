@@ -1,5 +1,5 @@
 import { router, routes as staticRoutes } from "@/router";
-import { transformRouteToMenu } from "@/utils";
+import { getCacheRoutes, transformRouteToMenu } from "@/utils";
 import type { RouteRecordRaw } from "vue-router";
 import type { AuthRoute } from "@/typings/route";
 import { useTabStore } from "../tab";
@@ -18,7 +18,9 @@ interface RouteState {
   /** 路由首页name */
   routeHomeName: string;
   /** 菜单 */
-  menus: GlobalMenuOption[]; // 类型待定
+  menus: GlobalMenuOption[];
+  /** 缓存的路由名称 */
+  cacheRoutes: string[];
 }
 
 export const useRouteStore = defineStore("route-store", {
@@ -27,6 +29,7 @@ export const useRouteStore = defineStore("route-store", {
     isInitAuthRoute: false,
     routeHomeName: "home_index",
     menus: [],
+    cacheRoutes: [],
   }),
   actions: {
     /**
@@ -40,6 +43,8 @@ export const useRouteStore = defineStore("route-store", {
         // 挂载路由
         router.addRoute(route as unknown as RouteRecordRaw);
       });
+
+      this.cacheRoutes = getCacheRoutes(vueRoutes); // 获取需要缓存的路由
     },
     /** 初始化静态路由 */
     async initStaticRoute() {

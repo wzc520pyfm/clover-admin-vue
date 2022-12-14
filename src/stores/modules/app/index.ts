@@ -13,7 +13,7 @@ export const useAppStore = defineStore("app-store", {
   actions: {
     /**
      * 重载页面
-     *  - 触发页面的activated
+     *  - 被缓存的页面会触发activated, 未被缓存的页面会触发mounted
      * @param duration - 重载的延迟时间(ms)
      */
     async reloadPage(duration = 0) {
@@ -30,7 +30,7 @@ export const useAppStore = defineStore("app-store", {
         document.documentElement.scrollTo({ left: 0, top: 0 });
       }, 100);
     },
-    /** // TODO: 强制重载页面(触发页面的mounted) */
+    /** // TODO: 强制重载页面(即使是被缓存的页面也触发其mounted) */
     async forceReloadPage() {},
     /** 切换侧边栏折叠状态 */
     toggleSidebarCollapse() {
