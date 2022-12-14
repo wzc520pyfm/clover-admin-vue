@@ -21,7 +21,7 @@ export function getUserInfo() {
   const emptyInfo: Auth.UserInfo = {
     userId: "",
     userName: "",
-    userRole: "user",
+    userRole: "super", // TODO: 更改为user, 暂时为方便调试: 默认权限为超级管理员
   };
   const userInfo: Auth.UserInfo = getLocal<Auth.UserInfo>(EnumStorageKey["user-info"]) || emptyInfo;
   return userInfo;
