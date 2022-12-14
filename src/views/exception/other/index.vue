@@ -1,5 +1,5 @@
 <template>
-  <div class="flex-x-center flex-wrap gap-20">
+  <div class="flex justify-between flex-wrap gap-20">
     <div class="flex-col-center gap-10">
       <el-icon :size="300"><i-local-load-failed /></el-icon>
       <span>加载失败</span>
