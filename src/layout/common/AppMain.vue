@@ -2,7 +2,7 @@
   <div
     ref="el"
     class="app-main overflow-auto wh-full p-5"
-    :style="{ backgroundColor: COLORS.GREEN }"
+    style="background: linear-gradient(to bottom right, #f6f9f8, #f6f9ff)"
   >
     <RouterView v-slot="{ Component, route }">
       <Transition name="fade" mode="out-in" :appear="true">
@@ -18,11 +18,6 @@
 import { useAppStore, useRouteStore } from "@/stores";
 
 defineOptions({ name: "GlobalMain" });
-
-const COLORS = {
-  BLUE: "#f6f9ff",
-  GREEN: "#f8fafb",
-};
 
 const app = useAppStore();
 const routeStore = useRouteStore();
