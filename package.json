@@ -21,6 +21,7 @@
     "@element-plus/icons-vue": "^2.0.10",
     "@vueuse/core": "^9.4.0",
     "ali-oss": "^6.17.1",
+    "crypto-js": "^4.1.1",
     "element-plus": "^2.2.19",
     "nprogress": "^0.2.0",
     "pinia": "^2.0.23",

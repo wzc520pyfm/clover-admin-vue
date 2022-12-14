@@ -17,6 +17,7 @@ specifiers:
   '@vue/tsconfig': ^0.1.3
   '@vueuse/core': ^9.4.0
   ali-oss: ^6.17.1
+  crypto-js: ^4.1.1
   cypress: ^10.10.0
   element-plus: ^2.2.19
   eslint: ^8.22.0
@@ -47,6 +48,7 @@ dependencies:
   '@element-plus/icons-vue': 2.0.10_vue@3.2.41
   '@vueuse/core': 9.4.0_vue@3.2.41
   ali-oss: 6.17.1
+  crypto-js: registry.npmmirror.com/crypto-js/4.1.1
   element-plus: 2.2.19_vue@3.2.41
   nprogress: registry.npmmirror.com/nprogress/0.2.0
   pinia: 2.0.23_lrjaoqkmph6q2hmgd3qeuy6rom
@@ -5756,6 +5758,12 @@ packages:
       object-assign: registry.npmmirror.com/object-assign/4.1.1
       vary: registry.npmmirror.com/vary/1.1.2
     dev: true
+
+  registry.npmmirror.com/crypto-js/4.1.1:
+    resolution: {integrity: sha512-o2JlM7ydqd3Qk9CA0L4NL6mTzU2sdx96a+oOfPu8Mkl/PK51vSyoi8/rQ8NknZtk44vq15lmhAj9CIAGwgeWKw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/crypto-js/-/crypto-js-4.1.1.tgz}
+    name: crypto-js
+    version: 4.1.1
+    dev: false
 
   registry.npmmirror.com/css-select/4.3.0:
     resolution: {integrity: sha512-wPpOYtnsVontu2mODhA19JrqWxNsfdatRKd64kmpRbQgh1KtItko5sTnEpPdpSaJszTOhEMlF/RPz28qj4HqhQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/css-select/-/css-select-4.3.0.tgz}
