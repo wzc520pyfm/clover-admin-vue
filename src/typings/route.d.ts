@@ -5,6 +5,8 @@ declare namespace AuthRoute {
   interface RouteMeta {
     /** 路由标题 */
     title: string;
+    /** 权限, 为空则表示不需要权限 */
+    permissions?: Auth.RoleType[];
     /** 图标 */
     icon?: string;
     /** 是否在菜单中隐藏此项, 其子菜单不受影响 */

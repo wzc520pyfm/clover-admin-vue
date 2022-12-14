@@ -9,6 +9,8 @@ module.exports = {
     defineOptions: "readonly",
     GlobalMenuOption: true,
     GlobalTabRoute: true,
+    AuthRoute: true,
+    Auth: true,
   },
   extends: [
     "plugin:vue/vue3-essential",
