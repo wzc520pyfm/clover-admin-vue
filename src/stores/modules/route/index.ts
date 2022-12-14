@@ -38,10 +38,6 @@ export const useRouteStore = defineStore("route-store", {
         // 挂载路由
         router.addRoute(route as unknown as RouteRecordRaw);
       });
-      router.addRoute({
-        path: "/:catchAll(.*)",
-        component: () => import("@/views/exception/404/index.vue"), //这个是我自己的路径
-      });
     },
     /** 初始化静态路由 */
     async initStaticRoute() {
