@@ -24,7 +24,7 @@ export const constantRoutes = [
   {
     name: "not-found-page",
     path: "/:pathMatch(.*)*",
-    component: () => import("@/views/exception/404/index.vue"),
+    component: () => import("@/views/system-view/not-found/index.vue"),
     meta: {
       title: "未找到",
       singleLayout: "blank",
