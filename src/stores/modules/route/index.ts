@@ -3,6 +3,8 @@ import { transformRouteToMenu } from "@/utils";
 import type { RouteRecordRaw } from "vue-router";
 import type { AuthRoute } from "@/typings/route";
 import { useTabStore } from "../tab";
+import { useAuthStore } from "../auth";
+import { filterAuthRoutesByUserPermission } from "@/utils/router/auth";
 
 interface RouteState {
   /**
@@ -32,7 +34,7 @@ export const useRouteStore = defineStore("route-store", {
      * @param routes - 权限路由
      */
     handleAuthRoutes(routes: AuthRoute.Route[]) {
-      this.menus = transformRouteToMenu(routes.flat(1)); // TODO: 将权限路由经处理赋值给菜单
+      this.menus = transformRouteToMenu(routes.flat(1)); // 将权限路由经处理赋值给菜单
       const vueRoutes = routes.flat(1); // TODO: 将权限路由转换为vue-router的路由
       vueRoutes.forEach((route) => {
         // 挂载路由
@@ -41,8 +43,8 @@ export const useRouteStore = defineStore("route-store", {
     },
     /** 初始化静态路由 */
     async initStaticRoute() {
-      // ...
-      const routes = staticRoutes; // TODO: 依据权限过滤路由
+      const auth = useAuthStore();
+      const routes = filterAuthRoutesByUserPermission(staticRoutes, auth.userInfo.userRole); // 依据权限过滤路由
       // 处理权限路由并挂载
       this.handleAuthRoutes(routes);
     },
