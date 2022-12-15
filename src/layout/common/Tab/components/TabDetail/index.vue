@@ -10,16 +10,27 @@
     <el-tab-pane
       v-for="item in tab.tabs"
       :key="item.fullPath"
-      :label="item.meta.title"
       :name="item.fullPath"
       :closable="Boolean(item.meta.key !== 'root')"
-    ></el-tab-pane>
+    >
+      <template #label>
+        <span class="flex-y-center gap-1">
+          <el-icon class="vertical-middle"
+            ><component :is="Icons[item.meta.icon as unknown as IconType]"></component
+          ></el-icon>
+          <span>{{ item.meta.title }}</span>
+        </span>
+      </template>
+    </el-tab-pane>
   </el-tabs>
 </template>
 
 <script lang="ts" setup>
 import { useTabStore } from "@/stores";
 import type { TabPaneName, TabsPaneContext } from "element-plus";
+import * as Icons from "@element-plus/icons-vue";
+
+type IconType = keyof typeof Icons;
 
 defineOptions({ name: "TabDetail" });
 
