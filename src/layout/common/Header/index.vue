@@ -4,14 +4,15 @@
       <MenuCollapse />
       <Breadcrumb />
     </div>
-    <div class="flex-y-center justify-end h-full">
+    <div class="flex-y-center justify-end gap-10px h-full">
+      <FullScreen />
       <UserAvatar />
     </div>
   </div>
 </template>
 
 <script lang="ts" setup>
-import { MenuCollapse, Breadcrumb, UserAvatar } from "./components";
+import { MenuCollapse, Breadcrumb, FullScreen, UserAvatar } from "./components";
 
 defineOptions({ name: "GlobalHeader" });
 </script>
