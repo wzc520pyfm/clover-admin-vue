@@ -1,6 +1,6 @@
 <template>
   <div class="my-auto mr-15px">
-    <el-icon class="text-22px" @click="handleRefresh"
+    <el-icon class="text-22px vertical-middle" @click="handleRefresh"
       ><i-ep-refresh-right :class="{ 'animate-spin': loading }"
     /></el-icon>
   </div>

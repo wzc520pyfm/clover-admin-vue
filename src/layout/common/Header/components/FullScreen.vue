@@ -1,7 +1,7 @@
 <template>
   <div class="my-auto">
     <el-tooltip :content="isFullscreen ? '窗口' : '全屏'">
-      <el-icon class="text-22px" @click="toggle"><i-ep-full-screen /></el-icon>
+      <el-icon class="text-22px vertical-middle" @click="toggle"><i-ep-full-screen /></el-icon>
     </el-tooltip>
   </div>
 </template>
