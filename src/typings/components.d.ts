@@ -34,6 +34,7 @@ declare module '@vue/runtime-core' {
     ExceptionBase: typeof import('./../components/common/ExceptionBase.vue')['default']
     GlobalProvider: typeof import('../components/common/ElementProvider.vue')['default']
     HelloWorld: typeof import('./../components/HelloWorld.vue')['default']
+    HoverContainer: typeof import('./../components/common/HoverContainer.vue')['default']
     IconCommunity: typeof import('./../components/icons/IconCommunity.vue')['default']
     IconDocumentation: typeof import('./../components/icons/IconDocumentation.vue')['default']
     IconEcosystem: typeof import('./../components/icons/IconEcosystem.vue')['default']

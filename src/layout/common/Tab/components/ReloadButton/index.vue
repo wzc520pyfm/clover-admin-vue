@@ -1,9 +1,9 @@
 <template>
-  <div class="my-auto mr-15px">
-    <el-icon class="text-22px vertical-middle" @click="handleRefresh"
+  <hover-container class="w-64px h-full" tooltip-content="重新加载" @click="handleRefresh">
+    <el-icon class="text-22px vertical-middle"
       ><i-ep-refresh-right :class="{ 'animate-spin': loading }"
     /></el-icon>
-  </div>
+  </hover-container>
 </template>
 
 <script lang="ts" setup>

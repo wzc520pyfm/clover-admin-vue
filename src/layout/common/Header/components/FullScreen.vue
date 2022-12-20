@@ -1,9 +1,11 @@
 <template>
-  <div class="my-auto">
-    <el-tooltip :content="isFullscreen ? '窗口' : '全屏'">
-      <el-icon class="text-22px vertical-middle" @click="toggle"><i-ep-full-screen /></el-icon>
-    </el-tooltip>
-  </div>
+  <hover-container
+    class="w-40px h-full"
+    :tooltip-content="isFullscreen ? '窗口' : '全屏'"
+    @click="toggle"
+  >
+    <el-icon class="text-22px vertical-middle"><i-ep-full-screen /></el-icon>
+  </hover-container>
 </template>
 
 <script lang="ts" setup>
