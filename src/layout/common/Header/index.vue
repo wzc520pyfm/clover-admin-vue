@@ -5,6 +5,7 @@
       <Breadcrumb />
     </div>
     <div class="flex-y-center justify-end gap-10px h-full">
+      <GithubSite />
       <FullScreen />
       <UserAvatar />
     </div>
@@ -12,7 +13,7 @@
 </template>
 
 <script lang="ts" setup>
-import { MenuCollapse, Breadcrumb, FullScreen, UserAvatar } from "./components";
+import { MenuCollapse, Breadcrumb, FullScreen, GithubSite, UserAvatar } from "./components";
 
 defineOptions({ name: "GlobalHeader" });
 </script>

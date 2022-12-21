@@ -65,6 +65,7 @@ declare module '@vue/runtime-core' {
     ILocalNetworkError: typeof import('~icons/local/network-error')['default']
     ILocalNoContent: typeof import('~icons/local/no-content')['default']
     ILocalPageError: typeof import('~icons/local/page-error')['default']
+    IMdiGithub: typeof import('~icons/mdi/github')['default']
     Loading: typeof import('./../components/business/Loading.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']

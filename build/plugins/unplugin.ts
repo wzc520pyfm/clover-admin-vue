@@ -40,7 +40,7 @@ export default function unplugin(): PluginOption[] {
       resolvers: [
         IconsResolver({
           // 自动注册图标组件 how to use: <i-ep-location />
-          enabledCollections: ["ep"], // 'ep'是element图标集在https://iconify.design/ 里的集合名, 如果你引入或`使用了其他图标集, 需要在此把其集合名写上
+          enabledCollections: ["ep", "mdi"], // 'ep'是element图标集在https://iconify.design/ 里的集合名, 如果你引入或`使用了其他图标集, 需要在此把其集合名写上
           // 本地svg图标集合
           customCollections: [collectionName],
           // componentPrefix: "icon", // 与element-plus的prefix配置冲突(本地图标使用: <i-local-iconName />)
