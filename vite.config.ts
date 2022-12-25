@@ -4,7 +4,8 @@ import { setupVitePlugins } from "./build";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [setupVitePlugins()],
+  base: "/",
+  plugins: setupVitePlugins(),
   server: {
     port: 5574,
   },
