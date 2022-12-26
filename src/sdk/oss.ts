@@ -6,7 +6,7 @@ function getSTS(): Promise<Credentials> {
   return new Promise((resolve, reject) => {
     // get STS token from server
     // see: https://help.aliyun.com/document_detail/32077.html
-    fetch("http://127.0.0.1:5976/clover-api/ali-oss/v1/get-sts")
+    fetch("/oss-api/ali-oss/v1/get-sts")
       .then((res) => res.json())
       .then((result) => {
         resolve(result);
