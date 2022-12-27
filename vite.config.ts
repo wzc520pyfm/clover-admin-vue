@@ -13,14 +13,24 @@ export default defineConfig(({ mode }) => {
   return {
     base: "/",
     plugins: setupVitePlugins(),
-    server: {
-      port: 5574,
-      proxy: createViteProxy(isOpenProxy, envConfig),
-    },
     resolve: {
       alias: {
         "@": fileURLToPath(new URL("./src", import.meta.url)),
       },
+    },
+    server: {
+      port: 5574,
+      open: true,
+      proxy: createViteProxy(isOpenProxy, envConfig),
+    },
+    // 依赖优化选项
+    optimizeDeps: {
+      include: [], // 需要强制预构建的包
+    },
+    // 构建选项
+    build: {
+      sourcemap: false, // 构建后是否生成source map 文件
+      reportCompressedSize: false, // 启用/禁用 gzip 压缩大小报告, 压缩大型输出文件可能会很慢，因此禁用该功能可能会提高大型项目的构建性能
     },
   };
 });

@@ -1,7 +1,6 @@
 {
   "extends": "@vue/tsconfig/tsconfig.web.json",
   "include": [
-    "env.d.ts",
     "build/**/*",
     "src/**/*",
     "src/**/*.vue",
