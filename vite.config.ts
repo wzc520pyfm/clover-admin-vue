@@ -2,6 +2,7 @@ import { fileURLToPath, URL } from "node:url";
 import { defineConfig, loadEnv } from "vite";
 import { createViteProxy, setupVitePlugins } from "./build";
 import { getServiceEnvConfig } from "./.env.config";
+import { resolve } from "node:path";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
@@ -22,6 +23,19 @@ export default defineConfig(({ mode }) => {
       port: 5574,
       open: true,
       proxy: createViteProxy(isOpenProxy, envConfig),
+    },
+    // css配置
+    css: {
+      preprocessorOptions: {
+        less: {
+          // see: https://lesscss.org/usage/#less-options
+          modifyVars: {
+            // 全局导入
+            // reference: 避免重复引用
+            hack: `true; @import (reference) "${resolve("src/styles/less/main.less")}";`,
+          },
+        },
+      },
     },
     // 依赖优化选项
     optimizeDeps: {
