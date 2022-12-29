@@ -1,5 +1,6 @@
 import { defineConfig } from "unocss/vite";
 import presetUno from "@unocss/preset-uno";
+import { presetAttributify } from "unocss";
 
 export default defineConfig({
   exclude: [
@@ -13,7 +14,7 @@ export default defineConfig({
     "mock",
     "./stats.html",
   ],
-  presets: [presetUno()],
+  presets: [presetUno(), presetAttributify()], // presetAttributify()开启无值的写法
   shortcuts: {
     "wh-full": "w-full h-full",
     "flex-center": "flex justify-center items-center",
@@ -33,5 +34,8 @@ export default defineConfig({
       }),
     ],
   ],
-  theme: {},
+  // see: https://tailwindcss.com/docs/theme
+  theme: {
+    colors: {},
+  },
 });
