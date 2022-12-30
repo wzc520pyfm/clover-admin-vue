@@ -1,5 +1,5 @@
 <template>
-  <div class="global-header h-full flex-y-center pl-10px pr-15px">
+  <div class="global-header h-full flex-y-center pl-10px pr-15px dark:bg-dark">
     <div class="flex-1-hidden flex-y-center h-full">
       <MenuCollapse />
       <Breadcrumb />
@@ -7,13 +7,21 @@
     <div class="flex-y-center justify-end gap-10px h-full">
       <GithubSite />
       <FullScreen />
+      <ThemeModel />
       <UserAvatar />
     </div>
   </div>
 </template>
 
 <script lang="ts" setup>
-import { MenuCollapse, Breadcrumb, FullScreen, GithubSite, UserAvatar } from "./components";
+import {
+  MenuCollapse,
+  Breadcrumb,
+  FullScreen,
+  ThemeModel,
+  GithubSite,
+  UserAvatar,
+} from "./components";
 
 defineOptions({ name: "GlobalHeader" });
 </script>

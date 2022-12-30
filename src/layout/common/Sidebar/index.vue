@@ -1,14 +1,9 @@
 <template>
-  <div class="global-sidebar h-full flex-col">
+  <div class="global-sidebar h-full flex-col dark:bg-dark">
     <GlobalLogo :show-title="!sidebarCollapse" class="h-56px py-10px px-5px" />
     <el-scrollbar>
-      <el-menu
-        popper-effect="light"
-        :collapse="sidebarCollapse"
-        class="flex-1 b-0 p-5px"
-        router
-        :default-active="activeRoute"
-      >
+      <el-menu popper-effect="light" :collapse="sidebarCollapse" class="flex-1 b-0 p-5px" router
+        :default-active="activeRoute">
         <SidebarItem v-for="menu in menus" :key="menu.key" :menu="menu" />
       </el-menu>
     </el-scrollbar>
@@ -36,33 +31,47 @@ const menus: GlobalMenuOption[] = routeStore.menus.flat(1);
 const activeRoute = computed(() => route.path);
 </script>
 
-<style scoped>
+<style lang="less" scoped>
 .global-sidebar {
   box-shadow: 1px 0 5px rgb(0 21 41 / 5%);
 }
-.el-menu--collapse :deep(.el-menu-tooltip__trigger) {
-  justify-content: center;
+
+.el-menu--collapse {
+  :deep(.el-menu-tooltip__trigger) {
+    justify-content: center;
+  }
+
+  :deep(.el-sub-menu__title) {
+    justify-content: center;
+  }
 }
-.el-menu--collapse :deep(.el-sub-menu__title) {
-  justify-content: center;
-}
-.el-menu:not(.el-menu--collapse) {
-  width: 220px;
-}
+
 .el-menu {
   --active-color: #409eff;
   --el-menu-item-height: 42px;
   --el-menu-sub-item-height: var(--el-menu-item-height);
+
+  &-:not(.el-menu--collapse) {
+    width: 220px;
+  }
 }
+
 :deep(.el-menu-item),
 :deep(.el-sub-menu) {
   margin-top: 6px;
-  --el-menu-hover-bg-color: #f3f3f5;
+
+  & {
+    --el-menu-hover-bg-color: #f3f3f5;
+  }
 }
+
 :deep(.el-menu-item).is-active {
-  background-color: #e7f4ff;
-}
-:deep(.el-menu-item).is-active span {
-  font-weight: bold;
+  & {
+    background-color: #e7f4ff;
+  }
+
+  span {
+    font-weight: bold;
+  }
 }
 </style>

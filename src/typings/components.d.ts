@@ -66,6 +66,8 @@ declare module '@vue/runtime-core' {
     ILocalNoContent: typeof import('~icons/local/no-content')['default']
     ILocalPageError: typeof import('~icons/local/page-error')['default']
     IMdiGithub: typeof import('~icons/mdi/github')['default']
+    IMdiMoonWaningCrescent: typeof import('~icons/mdi/moon-waning-crescent')['default']
+    IMdiWhiteBalanceSunny: typeof import('~icons/mdi/white-balance-sunny')['default']
     Loading: typeof import('./../components/business/Loading.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']

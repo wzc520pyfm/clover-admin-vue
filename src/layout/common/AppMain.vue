@@ -1,9 +1,5 @@
 <template>
-  <div
-    ref="el"
-    class="app-main overflow-auto wh-full p-5"
-    style="background: linear-gradient(to bottom right, #f6f9f8, #f6f9ff)"
-  >
+  <div ref="el" class="app-main overflow-auto wh-full p-5 bg-#f6f9f8 dark:bg-#101014">
     <RouterView v-slot="{ Component, route }">
       <Transition name="fade" mode="out-in" :appear="true">
         <KeepAlive :include="routeStore.cacheRoutes">

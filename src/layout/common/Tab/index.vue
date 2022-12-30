@@ -1,5 +1,5 @@
 <template>
-  <div class="global-tab flex-1-hidden h-full flex justify-between">
+  <div class="global-tab flex-1-hidden h-full flex justify-between dark:bg-dark">
     <tab-detail />
     <ReloadButton />
   </div>

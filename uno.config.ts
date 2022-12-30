@@ -14,7 +14,7 @@ export default defineConfig({
     "mock",
     "./stats.html",
   ],
-  presets: [presetUno(), presetAttributify()], // presetAttributify()开启无值的写法
+  presets: [presetUno({ dark: "class" }), presetAttributify()], // presetAttributify()开启无值的写法
   shortcuts: {
     "wh-full": "w-full h-full",
     "flex-center": "flex justify-center items-center",
@@ -36,6 +36,8 @@ export default defineConfig({
   ],
   // see: https://tailwindcss.com/docs/theme
   theme: {
-    colors: {},
+    colors: {
+      dark: "#18181c",
+    },
   },
 });
