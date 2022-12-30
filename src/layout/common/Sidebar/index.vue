@@ -52,7 +52,6 @@ const activeRoute = computed(() => route.path);
 }
 
 .el-menu {
-  --active-color: #409eff;
   --el-menu-item-height: 42px;
   --el-menu-sub-item-height: var(--el-menu-item-height);
 
@@ -64,15 +63,11 @@ const activeRoute = computed(() => route.path);
 :deep(.el-menu-item),
 :deep(.el-sub-menu) {
   margin-top: 6px;
-
-  & {
-    --el-menu-hover-bg-color: #f3f3f5;
-  }
 }
 
 :deep(.el-menu-item).is-active {
   & {
-    background-color: #e7f4ff;
+    background-color: var(--el-menu-active-bg-color);
   }
 
   span {

@@ -1,0 +1,5 @@
+// 在此覆盖elementUI的暗黑主题配置
+// elementUI暗黑主题变量see: https://github.com/element-plus/element-plus/blob/dev/packages/theme-chalk/src/dark/var.scss
+@forward "element-plus/theme-chalk/src/dark/var.scss" with (
+  $colors: (),
+);

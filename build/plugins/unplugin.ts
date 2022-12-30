@@ -45,7 +45,9 @@ export default function unplugin(): PluginOption[] {
           customCollections: [collectionName],
           // componentPrefix: "icon", // 与element-plus的prefix配置冲突(本地图标使用: <i-local-iconName />)
         }),
-        ElementPlusResolver(), // 自动导入element-plus相关组件
+        ElementPlusResolver({
+          importStyle: "sass",
+        }), // 自动导入element-plus相关组件
       ],
     }),
 
@@ -68,6 +70,6 @@ export default function unplugin(): PluginOption[] {
       inject: "body-last",
       customDomId: "__SVG_ICON_LOCAL__",
     }),
-    ElementPlus(), // 当需要手动导入Element组件时, 此plugin可帮助你自动导入其样式
+    ElementPlus({ useSource: true }), // 当需要手动导入Element组件时, 此plugin可帮助你自动导入其样式
   ];
 }
