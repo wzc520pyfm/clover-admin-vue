@@ -29,6 +29,7 @@ specifiers:
   nprogress: ^0.2.0
   pinia: ^2.0.23
   prettier: ^2.7.1
+  sass: ^1.57.1
   start-server-and-test: ^1.14.0
   typescript: ~4.7.4
   unocss: ^0.46.1
@@ -79,6 +80,7 @@ devDependencies:
   less: registry.npmmirror.com/less/4.1.3
   npm-run-all: 4.1.5
   prettier: 2.7.1
+  sass: registry.npmmirror.com/sass/1.57.1
   start-server-and-test: 1.14.0
   typescript: 4.7.4
   unocss: 0.46.1_vite@3.2.1
@@ -87,9 +89,9 @@ devDependencies:
   unplugin-icons: 0.14.12
   unplugin-vue-components: 0.22.9_vue@3.2.41
   unplugin-vue-macros: registry.npmmirror.com/unplugin-vue-macros/0.16.4_t6hi7gfpb2xbr7pq7lqythfxhu
-  vite: 3.2.1_less@4.1.3
+  vite: 3.2.1_less@4.1.3+sass@1.57.1
   vite-plugin-svg-icons: registry.npmmirror.com/vite-plugin-svg-icons/2.0.1_vite@3.2.1
-  vitest: 0.24.3_jsdom@20.0.1+less@4.1.3
+  vitest: 0.24.3_pldrxlmi47huueuhvjqi2gujue
   vue-tsc: 1.0.9_typescript@4.7.4
 
 packages:
@@ -976,7 +978,7 @@ packages:
       '@unocss/scope': 0.46.1
       '@unocss/transformer-directives': 0.46.1
       magic-string: registry.npmmirror.com/magic-string/0.26.7
-      vite: 3.2.1_less@4.1.3
+      vite: 3.2.1_less@4.1.3+sass@1.57.1
     transitivePeerDependencies:
       - rollup
     dev: true
@@ -991,7 +993,7 @@ packages:
       '@babel/core': 7.19.6
       '@babel/plugin-transform-typescript': 7.20.0_@babel+core@7.19.6
       '@vue/babel-plugin-jsx': 1.1.1_@babel+core@7.19.6
-      vite: 3.2.1_less@4.1.3
+      vite: 3.2.1_less@4.1.3+sass@1.57.1
       vue: 3.2.41
     transitivePeerDependencies:
       - supports-color
@@ -1004,7 +1006,7 @@ packages:
       vite: ^3.0.0
       vue: ^3.2.25
     dependencies:
-      vite: 3.2.1_less@4.1.3
+      vite: 3.2.1_less@4.1.3+sass@1.57.1
       vue: 3.2.41
     dev: true
 
@@ -4677,7 +4679,7 @@ packages:
       extsprintf: 1.3.0
     dev: true
 
-  /vite/3.2.1_less@4.1.3:
+  /vite/3.2.1_less@4.1.3+sass@1.57.1:
     resolution: {integrity: sha512-ADtMkfHuWq4tskJsri2n2FZkORO8ZyhI+zIz7zTrDAgDEtct1jdxOg3YsZBfHhKjmMoWLOSCr+64qrEDGo/DbQ==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
@@ -4704,11 +4706,12 @@ packages:
       postcss: 8.4.18
       resolve: 1.22.1
       rollup: 2.79.1
+      sass: registry.npmmirror.com/sass/1.57.1
     optionalDependencies:
       fsevents: registry.npmmirror.com/fsevents/2.3.2
     dev: true
 
-  /vitest/0.24.3_jsdom@20.0.1+less@4.1.3:
+  /vitest/0.24.3_pldrxlmi47huueuhvjqi2gujue:
     resolution: {integrity: sha512-aM0auuPPgMSstWvr851hB74g/LKaKBzSxcG3da7ejfZbx08Y21JpZmbmDYrMTCGhVZKqTGwzcnLMwyfz2WzkhQ==}
     engines: {node: '>=v14.16.0'}
     hasBin: true
@@ -4741,7 +4744,7 @@ packages:
       tinybench: 2.3.1
       tinypool: 0.3.0
       tinyspy: 1.0.2
-      vite: 3.2.1_less@4.1.3
+      vite: 3.2.1_less@4.1.3+sass@1.57.1
     transitivePeerDependencies:
       - less
       - sass
@@ -5142,7 +5145,7 @@ packages:
       vite: ^3.0.0
       vue: ^3.2.25
     dependencies:
-      vite: 3.2.1_less@4.1.3
+      vite: 3.2.1_less@4.1.3+sass@1.57.1
       vue: 3.2.41
     dev: true
 
@@ -6483,6 +6486,12 @@ packages:
     hasBin: true
     dev: true
 
+  registry.npmmirror.com/immutable/4.2.1:
+    resolution: {integrity: sha512-7WYV7Q5BTs0nlQm7tl92rDYYoyELLKHoDMBKhrxEoiV4mrfVdRz8hzPiYOzH7yWjzoVEamxRuAqhxL2PLRwZYQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/immutable/-/immutable-4.2.1.tgz}
+    name: immutable
+    version: 4.2.1
+    dev: true
+
   registry.npmmirror.com/inherits/2.0.4:
     resolution: {integrity: sha512-k/vGaX4/Yla3WzyMCvTQOXYeIHvqOKtnqBduzTHpzpQZzAskKMhZ2K+EnBiSM9zGSoIFeMpXKxa4dYeZIQqewQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/inherits/-/inherits-2.0.4.tgz}
     name: inherits
@@ -7275,6 +7284,18 @@ packages:
     name: safer-buffer
     version: 2.1.2
 
+  registry.npmmirror.com/sass/1.57.1:
+    resolution: {integrity: sha512-O2+LwLS79op7GI0xZ8fqzF7X2m/m8WFfI02dHOdsK5R2ECeS5F62zrwg/relM1rjSLy7Vd/DiMNIvPrQGsA0jw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/sass/-/sass-1.57.1.tgz}
+    name: sass
+    version: 1.57.1
+    engines: {node: '>=12.0.0'}
+    hasBin: true
+    dependencies:
+      chokidar: registry.npmmirror.com/chokidar/3.5.3
+      immutable: registry.npmmirror.com/immutable/4.2.1
+      source-map-js: registry.npmmirror.com/source-map-js/1.0.2
+    dev: true
+
   registry.npmmirror.com/sax/1.2.4:
     resolution: {integrity: sha512-NqVDv9TpANUjFm0N8uM5GxL36UgKi9/atZw+x7YFnQ8ckwFGKrl4xX4yWtrey3UJm5nP1kUbnYgLopqWNSRhWw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/sax/-/sax-1.2.4.tgz}
     name: sax
@@ -7643,7 +7664,7 @@ packages:
     dependencies:
       '@antfu/utils': registry.npmmirror.com/@antfu/utils/0.6.0
       unplugin: registry.npmmirror.com/unplugin/0.10.2
-      vite: 3.2.1_less@4.1.3
+      vite: 3.2.1_less@4.1.3+sass@1.57.1
     dev: true
 
   registry.npmmirror.com/unplugin-element-plus/0.4.1_vite@3.2.1:
@@ -7741,7 +7762,7 @@ packages:
     dependencies:
       acorn: registry.npmmirror.com/acorn/8.8.1
       chokidar: registry.npmmirror.com/chokidar/3.5.3
-      vite: 3.2.1_less@4.1.3
+      vite: 3.2.1_less@4.1.3+sass@1.57.1
       webpack-sources: registry.npmmirror.com/webpack-sources/3.2.3
       webpack-virtual-modules: registry.npmmirror.com/webpack-virtual-modules/0.4.6
     dev: true
@@ -7809,7 +7830,7 @@ packages:
       pathe: registry.npmmirror.com/pathe/0.2.0
       svg-baker: registry.npmmirror.com/svg-baker/1.7.0
       svgo: registry.npmmirror.com/svgo/2.8.0
-      vite: 3.2.1_less@4.1.3
+      vite: 3.2.1_less@4.1.3+sass@1.57.1
     transitivePeerDependencies:
       - supports-color
     dev: true

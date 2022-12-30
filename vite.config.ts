@@ -35,6 +35,9 @@ export default defineConfig(({ mode }) => {
             hack: `true; @import (reference) "${resolve("src/styles/less/main.less")}";`,
           },
         },
+        scss: {
+          additionalData: `@use "./src/styles/scss/main.scss" as *;`,
+        },
       },
     },
     // 依赖优化选项

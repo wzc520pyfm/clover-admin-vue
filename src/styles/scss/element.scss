@@ -1,0 +1,5 @@
+// 在此覆盖elementUI的主题配置
+// elementUI主题变量see: https://github.com/element-plus/element-plus/blob/dev/packages/theme-chalk/src/common/var.scss
+@forward "element-plus/theme-chalk/src/common/var.scss" with (
+  $colors: ()
+);
