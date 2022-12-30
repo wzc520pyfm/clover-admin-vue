@@ -1,6 +1,6 @@
 <template>
-  <div class="flex-center h-full">
-    <span>Copyright ©2022 Clover Admin</span>
+  <div class="flex-center h-full dark:bg-dark">
+    <span class="dark:text-#d5d5d6">Copyright ©2022 Clover Admin</span>
   </div>
 </template>
 
