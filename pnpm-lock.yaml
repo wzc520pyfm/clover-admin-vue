@@ -2,6 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   '@amap/amap-jsapi-types': ^0.0.10
+  '@better-scroll/core': ^2.5.0
   '@element-plus/icons-vue': ^2.0.10
   '@iconify/json': ^2.1.131
   '@rushstack/eslint-patch': ^1.1.4
@@ -47,6 +48,7 @@ specifiers:
   vue3-lottie: ^2.4.0
 
 dependencies:
+  '@better-scroll/core': registry.npmmirror.com/@better-scroll/core/2.5.0
   '@element-plus/icons-vue': 2.0.10_vue@3.2.41
   '@vueuse/core': 9.4.0_vue@3.2.41
   ali-oss: 6.17.1
@@ -5040,6 +5042,20 @@ packages:
       '@babel/helper-string-parser': registry.npmmirror.com/@babel/helper-string-parser/7.19.4
       '@babel/helper-validator-identifier': registry.npmmirror.com/@babel/helper-validator-identifier/7.19.1
       to-fast-properties: registry.npmmirror.com/to-fast-properties/2.0.0
+
+  registry.npmmirror.com/@better-scroll/core/2.5.0:
+    resolution: {integrity: sha512-+3aKf8T3kUl4Gj1M7NKV3fNFhsrBpTWwHoDClkXVmQ8S3TxMMHf6Kyw6l1zKsg4r+9ukW5lDDkyif7/gY76qXQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@better-scroll/core/-/core-2.5.0.tgz}
+    name: '@better-scroll/core'
+    version: 2.5.0
+    dependencies:
+      '@better-scroll/shared-utils': registry.npmmirror.com/@better-scroll/shared-utils/2.5.0
+    dev: false
+
+  registry.npmmirror.com/@better-scroll/shared-utils/2.5.0:
+    resolution: {integrity: sha512-5bfR/cwzIFtgWAU5E0CPKcOUvyd7KcgDZyAbOJQT6qqJeUBmTpG4Z8R7qO8uvqdZ0yIXxRPOu4te2Qt6ihGhkQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@better-scroll/shared-utils/-/shared-utils-2.5.0.tgz}
+    name: '@better-scroll/shared-utils'
+    version: 2.5.0
+    dev: false
 
   registry.npmmirror.com/@colors/colors/1.5.0:
     resolution: {integrity: sha512-ooWCrlZP11i8GImSjTHYHLkvFDP48nS4+204nGb1RiX/WXYHmJA2III9/e2DWVabCESdW7hBAEzHRqUn9OUVvQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@colors/colors/-/colors-1.5.0.tgz}
