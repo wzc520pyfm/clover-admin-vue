@@ -27,6 +27,9 @@ export default defineConfig(({ mode }) => {
     // css配置
     css: {
       preprocessorOptions: {
+        scss: {
+          additionalData: `@use "./src/styles/scss/main.scss" as *;`,
+        },
         less: {
           // see: https://lesscss.org/usage/#less-options
           modifyVars: {
@@ -34,9 +37,6 @@ export default defineConfig(({ mode }) => {
             // reference: 避免重复引用
             hack: `true; @import (reference) "${resolve("src/styles/less/main.less")}";`,
           },
-        },
-        scss: {
-          additionalData: `@use "./src/styles/scss/main.scss" as *;`,
         },
       },
     },
