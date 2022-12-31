@@ -18,6 +18,7 @@
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore"
   },
   "dependencies": {
+    "@better-scroll/core": "^2.5.0",
     "@element-plus/icons-vue": "^2.0.10",
     "@vueuse/core": "^9.4.0",
     "ali-oss": "^6.17.1",

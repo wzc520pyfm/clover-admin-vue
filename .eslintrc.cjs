@@ -16,6 +16,7 @@ module.exports = {
     ServiceEnvConfigs: "readonly",
     ImportMetaEnv: "readonly",
     ImportMeta: "readonly",
+    Expose: "readonly",
   },
   extends: [
     "plugin:vue/vue3-essential",
