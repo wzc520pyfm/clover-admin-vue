@@ -6,5 +6,10 @@
     'active-color': #409eff,
     'hover-bg-color': #ffffff17,
     'active-bg-color': #1890ff26,
+  ),
+  $box-shadow: (
+    'lightest': (
+      0px 1px 5px rgba(0, 0, 0, 0.05),
+    ),
   )
 );

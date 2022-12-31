@@ -42,9 +42,9 @@ onMounted(() => console.log("地图加载了"));
 onActivated(() => console.log("地图活了"));
 </script>
 
-<style scoped>
+<style lang="less" scoped>
 .el-card {
-  --el-box-shadow-light: none;
+  #ep.el-card-rounded();
 }
 :deep(.el-card__body),
 :deep(.el-tabs__content) {

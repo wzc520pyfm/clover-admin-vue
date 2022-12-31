@@ -1,5 +1,5 @@
 <template>
-  <div class="about">
+  <el-card class="h-full">
     <h1>This is an AliOSS Example page</h1>
     <el-upload
       ref="uploadRef"
@@ -37,7 +37,7 @@
         </template>
       </el-table-column>
     </el-table>
-  </div>
+  </el-card>
 </template>
 
 <script setup lang="ts">
@@ -105,4 +105,8 @@ onMounted(() => {
 });
 </script>
 
-<style scope></style>
+<style lang="less" scope>
+.el-card {
+  #ep.el-card-rounded();
+}
+</style>

@@ -1,0 +1,13 @@
+// 自定义的element-plus样式
+#ep() {
+
+  .el-card {
+    border: 0;
+    box-shadow: var(--el-box-shadow-lightest);
+  }
+
+  .el-card-rounded {
+    #ep.el-card();
+    border-radius: 16px;
+  }
+}

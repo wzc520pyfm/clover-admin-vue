@@ -1,5 +1,5 @@
 <template>
-  <div class="flex justify-between flex-wrap gap-20">
+  <dark-mode-container class="flex justify-between flex-wrap gap-20">
     <div class="flex-col-center gap-10">
       <el-icon :size="300"><i-local-load-failed /></el-icon>
       <span>加载失败</span>
@@ -16,7 +16,7 @@
       <el-icon :size="300"><i-local-page-error /></el-icon>
       <span>页面出错</span>
     </div>
-  </div>
+  </dark-mode-container>
 </template>
 
 <script lang="ts" setup></script>
