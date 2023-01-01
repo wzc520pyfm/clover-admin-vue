@@ -27,3 +27,6 @@ coverage
 *.njsproj
 *.sln
 *.sw?
+
+/src/typings/components.d.ts
+/src/typings/auto-import.d.ts

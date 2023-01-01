@@ -37,5 +37,6 @@ module.exports = {
   rules: {
     /** why off? see: https://github.com/vuejs/eslint-plugin-vue/issues/1793 */
     "vue/no-setup-props-destructure": "off",
+    "vue/multi-word-component-names": "off",
   },
 };
