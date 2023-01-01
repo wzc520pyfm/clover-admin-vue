@@ -1,0 +1,25 @@
+<template>
+  <p>
+    <span>{{ label }}</span>
+    <el-link type="primary" :href="link" :target="isBlank ? '_blank' : '_self'"
+      >{{ link }}<i-local-link-icon ml-1 v-if="isBlank"
+    /></el-link>
+  </p>
+</template>
+
+<script lang="ts" setup>
+export interface Props {
+  /** 网址名称 */
+  label: string;
+  /** 网址链接 */
+  link: string;
+  /** 是否外链 */
+  isBlank?: Boolean;
+}
+
+defineOptions({ name: "WebSiteLink" });
+
+const { isBlank = true } = defineProps<Props>();
+</script>
+
+<style lang="less" scoped></style>
