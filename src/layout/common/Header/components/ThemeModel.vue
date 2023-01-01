@@ -11,12 +11,11 @@
 </template>
 
 <script lang="ts" setup>
-import { useDark, useToggle } from "@vueuse/core";
+import { useThemeStore } from "@/stores";
 
 defineOptions({ name: "ThemeModel" });
 
-const isDark = useDark();
-const toggleDark = useToggle(isDark);
+const { isDark, toggleDark } = useThemeStore();
 </script>
 
 <style lang="less" scoped></style>
