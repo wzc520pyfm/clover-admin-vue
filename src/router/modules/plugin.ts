@@ -20,6 +20,12 @@ const plugin = [
         component: () => import("@/views/plugin/map/index.vue"),
         meta: { title: "地图", icon: "Location" },
       },
+      {
+        path: "swiper",
+        name: "plugin_swiper",
+        component: () => import("@/views/plugin/swiper/index.vue"),
+        meta: { title: "Swiper", icon: "Film" },
+      },
     ],
   },
 ];
