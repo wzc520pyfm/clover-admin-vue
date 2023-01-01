@@ -27,8 +27,8 @@ async function renderMap() {
   map.getCenter();
 }
 
-function setMapStyle(map: AMap.Map) {
-  if (theme.isDark.value) {
+function setMapStyle(map: AMap.Map, isDark: boolean) {
+  if (isDark) {
     map.setMapStyle(MapStyle[1]);
   } else {
     map.setMapStyle(MapStyle[0]);
@@ -37,7 +37,7 @@ function setMapStyle(map: AMap.Map) {
 
 watch(
   () => theme.isDark.value,
-  () => void setMapStyle(map)
+  (newValue) => void setMapStyle(map, newValue)
 );
 
 onMounted(() => {
