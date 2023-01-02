@@ -3,12 +3,12 @@
 </template>
 
 <script setup lang="ts">
-export interface Props {
+import WebSiteLink from "./WebSiteLink.vue";
+
+interface Props {
   /** github链接 */
   link: string;
 }
-
-import WebSiteLink from "./WebSiteLink.vue";
 
 defineOptions({ name: "GithubLink" });
 
