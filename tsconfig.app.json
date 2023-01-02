@@ -10,7 +10,7 @@
     "src/**/__tests__/*"
   ],
   "compilerOptions": {
-    "composite": true,
+    // "composite": true,
     "baseUrl": ".",
     "paths": {
       "@/*": [
