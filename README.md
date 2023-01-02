@@ -115,6 +115,12 @@ const doubled = computed(() => count.value * 2)
 项目默认集成了unocss的presetUno属性包, 你可以继续集成其他属性包, 这一切配置在uno.config.ts中
 
 
+### 三方功能库
+项目使用了诸多三方库, 以下列出其文档
+* BatterScroll: https://better-scroll.github.io/docs/zh-CN/
+* Swiper: https://swiperjs.com/
+* 高德地图: https://lbs.amap.com/
+
 ### 常见问题
 #### 安装Cypress太慢
 参考自: https://www.lfhacks.com/tech/cypress-download-failure/
