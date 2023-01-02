@@ -18,11 +18,8 @@ import * as Icons from "@element-plus/icons-vue";
 type IconType = keyof typeof Icons;
 
 const route = useRoute();
-console.log("route.name", route.name);
-
 const routeStore = useRouteStore();
 const menus = routeStore.menus;
-console.log("menus", menus);
 
 const breadcrumbs = computed(() => getBreadcrumbByRouteKey(route.name, menus));
 </script>

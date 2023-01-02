@@ -6,14 +6,14 @@
 </template>
 
 <script lang="ts" setup>
-export interface Props {
-  /** 显示名字 */
-  showTitle: boolean;
-}
-
 import IconLogo from "@/components/icons/IconLogo.vue";
 
 defineOptions({ name: "GlobalLogo" });
+
+interface Props {
+  /** 显示名字 */
+  showTitle: boolean;
+}
 
 defineProps<Props>();
 

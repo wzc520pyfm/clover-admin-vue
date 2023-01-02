@@ -19,19 +19,19 @@ defineOptions({ name: "GlobalTab" });
 const route = useRoute();
 const tab = useTabStore();
 
-const bsWrapper = ref<HTMLElement>();
-const { width: bsWrapperWidth, left: bsWrapperLeft } = useElementBounding(bsWrapper);
+const bsWrapper = $ref<HTMLElement>();
+const { width: bsWrapperWidth, left: bsWrapperLeft } = $(useElementBounding(bsWrapper));
 
-const bsScroll = ref<Expose.BetterScroll>();
+const bsScroll = $ref<Expose.BetterScroll>();
 
 function handleScroll(clientX: number) {
-  const currentX = clientX - bsWrapperLeft.value;
-  const deltaX = currentX - bsWrapperWidth.value / 2;
-  if (bsScroll.value) {
-    const { maxScrollX, x: leftX } = bsScroll.value.instance;
+  const currentX = clientX - bsWrapperLeft;
+  const deltaX = currentX - bsWrapperWidth / 2;
+  if (bsScroll) {
+    const { maxScrollX, x: leftX } = bsScroll.instance;
     const rightX = maxScrollX - leftX;
     const update = deltaX > 0 ? Math.max(-deltaX, rightX) : Math.min(-deltaX, -leftX);
-    bsScroll.value?.instance.scrollBy(update, 0, 300);
+    bsScroll?.instance.scrollBy(update, 0, 300);
   }
 }
 
