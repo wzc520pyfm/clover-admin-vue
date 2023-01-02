@@ -8,7 +8,9 @@
 </template>
 
 <script lang="ts" setup>
-export interface Props {
+defineOptions({ name: "WebSiteLink" });
+
+interface Props {
   /** 网址名称 */
   label: string;
   /** 网址链接 */
@@ -16,8 +18,6 @@ export interface Props {
   /** 是否外链 */
   isBlank?: Boolean;
 }
-
-defineOptions({ name: "WebSiteLink" });
 
 const { isBlank = true } = defineProps<Props>();
 </script>

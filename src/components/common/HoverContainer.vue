@@ -12,7 +12,9 @@
 </template>
 
 <script lang="ts" setup>
-export interface Props {
+defineOptions({ name: "HoverContainer" });
+
+interface Props {
   /** tooltip显示文本 */
   tooltipContent?: string;
   /** tooltip的位置 */
@@ -22,8 +24,6 @@ export interface Props {
   /** 是否处于反转模式 */
   inverted?: boolean;
 }
-
-defineOptions({ name: "HoverContainer" });
 
 const {
   tooltipContent = "",
