@@ -9,20 +9,20 @@ import { useThemeStore } from "@/stores";
 
 const MapStyle = ["amap://styles/normal", "amap://styles/darkblue"];
 
-const theme = useThemeStore();
+const { isDark } = $(useThemeStore());
 const { load } = useScriptTag(GAODE_MAP_SDK_URL);
 let map: AMap.Map;
 
-const domRef = ref<HTMLDivElement>();
+const domRef = $ref<HTMLDivElement>();
 
 async function renderMap() {
-  if (!domRef.value) return;
+  if (!domRef) return;
   await load(true);
-  map = new AMap.Map(domRef.value, {
+  map = new AMap.Map(domRef, {
     zoom: 11,
     center: [116.397428, 39.90923],
     viewMode: "3D",
-    mapStyle: theme.isDark.value ? MapStyle[1] : MapStyle[0],
+    mapStyle: isDark ? MapStyle[1] : MapStyle[0],
   });
   map.getCenter();
 }
@@ -36,7 +36,7 @@ function setMapStyle(map: AMap.Map, isDark: boolean) {
 }
 
 watch(
-  () => theme.isDark.value,
+  () => isDark,
   (newValue) => void setMapStyle(map, newValue)
 );
 

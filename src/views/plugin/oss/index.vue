@@ -46,11 +46,10 @@ import type { ObjectMeta } from "ali-oss";
 import type { UploadInstance } from "element-plus";
 
 const fileList = ref([]);
-const uploadRef = ref<UploadInstance>();
-const tableData = ref<ObjectMeta[]>([]);
+const uploadRef = $ref<UploadInstance>();
+let tableData = $ref<ObjectMeta[]>([]);
 
 const { client, upload, preview, download, remove, list } = await useAliOSS();
-console.log(client);
 
 const uploadRequest = (options: any) => {
   const { file, onSuccess, onError, onProgress } = options;
@@ -73,13 +72,13 @@ const uploadRequest = (options: any) => {
 };
 const submitUpload = (e: PointerEvent) => {
   e.stopPropagation();
-  uploadRef.value!.submit();
+  uploadRef!.submit();
 };
 
 const getFiles = async () => {
   const res = await list("clover-admin");
   console.log("files", res);
-  tableData.value = res.objects;
+  tableData = res.objects;
 };
 
 const previewFile = async (index: number, row: ObjectMeta) => {
