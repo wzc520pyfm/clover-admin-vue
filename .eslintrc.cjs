@@ -17,6 +17,7 @@ module.exports = {
     ImportMetaEnv: "readonly",
     ImportMeta: "readonly",
     Expose: "readonly",
+    ApiUserManagement: "readonly",
   },
   extends: [
     "plugin:vue/vue3-essential",

@@ -10,4 +10,13 @@
     #ep.el-card();
     border-radius: 16px;
   }
+
+  .el-card-no-divider {
+    :deep(.el-card__body) {
+      --el-card-padding: 0px 20px 20px 20px;
+    }
+    :deep(.el-card__header) {
+      border-bottom: none;
+    }
+  }
 }
