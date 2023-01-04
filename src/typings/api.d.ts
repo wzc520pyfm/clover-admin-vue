@@ -1,5 +1,15 @@
 // 后端接口返回的数据类型
 
+/** 用户权益相关 */
+declare namespace ApiAuth {
+  /** token */
+  interface Token {
+    token: string;
+  }
+  /** 用户信息 */
+  type UserInfo = Auth.UserInfo;
+}
+
 declare namespace ApiUserManagement {
   interface User {
     /** 用户id */

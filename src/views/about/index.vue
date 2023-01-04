@@ -4,7 +4,11 @@
   </dark-mode-container>
 </template>
 
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import { fetchLogin } from "@/service";
+
+await fetchLogin("userName", "password");
+</script>
 
 <style lang="less" scoped>
 .el-card {
