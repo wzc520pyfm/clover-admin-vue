@@ -1,17 +1,25 @@
-import type { AxiosInstance, AxiosRequestConfig } from "axios";
+import type { AxiosInstance, AxiosRequestConfig, AxiosResponse } from "axios";
 import CustomAxiosInstance from "./instance";
 
-type RequestMethod = "get" | "post" | "put" | "delete";
+type RequestMethod = "get" | "post" | "put" | "delete" | "patch";
+
+type ResponseEntries = keyof AxiosResponse;
 
 type MyAxiosRequestConfig = AxiosRequestConfig & {
   defaultMethod?: RequestMethod;
+};
+
+type MyRequestConfig = {
+  axios?: AxiosRequestConfig;
+  entries?: ResponseEntries[];
 };
 
 interface RequestParam {
   url: string;
   method?: RequestMethod;
   data?: any;
-  axiosConfig?: MyAxiosRequestConfig;
+  axiosConfig?: AxiosRequestConfig;
+  entries?: ResponseEntries[];
 }
 
 export function createRequest(
@@ -30,7 +38,7 @@ export function createRequest(
    *  - axiosConfig: axios配置
    */
   async function asyncRequest<T>(param: RequestParam): Promise<Service.RequestResult<T>> {
-    const { url, data, axiosConfig } = param;
+    const { url, data, axiosConfig, entries } = param;
     const method = param.method ?? defaultMethod;
     const instance = customInstance.getInstance();
 
@@ -40,6 +48,7 @@ export function createRequest(
       url,
       data,
       config: axiosConfig,
+      entries,
     })) as Service.RequestResult<T>;
 
     return res;
@@ -50,8 +59,13 @@ export function createRequest(
    * @param url - 请求地址
    * @param config - axios配置
    */
-  function get<T>(url: string, config?: AxiosRequestConfig) {
-    return asyncRequest<T>({ url, method: "get", axiosConfig: config });
+  function get<T>(url: string, config?: MyRequestConfig) {
+    return asyncRequest<T>({
+      url,
+      method: "get",
+      axiosConfig: config?.axios,
+      entries: config?.entries,
+    });
   }
 
   /**
@@ -60,8 +74,14 @@ export function createRequest(
    * @param data - 请求的body的data
    * @param config - axios配置
    */
-  function post<T>(url: string, data?: any, config?: AxiosRequestConfig) {
-    return asyncRequest<T>({ url, method: "post", data, axiosConfig: config });
+  function post<T>(url: string, data?: any, config?: MyRequestConfig) {
+    return asyncRequest<T>({
+      url,
+      method: "post",
+      data,
+      axiosConfig: config?.axios,
+      entries: config?.entries,
+    });
   }
 
   /**
@@ -70,8 +90,30 @@ export function createRequest(
    * @param data - 请求的body的data
    * @param config - axios配置
    */
-  function put<T>(url: string, data?: any, config?: AxiosRequestConfig) {
-    return asyncRequest<T>({ url, method: "put", data, axiosConfig: config });
+  function put<T>(url: string, data?: any, config?: MyRequestConfig) {
+    return asyncRequest<T>({
+      url,
+      method: "put",
+      data,
+      axiosConfig: config?.axios,
+      entries: config?.entries,
+    });
+  }
+
+  /**
+   * patch请求
+   * @param url - 请求地址
+   * @param data - 请求的body的data
+   * @param config - axios配置
+   */
+  function patch<T>(url: string, data?: any, config?: MyRequestConfig) {
+    return asyncRequest<T>({
+      url,
+      method: "patch",
+      data,
+      axiosConfig: config?.axios,
+      entries: config?.entries,
+    });
   }
 
   /**
@@ -79,14 +121,20 @@ export function createRequest(
    * @param url - 请求地址
    * @param config - axios配置
    */
-  function handleDelete<T>(url: string, config?: AxiosRequestConfig) {
-    return asyncRequest<T>({ url, method: "delete", axiosConfig: config });
+  function handleDelete<T>(url: string, config?: MyRequestConfig) {
+    return asyncRequest<T>({
+      url,
+      method: "delete",
+      axiosConfig: config?.axios,
+      entries: config?.entries,
+    });
   }
 
   return {
     get,
     post,
     put,
+    patch,
     delete: handleDelete,
   };
 }
@@ -97,8 +145,9 @@ async function getRequestResponse(params: {
   url: string;
   data?: any;
   config?: AxiosRequestConfig;
+  entries?: ResponseEntries[];
 }) {
-  const { instance, method, url, data, config } = params;
+  const { instance, method, url, data, config, entries = ["data"] } = params;
 
   let res: any;
   if (["get", "delete"].includes(method)) {
@@ -107,6 +156,15 @@ async function getRequestResponse(params: {
   } else {
     res = await instance[method](url, data, config);
   }
+  // res即axios的响应结构, see: https://axios-http.com/zh/docs/res_schema
+  // 通过指定entries来决定获取哪些, 通常保持默认获取data即可
+  let result = {};
+  if (entries.length === 1) result = res[entries[0]];
+  else {
+    entries.forEach(async (item) => {
+      Object.assign(result, { [item]: item === "data" ? (await res[item]).data : res[item] });
+    });
+  }
 
-  return res;
+  return result;
 }
