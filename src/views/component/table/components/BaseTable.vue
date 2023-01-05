@@ -18,6 +18,12 @@
             {{ constantFormat(scope.row.userStatus, VALUE_CONSTANT.USER_STATUS) }}
           </template>
         </el-table-column>
+        <!-- 第三种枚举过滤写法: 直接使用注册到全局的$filters访问过滤方法 -->
+        <el-table-column
+          prop="gender"
+          label="性别(演示)"
+          :formatter="$filters.elTableFormatter(VALUE_CONSTANT.GENDER)"
+        />
         <!-- 操作列 -->
         <el-table-column align="right" width="180">
           <template #header>
