@@ -1,6 +1,7 @@
 import { createApp } from "vue";
 
 import App from "./App.vue";
+import { setupDirectives } from "./directives";
 import { setupRouter } from "./router";
 import { setupAssets } from "./plugins";
 import { setupStore } from "./stores";
@@ -13,6 +14,9 @@ async function setupApp() {
 
   // setup vue store plugin: pinia.
   setupStore(app);
+
+  // vue custom directives
+  setupDirectives(app);
 
   // vue router
   await setupRouter(app);
