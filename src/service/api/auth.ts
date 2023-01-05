@@ -9,3 +9,5 @@ import { mockRequest } from "../request";
 export function fetchLogin(username: string, password: string) {
   return mockRequest.post<ApiAuth.Token>("/login", { username, password });
 }
+// mockRequest.post<ApiAuth.Token>("/login", { username, password }, {});
+// mockRequest.get<ApiAuth.Token>("/login", { params: {} });

@@ -7,9 +7,9 @@ export async function handleServiceResult<T = any>(error: Service.RequestError |
     };
     return fail;
   }
-  const success: Service.SuccessResult<T> = {
+  const success: Service.SuccessResult<NonNullable<T>> = {
     error: null,
-    data,
+    data: data ?? "success",
   };
   return success;
 }
