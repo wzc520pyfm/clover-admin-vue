@@ -7,7 +7,6 @@
 <script lang="ts" setup>
 import { ElMessage } from "element-plus";
 import NProgress from "nprogress"; // progress bar
-import "nprogress/nprogress.css"; // progress bar style
 
 defineOptions({ name: "ElementProvider" });
 
