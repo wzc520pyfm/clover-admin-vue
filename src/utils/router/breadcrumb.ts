@@ -12,7 +12,6 @@ export function getBreadcrumbByRouteKey(activeKey: any, menus: any) {
 function getBreadcrumbMenu(activeKey: any, menus: any) {
   const breadcrumbMenu: any[] = [];
   menus.some((menu: any) => {
-    console.log("menu", menu);
     const flag = activeKey.includes(menu.routeName);
     if (flag) {
       breadcrumbMenu.push(...getBreadcrumbMenuItem(activeKey, menu));
