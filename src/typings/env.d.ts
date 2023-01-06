@@ -1,3 +1,5 @@
+/// <reference types="vite/client" />
+
 /**
  * 抉择
  *  YES or NO
@@ -28,10 +30,26 @@ interface ServiceEnvConfig {
 type ServiceEnvConfigs = Array<ServiceEnvConfig>;
 
 interface ImportMetaEnv {
+  /** 项目基本地址 */
+  readonly VITE_BASE_URL: string;
+  /** 项目名称 */
+  readonly VITE_APP_NAME: string;
+  /** 项目标题 */
+  readonly VITE_APP_TITLE: string;
+  /** 项目描述 */
+  readonly VITE_APP_DESC: string;
+  /** 是否开启打包文件大小结果分析 */
+  readonly VITE_VISUALIZER?: YorN;
+  /** 是否开启打包压缩 */
+  readonly VITE_COMPRESS?: YorN;
+  /** 压缩算法类型 */
+  readonly VITE_COMPRESS_TYPE?: "gzip" | "brotliCompress" | "deflate" | "deflateRaw";
   /** 后端服务的环境类型 */
   readonly VITE_SERVICE_ENV?: ServiceEnvType;
   /** 是否开启请求代理 */
   readonly VITE_HTTP_PROXY?: YorN;
+  /** hash路由模式 */
+  readonly VITE_HASH_ROUTE?: YorN;
 }
 
 interface ImportMeta {

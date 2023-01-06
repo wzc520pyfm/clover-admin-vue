@@ -6,14 +6,14 @@ import { resolve } from "node:path";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
-  const viteEnv = loadEnv(mode, process.cwd());
+  const viteEnv = loadEnv(mode, process.cwd()) as unknown as ImportMetaEnv;
 
   const isOpenProxy = viteEnv.VITE_HTTP_PROXY === "Y";
   const envConfig = getServiceEnvConfig(viteEnv);
 
   return {
-    base: "/",
-    plugins: setupVitePlugins(),
+    base: viteEnv.VITE_BASE_URL,
+    plugins: setupVitePlugins(viteEnv),
     resolve: {
       alias: {
         "@": fileURLToPath(new URL("./src", import.meta.url)),

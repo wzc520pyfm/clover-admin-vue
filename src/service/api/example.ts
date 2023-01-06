@@ -1,7 +1,7 @@
 import { mockRequest } from "../request";
 
 export function fetch404() {
-  return mockRequest.get("/404");
+  return mockRequest.post("/404");
 }
 
 export function fetchExampleData() {
