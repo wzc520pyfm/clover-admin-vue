@@ -6,6 +6,19 @@ const ERROR_PARAM_CODE = 10000;
 const ERROR_PARAM_MSG = "参数校验失败！";
 
 const apis: MockMethod[] = [
+  // 404
+  {
+    url: "/mock/404",
+    method: "post",
+    statusCode: 404,
+    response: (_) => {
+      return {
+        code: 404,
+        message: "找不到资源!",
+        data: "error",
+      };
+    },
+  },
   // 获取data
   {
     url: "/mock/example-data",

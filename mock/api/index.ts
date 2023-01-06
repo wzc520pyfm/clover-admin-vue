@@ -1,3 +1,4 @@
 import auth from "./auth";
+import example from "./example";
 
-export default [...auth];
+export default [...auth, ...example];

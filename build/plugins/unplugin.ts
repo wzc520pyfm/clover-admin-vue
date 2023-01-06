@@ -18,7 +18,7 @@ export default function unplugin(): PluginOption[] {
   const collectionName = "local";
 
   return [
-    VueMacros(),
+    VueMacros(), // see: https://vue-macros.sxzz.moe/
     AutoImport({
       imports: ["vue", "vue/macros", "vue-router", "pinia"], // 自动导入vue和vue-router相关函数
       dts: "src/typings/auto-import.d.ts", // 生成 `auto-import.d.ts` 全局声明
