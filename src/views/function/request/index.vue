@@ -33,7 +33,7 @@ const requestData = async () => {
 
 const requestNoData = async () => {
   const { data } = await fetchExampleNoData();
-  console.log("requestData", data);
+  console.log("responseData", data);
   if (data) {
     window.$message.success("获取成功");
   }
@@ -41,8 +41,8 @@ const requestNoData = async () => {
 
 const requestHeaders = async () => {
   const { data, headers } = await fetchExampleHeaders();
-  console.log("requestData", data);
-  console.log("requestHeaders", headers);
+  console.log("responseData", data);
+  console.log("responseHeaders", headers);
 };
 </script>
 
