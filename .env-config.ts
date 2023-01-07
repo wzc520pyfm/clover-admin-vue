@@ -15,12 +15,12 @@ const serviceEnv: ServiceEnv = {
     {
       url: "http://127.0.0.1:5976",
       urlPattern: "/oss-api",
-      rewritten: "/clover-api"
-    }
+      rewritten: "/clover-api",
+    },
   ],
   test: [],
-  prod: []
-}
+  prod: [],
+};
 
 /**
  * 获取当前环境下的请求服务配置
@@ -33,4 +33,3 @@ export function getServiceEnvConfig(env: ImportMetaEnv) {
 
   return config;
 }
-

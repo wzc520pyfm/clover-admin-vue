@@ -1,7 +1,7 @@
 import { fileURLToPath, URL } from "node:url";
 import { defineConfig, loadEnv } from "vite";
 import { createViteProxy, setupVitePlugins } from "./build";
-import { getServiceEnvConfig } from "./.env.config";
+import { getServiceEnvConfig } from "./.env-config";
 import { resolve } from "node:path";
 
 // https://vitejs.dev/config/
