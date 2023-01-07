@@ -11,20 +11,57 @@
 		"vscode": {
 			// Add the IDs of extensions you want installed when the container is created.
 			"extensions": [
-				"dbaeumer.vscode-eslint",
-				"octref.vetur"
+				"dbaeumer.vscode-eslint", // 代码格式检查插件
+		    "eamodio.gitlens", // 大大增强vscode内使用git的体验
+		    "afzalsayed96.icones", // 方便地查找icon: Ctrl+Shift+P => Icons:Find icons => 即可在vsc内打开icons官网搜索图标
+		    "antfu.iconify", // 图标组件预览(直接将图标显示在你的HTML)
+		    "antfu.unocss", // unocss插件, 若使用unocss, 务必安装, 否则毫无体验可言
+		    "christian-kohler.path-intellisense", // 自动完成文件名
+		    "EditorConfig.EditorConfig", // 统一工作环境(例如统一工作区行尾符为LF)
+		    "esbenp.prettier-vscode", // 代码格式化插件
+		    "formulahendry.auto-complete-tag", // 标签自动完成
+		    "formulahendry.auto-close-tag", // 标签自动闭合
+		    "formulahendry.auto-rename-tag", // 标签自动重命名
+		    "kisstkondoros.vscode-gutter-preview", // 图片预览
+		    "lokalise.i18n-ally", // i18n国际化智能显示
+		    "mhutchie.git-graph", // 可视化Git提交图
+		    "mikestead.dotenv", // .env文件的语法高亮
+		    "naumovs.color-highlight", // 色彩值高亮显示
+		    "PKief.material-icon-theme", // 漂亮的图标主题
+		    "Equinusocio.vsc-material-theme", // 漂亮的色彩主题
+		    "steoates.autoimport", // 为TS提供代码提示
+		    "Vue.vscode-typescript-vue-plugin",// vue3 for ts 官方推荐插件
+		    "Vue.volar", // vue3官方推荐插件
+        "wix.vscode-import-cost", // 在编译器中显示导入包的大小
+        "pranaygp.vscode-css-peek", // 允许在HTML内查看css定义, 且支持跳转
+        "Zignd.html-css-class-completion", // 根据工作区定义的css, 在HTML中提供css智能提示
+        "leizongmin.node-module-intellisense", // 当导入nodejs模块时智能提示模块名
+        "christian-kohler.npm-intellisense", // 当导入npm模块时智能提示模块名
+        "quicktype.quicktype", // 依据json生成TS的type定义: 1.copy一份json  2. Ctrl+Shift+P => 选择 Paste JSON as Code
+		    "whtouche.vscode-js-console-utils", // 快速插入console: 1. 选中要输出的变量 2. Ctrl+Shift+L  3. 快速删除当前文件内的所有console Ctrl+Shift+D
+        "stylelint.vscode-stylelint", // 对css的语法检查
+        "syler.sass-indented", // 针对sass的语法提示与格式化
+        "bierner.color-info", // color工具, 帮助你检查和调整色彩, 也可以快速地切换rgb, hsl, hex等不同色彩表示法
+        "streetsidesoftware.code-spell-checker", // 拼写检查, 减少你的拼写错误
+        "VisualStudioExptTeam.vscodeintellicode", // 代码智能提示
+        "aaron-bond.better-comments", // 高亮你的注释: 诸如  //?  //!  //*  //TODO
+        "Gruntfuggly.todo-tree", // 更方便地管理你的TODO
+        "VisualStudioExptTeam.intellicode-api-usage-examples", // 帮助查看api的使用示例, 鼠标悬浮在api上, 你可以看到 See Real World Examples From GitHub  的可点击字样
+        "xabikos.JavaScriptSnippets", // 提供一些js或ts的代码片段
+        "lottiefiles.vscode-lottie", // 在vsocde里预览lottie动画(右击lottie的json文件, 选择View in Lottie Player)
+        "GitHub.copilot" //! 强大的代码提示插件, 提高开发效率, 但它是付费的
 			]
 		}
 	},
-	
+
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	"forwardPorts": [
 		8080
 	],
-	
+
 	// Use 'postCreateCommand' to run commands after the container is created.
 	// "postCreateCommand": "uname -a",
-	
+
 	// Set `remoteUser` to `root` to connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
 	"remoteUser": "node",
 	"features": {

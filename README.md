@@ -70,7 +70,7 @@ pnpm lint
 ## 项目配置
 
 ### 目录结构
-```json
+```tree
 clover-admin
 |-- .devcontainer
 |-- .vsocde
