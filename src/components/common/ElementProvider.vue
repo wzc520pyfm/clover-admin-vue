@@ -1,7 +1,5 @@
 <template>
-  <el-config-provider>
-    <slot></slot>
-  </el-config-provider>
+  <slot></slot>
 </template>
 
 <script lang="ts" setup>
