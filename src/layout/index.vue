@@ -18,6 +18,8 @@
 
 <script lang="ts" setup>
 import { Header, Tab, Sidebar, AppMain, Footer } from "./common";
+
+defineOptions({ name: "Layout" });
 </script>
 
 <style scoped></style>

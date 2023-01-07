@@ -20,6 +20,8 @@
 <script lang="ts" setup>
 import { fetch404, fetchExampleData, fetchExampleNoData, fetchExampleHeaders } from "@/service";
 
+defineOptions({ name: "FunctionRequest" });
+
 const request404 = async () => {
   await fetch404();
 };

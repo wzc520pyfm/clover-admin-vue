@@ -45,6 +45,8 @@ import { useAliOSS } from "@/hooks";
 import type { ObjectMeta } from "ali-oss";
 import type { UploadInstance } from "element-plus";
 
+defineOptions({ name: "PluginOss" });
+
 const fileList = ref([]);
 const uploadRef = $ref<UploadInstance>();
 let tableData = $ref<ObjectMeta[]>([]);

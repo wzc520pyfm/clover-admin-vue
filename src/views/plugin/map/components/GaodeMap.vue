@@ -7,6 +7,8 @@ import { useScriptTag } from "@vueuse/core";
 import { GAODE_MAP_SDK_URL } from "@/config";
 import { useThemeStore } from "@/stores";
 
+defineOptions({ name: "GaodeMap" });
+
 const MapStyle = ["amap://styles/normal", "amap://styles/darkblue"];
 
 const { isDark } = $(useThemeStore());

@@ -45,6 +45,8 @@
 import { VALUE_CONSTANT } from "@/constants";
 import { elTableFormatter, constantFormat } from "@/utils";
 
+defineOptions({ name: "BaseTable" });
+
 const search = $ref("");
 
 const handleEdit = (index: number, row: ApiUserManagement.User) => {

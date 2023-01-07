@@ -26,6 +26,8 @@
 import { ElMessage } from "element-plus";
 import type { Component } from "vue";
 
+defineOptions({ name: "UserAvatar" });
+
 interface DropdownOption {
   key: string;
   command?: string | number | object;
