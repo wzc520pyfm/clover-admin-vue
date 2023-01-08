@@ -1,6 +1,6 @@
 import Layout from "@/layout/index.vue";
 
-const about = [
+const about: AuthRoute.Route[] = [
   {
     name: "about",
     path: "/about",

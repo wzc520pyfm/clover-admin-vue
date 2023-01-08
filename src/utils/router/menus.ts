@@ -1,5 +1,3 @@
-import type { AuthRoute } from "@/typings/route";
-
 /**
  * 路由不转换为菜单, 其子路由也不转换
  */

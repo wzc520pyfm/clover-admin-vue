@@ -1,5 +1,3 @@
-import type { AuthRoute } from "@/typings/route";
-
 /**
  * 根据用户权限过滤路由
  * @param routes - 权限路由

@@ -1,5 +1,3 @@
-import type { AuthRoute } from "@/typings/route";
-
 /**
  * 路由排序
  * @param routes - 路由

@@ -1,4 +1,3 @@
-import type { AuthRoute } from "@/typings/route";
 import { handleModuleRoutes } from "../helper";
 
 // see: https://cn.vitejs.dev/guide/features.html#glob-import

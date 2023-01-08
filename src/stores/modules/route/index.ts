@@ -1,7 +1,6 @@
 import { router, routes as staticRoutes } from "@/router";
 import { getCacheRoutes, transformRouteToMenu } from "@/utils";
 import type { RouteRecordRaw } from "vue-router";
-import type { AuthRoute } from "@/typings/route";
 import { useTabStore } from "../tab";
 import { useAuthStore } from "../auth";
 import { filterAuthRoutesByUserPermission } from "@/utils/router/auth";
