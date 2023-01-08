@@ -1,9 +1,8 @@
-import type { RawRouteComponent } from "vue-router";
 /** 权限路由 */
 declare namespace AuthRoute {
   /** 路由描述 */
   interface RouteMeta {
-    /** 路由标题 */
+    /** 路由标题(document.title或者菜单的名称) */
     title: string;
     /** 权限, 为空则表示不需要权限 */
     permissions?: Auth.RoleType[];
@@ -15,9 +14,17 @@ declare namespace AuthRoute {
     hidden?: boolean;
     /** 唯一标识, 独立于name的标识, 可用于标识主页路由 */
     key?: string;
+    /** 外链链接 */
+    href?: string;
     /** 路由顺序, 调整菜单排序 */
     order?: number;
   }
+
+  type Lazy<T> = () => Promise<T>;
+
+  type RouteComponent = import("vue-router").RouteComponent;
+
+  type RawRouteComponent = RouteComponent | Lazy<RouteComponent>;
 
   /** 路由类型结构 */
   interface Route {

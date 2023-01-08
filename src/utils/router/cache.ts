@@ -1,5 +1,3 @@
-import type { AuthRoute } from "@/typings/route";
-
 /**
  * 获取缓存的路由对应组件的名称
  * @param routes - 转换后的vue路由
