@@ -19,6 +19,8 @@
   </dark-mode-container>
 </template>
 
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+defineOptions({ name: "ExceptionOther" });
+</script>
 
 <style scoped></style>

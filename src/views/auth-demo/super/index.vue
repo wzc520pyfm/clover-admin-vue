@@ -4,7 +4,9 @@
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+defineOptions({ name: "AuthDemoSuper" });
+</script>
 
 <style lang="less" scoped>
 .el-card {

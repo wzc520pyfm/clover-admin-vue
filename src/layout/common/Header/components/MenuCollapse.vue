@@ -10,6 +10,8 @@
 <script lang="ts" setup>
 import { useAppStore } from "@/stores";
 
+defineOptions({ name: "MenuCollapse" });
+
 const { sidebarCollapse, toggleSidebarCollapse } = $(useAppStore());
 </script>
 

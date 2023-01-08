@@ -15,6 +15,8 @@ import { useRouteStore } from "@/stores";
 import { getBreadcrumbByRouteKey } from "@/utils";
 import * as Icons from "@element-plus/icons-vue";
 
+defineOptions({ name: "Breadcrumb" });
+
 type IconType = keyof typeof Icons;
 
 const route = useRoute();

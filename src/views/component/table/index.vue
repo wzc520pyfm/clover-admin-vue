@@ -8,6 +8,8 @@
 
 <script lang="ts" setup>
 import { BaseTable } from "./components";
+
+defineOptions({ name: "ComponentTable" });
 </script>
 
 <style lang="less" scoped>

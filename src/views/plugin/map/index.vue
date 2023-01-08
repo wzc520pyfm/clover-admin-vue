@@ -27,6 +27,8 @@
 import type { Component } from "vue";
 import { GaodeMap, BaiduMap } from "./components";
 
+defineOptions({ name: "PluginMap" });
+
 interface Map {
   id: string;
   label: string;

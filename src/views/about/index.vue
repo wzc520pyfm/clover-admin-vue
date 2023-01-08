@@ -4,7 +4,9 @@
   </dark-mode-container>
 </template>
 
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+defineOptions({ name: "About" });
+</script>
 
 <style lang="less" scoped>
 .el-card {
