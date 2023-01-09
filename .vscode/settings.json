@@ -26,8 +26,17 @@
     "src/locales",
     "src/locales/lang"
   ],
+  // see: https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme
   "material-icon-theme.activeIconPack": "angular", // 启用特定的图标包
-  "material-icon-theme.files.associations": {}, // 设置自定义文件图标关联
+  "material-icon-theme.files.associations": {
+    "index.ts": "Bazel",
+    "index.vue": "Vagrant",
+    "App.vue": "Verdaccio",
+    "main.css": "Moonscript",
+    "main.scss": "Moonscript",
+    "main.less": "Moonscript",
+    "main.ts": "Nim"
+  }, // 设置自定义文件图标关联
   "material-icon-theme.folders.associations": { // 设置自定义文件夹图标关联
 		"src-tauri": "src",
     "enum": "typescript",
@@ -36,11 +45,32 @@
     "stores": "context",
     "composable": "hook",
     "composables": "hook",
-    "directive": "tools",
-    "directives": "tools",
     "business": "core",
-    "request": "api",
-    "adapter": "middleware"
+    "request": "Aws",
+    "adapter": "middleware",
+    "svg-icon": "svg",
+    "directive": "Vue-directives",
+    "directives": "Vue-directives",
+    "sdk": "Tools",
+    "filters": "Pipe",
+    "storage": "Database",
+    "crypto": "Keys",
+    // 我们希望将views目录和layout/common下的文件夹指定为Vue类文件夹, 遗憾的是目前只能手动配置, vscode暂时缺少api支持
+    // https://github.com/PKief/vscode-material-icon-theme/issues/632
+    // https://github.com/PKief/vscode-material-icon-theme/issues/631
+    "common/Footer": "Vue", // 不支持两级以上的目录写法
+    "common/Header": "Vue",
+    "common/Logo": "Vue",
+    "common/Sidebar": "Vue",
+    "common/Tab": "Vue",
+    "views/about": "Vue",
+    "views/auth-demo": "Vue",
+    "views/component": "Vue",
+    "views/login": "Vue",
+    "views/exception": "Vue",
+    "views/function": "Vue",
+    "views/plugin": "Vue",
+    "views/system-view": "Vue"
   },
   "path-intellisense.mappings": { // 路径映射, 这些值应该被解析为绝对路径
     "@": "${workspaceFolder}/src"
