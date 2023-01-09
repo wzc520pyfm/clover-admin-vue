@@ -35,7 +35,10 @@
     "main.css": "Moonscript",
     "main.scss": "Moonscript",
     "main.less": "Moonscript",
-    "main.ts": "Nim"
+    "main.ts": "Nim",
+    "helpers.ts": "Architecture",
+    "permission.ts": "Lock",
+    "dynamic.ts": "Imba"
   }, // 设置自定义文件图标关联
   "material-icon-theme.folders.associations": { // 设置自定义文件夹图标关联
 		"src-tauri": "src",
@@ -55,6 +58,8 @@
     "filters": "Pipe",
     "storage": "Database",
     "crypto": "Keys",
+    "route": "Routes",
+    "tab": "Queue",
     // 我们希望将views目录和layout/common下的文件夹指定为Vue类文件夹, 遗憾的是目前只能手动配置, vscode暂时缺少api支持
     // https://github.com/PKief/vscode-material-icon-theme/issues/632
     // https://github.com/PKief/vscode-material-icon-theme/issues/631
