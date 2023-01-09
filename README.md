@@ -138,6 +138,21 @@ clover-admin
 |-- vite.config.ts
 ```
 
+### vscode
+项目期望保持一致的开发体验, 配置了一系列vscode配置:
+1. 项目级的vscode扩展
+   - see: `./.vscode/extensions.json`
+2. 项目级的vscode设置
+   - see: `./.vscode/settings.json`
+3. 项目级的代码模板
+   - see: `./.vscode/clover.code-snippets`
+4. 如果你熟悉vscode的远程开发功能, 项目也做好了相关配置以保持一致的开发体验
+   - see: `./.devcontainer`
+5. 项目级的精心挑选的vscode图标, 包括文件和文件夹图标
+   - see: `./.vscode/settings.json`
+   - <img src="./doc/pic/icons-root.png"></img><img src="./doc/pic/icons-src.png"></img>
+
+
 ### 以新的姿态使用vue
 
 #### 自动导入、自动注册组件、响应式语法糖
