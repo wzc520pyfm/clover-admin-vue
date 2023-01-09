@@ -3,6 +3,7 @@
     "source.fixAll.eslint": true // 依据eslint格式化代码
   },
   "editor.formatOnSave": true,  // 保存时格式化代码
+  "npm.packageManager": "pnpm", // 使用pnpm作为项目的包管理器
   "editor.guides.bracketPairs": "active", // 是否启用括号对其参考线(active则是激活时启用)
   "editor.inlineSuggest.enabled": true, // 是否显示内联建议
   "editor.tabSize": 2, // tab键占多少字符
