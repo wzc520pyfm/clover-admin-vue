@@ -81,6 +81,7 @@
   "path-intellisense.mappings": { // 路径映射, 这些值应该被解析为绝对路径
     "@": "${workspaceFolder}/src"
   },
+  "iconify.includes": ["ep", "mdi"], // 默认引入工作区的iconify图标集id, 但建议全量本地安装iconify图标集(约120M), 只有实际使用的图标才会打包到生产环境, see: https://github.com/antfu/unplugin-icons
   "typescript.updateImportsOnFileMove.enabled": "always", // 自动更新导入路径
   "workbench.iconTheme": "material-icon-theme", // 图标主题
   "workbench.colorTheme": "Material Theme Ocean High Contrast", // 全局色彩主题
