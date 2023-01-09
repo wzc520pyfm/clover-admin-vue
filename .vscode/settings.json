@@ -1,28 +1,33 @@
 {
-  "editor.codeActionsOnSave": { // 保存时要执行的操作
+  "editor.codeActionsOnSave": {
+    // 保存时要执行的操作
     "source.fixAll.eslint": true // 依据eslint格式化代码
   },
-  "editor.formatOnSave": true,  // 保存时格式化代码
+  "editor.formatOnSave": true, // 保存时格式化代码
   "editor.guides.bracketPairs": "active", // 是否启用括号对其参考线(active则是激活时启用)
   "editor.inlineSuggest.enabled": true, // 是否显示内联建议
   "editor.tabSize": 2, // tab键占多少字符
   "eslint.alwaysShowStatus": true, // 始终显示eslint状态栏
-  "eslint.validate": [ // 应该由eslint检查的语言
+  "eslint.validate": [
+    // 应该由eslint检查的语言
     "javascript",
     "javascriptreact",
     "typescript",
     "typescriptreact",
     "vue"
   ],
-  "files.associations": { // 配置文件关联. 优先级高于默认配置
+  "files.associations": {
+    // 配置文件关联. 优先级高于默认配置
     "*.env.*": "dotenv"
   },
   "files.eol": "\n", // 默认的行尾符(此处设置为LF)
   "git.enableSmartCommit": true, // 当git没有暂存的变更时, 提交所有变更
-  "gutterpreview.paths": { // 指定要相对项目跟路径计算的路径映射
+  "gutterpreview.paths": {
+    // 指定要相对项目跟路径计算的路径映射
     "@": "/src"
   },
-  "i18n-ally.localesPaths": [ // locales目录路径(相对根目录)
+  "i18n-ally.localesPaths": [
+    // locales目录路径(相对根目录)
     "src/locales",
     "src/locales/lang"
   ],
@@ -40,8 +45,9 @@
     "permission.ts": "Lock",
     "dynamic.ts": "Imba"
   }, // 设置自定义文件图标关联
-  "material-icon-theme.folders.associations": { // 设置自定义文件夹图标关联
-		"src-tauri": "src",
+  "material-icon-theme.folders.associations": {
+    // 设置自定义文件夹图标关联
+    "src-tauri": "src",
     "enum": "typescript",
     "enums": "typescript",
     "store": "context",
@@ -77,7 +83,8 @@
     "views/plugin": "Vue",
     "views/system-view": "Vue"
   },
-  "path-intellisense.mappings": { // 路径映射, 这些值应该被解析为绝对路径
+  "path-intellisense.mappings": {
+    // 路径映射, 这些值应该被解析为绝对路径
     "@": "${workspaceFolder}/src"
   },
   "typescript.updateImportsOnFileMove.enabled": "always", // 自动更新导入路径
@@ -111,7 +118,8 @@
   "[vue]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "cSpell.userWords": [ // 添加到全局字典的单词
+  "cSpell.userWords": [
+    // 添加到全局字典的单词
     "Pinia",
     "swiper",
     "unocss",
@@ -126,6 +134,7 @@
     "GAODE",
     "decrypto",
     "encrypto",
-    "Attributify"
-  ],
+    "Attributify",
+    "typeof"
+  ]
 }
