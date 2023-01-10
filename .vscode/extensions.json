@@ -38,6 +38,7 @@
     "VisualStudioExptTeam.intellicode-api-usage-examples", // 帮助查看api的使用示例, 鼠标悬浮在api上, 你可以看到 See Real World Examples From GitHub  的可点击字样
     "xabikos.JavaScriptSnippets", // 提供一些js或ts的代码片段
     "lottiefiles.vscode-lottie", // 在vsocde里预览lottie动画(右击lottie的json文件, 选择View in Lottie Player)
+    "intellsmi.comment-translate", // 悬浮翻译插件
     "GitHub.copilot" //! 强大的代码提示插件, 提高开发效率, 但它是付费的
   ]
 }
