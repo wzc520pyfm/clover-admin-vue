@@ -7,7 +7,7 @@
         <web-site-link label="插件demo地址：" link="https://swiperjs.com/demos" />
       </el-space>
       <el-space direction="vertical" alignment="normal" class="w-full">
-        <div class="w-full" v-for="item in swiperExample" :key="item.id">
+        <div v-for="item in swiperExample" :key="item.id" class="w-full">
           <h3 class="py-24px text-24px font-bold">{{ item.label }}</h3>
           <swiper v-bind="item.options">
             <swiper-slide v-for="i in 5" :key="i">

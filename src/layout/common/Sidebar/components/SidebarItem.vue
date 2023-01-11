@@ -9,7 +9,7 @@
       <span>{{ menu.label }}</span>
     </template>
   </el-menu-item>
-  <el-sub-menu v-else :index="menu.routePath" :key="menu.key">
+  <el-sub-menu v-else :key="menu.key" :index="menu.routePath">
     <template #title>
       <el-icon v-if="menu?.icon"
         ><component :is="Icons[menu.icon as unknown as IconType]"></component

@@ -2,7 +2,7 @@
   <p>
     <span>{{ label }}</span>
     <el-link type="primary" :href="link" :target="isBlank ? '_blank' : '_self'"
-      >{{ link }}<i-local-link-icon ml-1 v-if="isBlank"
+      >{{ link }}<i-local-link-icon v-if="isBlank" ml-1
     /></el-link>
   </p>
 </template>
