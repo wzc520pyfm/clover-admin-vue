@@ -5,7 +5,7 @@
       <h2 class="pl-5px c-#1890ff text-32px font-bold">Clover管理系统</h2>
     </div>
     <div class="pt-20px">
-      <Vue3Lottie :animationData="AstronautJSON" :speed="1.5" :height="250" :width="250" />
+      <Vue3Lottie :animation-data="AstronautJSON" :speed="1.5" :height="250" :width="250" />
     </div>
   </div>
 </template>

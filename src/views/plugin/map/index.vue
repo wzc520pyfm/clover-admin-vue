@@ -8,9 +8,9 @@
       </template>
       <el-tabs model-value="gaode" class="h-full flex-col">
         <el-tab-pane
-          class="h-full"
           v-for="item in maps"
           :key="item.id"
+          class="h-full"
           :label="item.label"
           :name="item.id"
         >

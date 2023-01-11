@@ -13,7 +13,7 @@
       </el-menu>
     </el-scrollbar>
     <div v-show="!sidebarCollapse">
-      <Vue3Lottie :animationData="ManagementJSON" :speed="0.7" :height="220" :width="220" />
+      <Vue3Lottie :animation-data="ManagementJSON" :speed="0.7" :height="220" :width="220" />
     </div>
   </div>
 </template>
