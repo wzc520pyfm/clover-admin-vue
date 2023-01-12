@@ -20,6 +20,12 @@ const authDemo = [
         component: () => import("@/views/auth-demo/super/index.vue"),
         meta: { title: "超级管理员可见", icon: "Avatar", permissions: ["super"] },
       },
+      {
+        path: "permission",
+        name: "auth-demo-permission",
+        component: () => import("@/views/auth-demo/permission/index.vue"),
+        meta: { title: "权限指令", icon: "Lock" },
+      },
     ],
   },
 ];
