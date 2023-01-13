@@ -187,7 +187,7 @@ const doubled = computed(() => count * 2)
 #### 为vue注册全局属性
 1. 在`./src/globalProperties.ts`中
 2. 以注册全局属性`$filters`为例
-```ts
+```typescript
 // globalProperties.ts
 export function setupGlobalProperties(app: App) {
   installGlobalProperties(filters, "$filters");
@@ -195,7 +195,7 @@ export function setupGlobalProperties(app: App) {
 }
 ```
 还需要在`./src/typings/vue.d.ts`中为$filters定义类型
-```ts
+```typescript
 export {};
 
 declare module "vue" {
@@ -246,7 +246,7 @@ element-plus的图标也是https://iconify.design/中的一个图标集合, 现�
 2. 点击任意一个图标, 可以看到此图标集合的前缀名(mdi):
    <img src="./doc/pic/iconify-mdi.png"></img>
 3. 在`./build/plugins/unplugin.ts`中写入此图标集合的前缀名(mdi):
-```ts
+```typescript
 Components({
   dts: "src/typings/components.d.ts",
   resolvers: [
@@ -327,7 +327,7 @@ export default defineConfig({
 ```
 
 unocss也支持配置主题:
-```ts
+```typescript
 export default defineConfig({
   // ...
   // see: https://tailwindcss.com/docs/theme
@@ -347,7 +347,7 @@ export default defineConfig({
 ```
 
 unocss暗黑模式:
-```ts
+```typescript
 export default defineConfig({
   // 开启
   presets: [presetUno({ dark: "class" })],
@@ -361,7 +361,7 @@ export default defineConfig({
 ### 配置路由
 1. 路由配置在`./src/router/modules`中, 以`关于`页面为例
 2. 在`./src/router/modules`新建`about.ts`
-```ts
+```typescript
 import Layout from "@/layout/index.vue";
 
 const about = [
@@ -410,13 +410,13 @@ export default about;
 如果你想参考示例, 请见: `./src/views/function/request`.
 要声明一个api, 需按照如下步骤:
 1. 在`./src/service/request/index.ts`中创建一个Request实例
-```ts
+```typescript
 import { createRequest } from "./request";
 
 export const mockRequest = createRequest({ baseURL: "/mock" });
 ```
 2. 在`./src/service/api`目录下声明api
-```ts
+```typescript
 // /api/auth.ts
 import { mockRequest } from "../request";
 
@@ -425,7 +425,7 @@ export function fetchLogin(username: string, password: string) {
 }
 ```
 3. 在`./src/typings/api.d.ts`中声明api相关的数据类型
-```ts
+```typescript
 declare namespace ApiAuth {
   /** token */
   interface Token {
@@ -451,15 +451,15 @@ const requestLogin = async () => {
  - 当http状态失败时, 会弹出el-message提示, 会根据http状态码不同而匹配显示不同的错误信息, 见: `./src/config/service.ts`中的ERROR_STATUS
  - 当后端接口一切正常但返回业务上的错误时, 会弹出el-message提示, 提示内容是后端返回的message字段信息
 6. 项目默认后端接口返回的数据结构如下:
-```ts
-{
+```typescript
+const response = {
   code: 200,
   message: "成功",
-  data: ...
+  data: "SomeObjectOrOther"
 }
 ```
 如果后端返回的数据结构与上述不符, 可以在创建Request时进行配置:
-```ts
+```typescript
 export const mockRequest = createRequest({ baseURL: "/mock" }, {
   codeField: "statusCode",
   dataField: "data",
@@ -482,7 +482,7 @@ const requestLogin = async () => {
 </script>
 ```
 如你所见, 你只能拿到接口返回的data的内容, 如果你想获取其他内容, 比如响应头, 你可以在声明api时进行配置:
-```ts
+```typescript
 export function fetchLogin(username: string, password: string) {
   // entries可以配置所有的AxiosResponse的key
   return mockRequest.post<ApiAuth.Token>("/login", { username, password }, { entries: ["data", "headers"] });
@@ -501,22 +501,22 @@ const requestLogin = async () => {
 </script>
 ```
 8. 有些变更类的后端接口, 返回的数据中不会包含data, 例如:
-```ts
-{
+```typescript
+const message = {
   code: 200,
   message: "成功"
 }
 ```
 本项目会自动为其补充data:
-```ts
-{
+```typescript
+const message = {
   code: 200,
   message: "成功",
   data: "success"
 }
 ```
 9. 开启代理
-```ts
+```typescript
 // .env.config.ts
 const serviceEnv: ServiceEnv = {
   // 项目默认启动在5574端口
@@ -569,7 +569,7 @@ CYPRESS_DOWNLOAD_MIRROR="https://download.cypress.io/desktop"
 按照AutoImport插件介绍, 需要在第一个运行项目时设置`eslintrc: {enabled: true}`生成eslint文件, 后续可改为false.
 
 本项目AutoImport位置在./build/plugins/unplugin.ts
-```ts
+```typescript
 AutoImport({
     // ...
     eslintrc: {
@@ -580,3 +580,33 @@ AutoImport({
 }),
 ```
 
+### 提交规范
+
+好的提交规范可以清晰地了解到开发者试图做什么, 并且有助于自动生成更改日志.
+
+推荐使用项目内置的`pnpm cz`命令进行git提交, 这是一个交互式的git提交界面.
+
+#### 提交消息的模板
+
+```md
+feat(components): [HoverLink] 增加悬浮链接组件(使用命令式语气)
+
+主体行和主体内容之间用空白行隔开(可以有预期时间)
+通过一行或多行描述你的修改信息(大批量更改务必描述修改详情)
+每一行的首字母大写
+且每一行的总字符数限制在72个以内最优, 超过了将不易于他人理解
+
+- 你也可以通过添加子项列表符号来为内容布局
+```
+主题标题的格式是：
+
+```md
+[type](scope 域): [messages]
+```
+
+#### 通用git惯例
+<a href="https://www.conventionalcommits.org/" class="vp-link" target="_blank" rel="noopener noreferrer">通用惯例<svg preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24" width="1.2em" height="1.2em" class="link-icon"><path fill="currentColor" d="M10 6v2H5v11h11v-5h2v6a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h6zm11-3v8h-2V6.413l-7.793 7.794l-1.414-1.414L17.585 5H13V3h8z"></path></svg></a>
+
+#### 保持git提交历史简介
+
+<a href="https://about.gitlab.com/blog/2018/06/07/keeping-git-commit-history-clean/" class="vp-link" target="_blank" rel="noopener noreferrer">保持 git 提交历史简洁<svg preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24" width="1.2em" height="1.2em" class="link-icon"><path fill="currentColor" d="M10 6v2H5v11h11v-5h2v6a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h6zm11-3v8h-2V6.413l-7.793 7.794l-1.414-1.414L17.585 5H13V3h8z"></path></svg></a>
