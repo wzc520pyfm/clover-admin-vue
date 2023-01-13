@@ -3,7 +3,7 @@
     <RouterView v-slot="{ Component, route }">
       <Transition name="fade" mode="out-in" :appear="true">
         <KeepAlive :include="routeStore.cacheRoutes">
-          <component :is="Component" v-if="app.reloadFlag" :key="route.fullPath"></component>
+          <component :is="Component" v-if="app.reloadFlag" :key="route.fullPath" />
         </KeepAlive>
       </Transition>
     </RouterView>

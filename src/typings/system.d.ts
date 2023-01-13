@@ -9,8 +9,10 @@ type GlobalMenuOption = {
 };
 
 /** 多页签Tab路由 */
-interface GlobalTabRoute
-  extends Pick<import("vue-router").RouteLocationNormalizedLoaded, "name" | "fullPath" | "meta"> {}
+type GlobalTabRoute = Pick<
+  import("vue-router").RouteLocationNormalizedLoaded,
+  "name" | "fullPath" | "meta"
+>;
 
 /** 请求相关类型 */
 declare namespace Service {

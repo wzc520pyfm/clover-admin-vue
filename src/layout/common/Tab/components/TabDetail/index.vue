@@ -16,8 +16,8 @@
       <template #label>
         <span class="flex-y-center gap-1">
           <el-icon class="vertical-middle"
-            ><component :is="Icons[item.meta.icon as unknown as IconType]"></component
-          ></el-icon>
+            ><component :is="Icons[item.meta.icon as unknown as IconType]"
+          /></el-icon>
           <span>{{ item.meta.title }}</span>
         </span>
       </template>

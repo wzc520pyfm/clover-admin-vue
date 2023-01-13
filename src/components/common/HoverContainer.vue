@@ -2,12 +2,12 @@
   <div v-if="showTooltip">
     <el-tooltip :placement="placement" :content="tooltipContent" trigger="hover">
       <div class="flex-center h-full cursor-pointer dark:hover:bg-[#333]" :class="contentClassName">
-        <slot></slot>
+        <slot />
       </div>
     </el-tooltip>
   </div>
   <div v-else class="flex-center cursor-pointer dark:hover:bg-[#333]" :class="contentClassName">
-    <slot></slot>
+    <slot />
   </div>
 </template>
 

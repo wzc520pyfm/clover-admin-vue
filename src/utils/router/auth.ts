@@ -7,7 +7,7 @@ export function filterAuthRoutesByUserPermission(
   routes: AuthRoute.Route[],
   permission: Auth.RoleType
 ): AuthRoute.Route[] {
-  return routes.map((route) => filterAuthRouteByUserPermission(route, permission)).flat(1);
+  return routes.flatMap((route) => filterAuthRouteByUserPermission(route, permission));
 }
 
 /**
@@ -26,9 +26,9 @@ function filterAuthRouteByUserPermission(
     route.meta.permissions.includes(permission);
 
   if (filterRoute.children) {
-    const filterChildren = filterRoute.children
-      .map((item) => filterAuthRouteByUserPermission(item, permission))
-      .flat(1);
+    const filterChildren = filterRoute.children.flatMap((item) =>
+      filterAuthRouteByUserPermission(item, permission)
+    );
     Object.assign(filterRoute, { children: filterChildren });
   }
   return hasPermission ? [filterRoute] : [];

@@ -1,5 +1,4 @@
-import { createGlobalState } from "@vueuse/core";
-import { useDark, useToggle } from "@vueuse/core";
+import { createGlobalState, useDark, useToggle } from "@vueuse/core";
 
 export const useThemeStore = createGlobalState(() => {
   // state

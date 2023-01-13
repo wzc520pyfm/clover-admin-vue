@@ -36,14 +36,14 @@ function getBreadcrumbMenuItem(activeKey: any, menu: any) {
   }
   if (activeKey.includes(menu.routeName) && menu.children && menu.children.length) {
     /** !menu.meta.hidden && */
-    breadcrumbMenu.push({
-      key: menu.routeName,
-      path: menu.routePath,
-      title: menu.label,
-      icon: menu.icon,
-    });
     breadcrumbMenu.push(
-      ...menu.children.map((item: any) => getBreadcrumbMenuItem(activeKey, item)).flat(1)
+      {
+        key: menu.routeName,
+        path: menu.routePath,
+        title: menu.label,
+        icon: menu.icon,
+      },
+      ...menu.children.flatMap((item: any) => getBreadcrumbMenuItem(activeKey, item))
     );
   }
   return breadcrumbMenu;

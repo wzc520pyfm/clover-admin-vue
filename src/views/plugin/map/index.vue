@@ -25,7 +25,7 @@
 
 <script lang="ts" setup>
 import type { Component } from "vue";
-import { GaodeMap, BaiduMap } from "./components";
+import { BaiduMap, GaodeMap } from "./components";
 
 defineOptions({ name: "PluginMap" });
 

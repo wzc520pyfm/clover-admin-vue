@@ -2,9 +2,7 @@
   <el-menu-item v-if="!menu.children" :index="menu.routePath">
     <!-- <i-ep-location /> -->
     <!-- see: https://github.com/element-plus/element-plus/issues/5588 -->
-    <el-icon v-if="menu?.icon"
-      ><component :is="Icons[menu.icon as unknown as IconType]"></component
-    ></el-icon>
+    <el-icon v-if="menu?.icon"><component :is="Icons[menu.icon as unknown as IconType]" /></el-icon>
     <template #title>
       <span>{{ menu.label }}</span>
     </template>
@@ -12,8 +10,8 @@
   <el-sub-menu v-else :key="menu.key" :index="menu.routePath">
     <template #title>
       <el-icon v-if="menu?.icon"
-        ><component :is="Icons[menu.icon as unknown as IconType]"></component
-      ></el-icon>
+        ><component :is="Icons[menu.icon as unknown as IconType]"
+      /></el-icon>
       <span>{{ menu.label }}</span>
     </template>
     <el-menu-item-group>

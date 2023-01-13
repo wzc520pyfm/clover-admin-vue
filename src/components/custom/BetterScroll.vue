@@ -1,7 +1,7 @@
 <template>
   <div ref="bsWrap" class="h-full text-left">
     <div ref="bsContent" class="inline-block" :class="{ 'h-full': !isScrollY }">
-      <slot></slot>
+      <slot />
     </div>
   </div>
 </template>

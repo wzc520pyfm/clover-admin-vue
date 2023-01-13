@@ -12,7 +12,7 @@
 <script lang="ts" setup>
 import { useElementBounding } from "@vueuse/core";
 import { useTabStore } from "@/stores";
-import { TabDetail, ReloadButton } from "./components";
+import { ReloadButton, TabDetail } from "./components";
 
 defineOptions({ name: "GlobalTab" });
 
