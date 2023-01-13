@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import { execSync } from "child_process";
 import fg from "fast-glob";
 
@@ -16,18 +17,10 @@ const scopes = [
   "other", // 其他
 ];
 
-const gitStatus = execSync("git status --porcelain || true").toString().trim().split("\n");
+// @tip: git branch name = feature/issue_33   =>    auto get defaultIssues = #33
+const issue = execSync("git rev-parse --abbrev-ref HEAD").toString().trim().split("_")[1];
 
-const scopeComplete = gitStatus
-  .find((r) => ~r.indexOf("M  packages"))
-  ?.replace(/\//g, "%%")
-  ?.match(/packages%%((\w|-)*)/)?.[1];
-
-const subjectComplete = gitStatus
-  .find((r) => ~r.indexOf("M  packages/components"))
-  ?.replace(/\//g, "%%")
-  ?.match(/packages%%components%%((\w|-)*)/)?.[1];
-
+// @see: https://cz-git.qbb.sh/zh/config/
 export default {
   rules: {
     /**
@@ -70,7 +63,7 @@ export default {
       "always",
       [
         "build", // 构建流程、外部依赖变更(如升级npm包、修改打包配置等)
-        "chore", // 对构建过程或辅助工具和库的更改(不应影响源文件、测试用例)
+        "chore", // 其他修改, 对构建过程或辅助工具和库的更改(不应影响源文件、测试用例)
         "ci", // 修改CI配置、脚本
         "docs", // 文档变更
         "feat", // 新增功能
@@ -79,17 +72,29 @@ export default {
         "refactor", // 代码重构
         "revert", // 回滚commit
         "release", // 发版
-        "style", // 代码个数
+        "style", // 代码格式
         "test", // 添加测试或已有测试改动
-        "types", // 类型定义文件修改
-        "improvement", // 改进
       ],
     ],
   },
   prompt: {
-    defaultScope: scopeComplete,
-    customScopesAlign: !scopeComplete ? "top" : "bottom",
-    defaultSubject: subjectComplete && `[${subjectComplete}] `,
+    customIssuePrefixAlign: !issue ? "top" : "bottom",
+    defaultIssues: !issue ? "" : `#${issue}`,
+    types: [
+      { value: "feat", name: "feat:     ✨  A new feature", emoji: ":sparkles:" },
+      { value: "fix", name: "fix:      🐛  A bug fix", emoji: ":bug:" },
+      { value: "docs", name: "docs:     📝  Documentation only changes", emoji: ":memo:" },
+      { value: "style", name: "style:    🎨  Changes that do not affect the meaning of the code", emoji: ":art:" },
+      { value: "refactor", name: "refactor: ♻️   A code change that neither fixes a bug nor adds a feature", emoji: ":recycle:" },
+      { value: "perf", name: "perf:     ⚡️  A code change that improves performance", emoji: ":zap:" },
+      { value: "test", name: "test:     ✅  Adding missing tests or correcting existing tests", emoji: ":white_check_mark:" },
+      { value: "build", name: "build:    📦️   Changes that affect the build system or external dependencies", emoji: ":package:" },
+      { value: "ci", name: "ci:       👷  Changes to our CI configuration files and scripts", emoji: ":construction_worker:" },
+      { value: "chore", name: "chore:    🔨  Other changes that don't modify src or test files", emoji: ":hammer:" },
+      { value: "revert", name: "revert:   ⏪️  Reverts a previous commit", emoji: ":rewind:" },
+      { value: "release", name: "release:  🔖  Release a version", emoji: ":bookmark:" },
+    ],
+    useEmoji: true, // 出于美观, 项目使用了emoji, 但emoji应遵循规范  @see: https://gitmoji.dev/
     allowCustomIssuePrefixs: false,
     allowEmptyIssuePrefixs: false,
   },
