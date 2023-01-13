@@ -11,7 +11,7 @@ const apis: MockMethod[] = [
     url: "/mock/404",
     method: "post",
     statusCode: 404,
-    response: (_) => {
+    response: () => {
       return {
         code: 404,
         message: "找不到资源!",
@@ -24,7 +24,7 @@ const apis: MockMethod[] = [
     url: "/mock/example-data",
     method: "get",
     statusCode: 200,
-    response: (_) => {
+    response: () => {
       return {
         code: 200,
         message: "成功",
@@ -39,7 +39,7 @@ const apis: MockMethod[] = [
     url: "/mock/example-no-data",
     method: "get",
     statusCode: 200,
-    response: (_) => {
+    response: () => {
       return {
         code: 200,
         message: "成功",
@@ -51,7 +51,7 @@ const apis: MockMethod[] = [
     url: "/mock/example-headers",
     method: "get",
     statusCode: 200,
-    response: (_) => {
+    response: () => {
       return {
         code: 200,
         message: "成功",

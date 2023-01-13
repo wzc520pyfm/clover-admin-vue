@@ -11,7 +11,7 @@ const apis: MockMethod[] = [
     url: "/mock/login",
     method: "post",
     statusCode: 200,
-    response: (_) => {
+    response: () => {
       return {
         code: 200,
         message: "成功",
