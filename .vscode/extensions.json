@@ -39,6 +39,7 @@
     "xabikos.JavaScriptSnippets", // 提供一些js或ts的代码片段
     "lottiefiles.vscode-lottie", // 在vsocde里预览lottie动画(右击lottie的json文件, 选择View in Lottie Player)
     "intellsmi.comment-translate", // 悬浮翻译插件
+    "WhenSunset.chatgpt-china", //! 近期很火的AI, 这个插件将他的功能结合在了vscode里, 支持中文, 你需要有国外帐号
     "GitHub.copilot" //! 强大的代码提示插件, 提高开发效率, 但它是付费的
   ]
 }
