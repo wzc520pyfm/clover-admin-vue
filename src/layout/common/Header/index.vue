@@ -15,11 +15,11 @@
 
 <script lang="ts" setup>
 import {
-  MenuCollapse,
   Breadcrumb,
   FullScreen,
-  ThemeModel,
   GithubSite,
+  MenuCollapse,
+  ThemeModel,
   UserAvatar,
 } from "./components";
 

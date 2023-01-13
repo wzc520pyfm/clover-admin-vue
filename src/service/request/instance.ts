@@ -1,12 +1,12 @@
 import axios from "axios";
-import type { AxiosError, AxiosInstance, AxiosRequestConfig, AxiosHeaders } from "axios";
+import type { AxiosError, AxiosHeaders, AxiosInstance, AxiosRequestConfig } from "axios";
 import {
   getToken,
-  transformRequestData,
-  handleServiceResult,
-  handleResponseError,
-  handleBackendError,
   handleAxiosError,
+  handleBackendError,
+  handleResponseError,
+  handleServiceResult,
+  transformRequestData,
 } from "@/utils";
 
 export default class CustomAxiosInstance {

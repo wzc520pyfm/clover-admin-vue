@@ -1,4 +1,4 @@
-import { fileURLToPath, URL } from "node:url";
+import { URL, fileURLToPath } from "node:url";
 import { defineConfig, loadEnv } from "vite";
 import { createViteProxy, setupVitePlugins } from "./build";
 import { getServiceEnvConfig } from "./.env-config";

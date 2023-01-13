@@ -43,7 +43,7 @@
 
 <script lang="ts" setup>
 import { VALUE_CONSTANT } from "@/constants";
-import { elTableFormatter, constantFormat } from "@/utils";
+import { constantFormat, elTableFormatter } from "@/utils";
 
 defineOptions({ name: "BaseTable" });
 

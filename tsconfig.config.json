@@ -10,8 +10,6 @@
   ],
   "compilerOptions": {
     "composite": true,
-    "types": [
-      "node"
-    ]
+    "types": ["node"]
   }
 }

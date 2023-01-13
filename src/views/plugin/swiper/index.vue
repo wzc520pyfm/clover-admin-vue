@@ -23,7 +23,7 @@
 </template>
 
 <script lang="ts" setup>
-import SwiperCore, { Navigation, Pagination, Autoplay } from "swiper";
+import SwiperCore, { Autoplay, Navigation, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/vue";
 import type { SwiperOptions } from "swiper";
 

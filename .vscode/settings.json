@@ -9,13 +9,29 @@
   "editor.inlineSuggest.enabled": true, // 是否显示内联建议
   "editor.tabSize": 2, // tab键占多少字符
   "eslint.alwaysShowStatus": true, // 始终显示eslint状态栏
+  "eslint.probe": [
+    // 如果安装了支持, 扩展应探测这些支持
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "html",
+    "vue",
+    "markdown",
+    "json",
+    "jsonc"
+  ],
   "eslint.validate": [
     // 应该由eslint检查的语言
     "javascript",
     "javascriptreact",
     "typescript",
     "typescriptreact",
-    "vue"
+    "html",
+    "vue",
+    "markdown",
+    "json",
+    "jsonc"
   ],
   "files.associations": {
     // 配置文件关联. 优先级高于默认配置

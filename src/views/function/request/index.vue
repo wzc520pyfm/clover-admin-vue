@@ -18,7 +18,7 @@
 </template>
 
 <script lang="ts" setup>
-import { fetch404, fetchExampleData, fetchExampleNoData, fetchExampleHeaders } from "@/service";
+import { fetch404, fetchExampleData, fetchExampleHeaders, fetchExampleNoData } from "@/service";
 
 defineOptions({ name: "FunctionRequest" });
 

@@ -23,7 +23,7 @@ export function transformRouteToMenu(
   routes.forEach((route) => {
     const { name, path, meta } = route;
     let menuChildren: GlobalMenuOption[] | undefined;
-    const fullPath: string = `${superPath ? superPath + "/" : ""}${path}`;
+    const fullPath = `${superPath ? `${superPath}/` : ""}${path}`;
     if (route.children) {
       menuChildren = transformRouteToMenu(route.children, fullPath);
     }

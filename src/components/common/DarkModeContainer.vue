@@ -2,7 +2,7 @@
   <div
     class="dark:bg-dark dark:text-white dark:text-opacity-82 transition-all duration-300 ease-in-out"
   >
-    <slot></slot>
+    <slot />
   </div>
 </template>
 

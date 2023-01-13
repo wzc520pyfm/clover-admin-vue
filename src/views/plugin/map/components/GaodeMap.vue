@@ -1,5 +1,5 @@
 <template>
-  <div ref="domRef" class="h-full w-full"></div>
+  <div ref="domRef" class="h-full w-full" />
 </template>
 
 <script lang="ts" setup>
@@ -39,7 +39,7 @@ function setMapStyle(map: AMap.Map, isDark: boolean) {
 
 watch(
   () => isDark,
-  (newValue) => void setMapStyle(map, newValue)
+  (newValue) => setMapStyle(map, newValue)
 );
 
 onMounted(() => {

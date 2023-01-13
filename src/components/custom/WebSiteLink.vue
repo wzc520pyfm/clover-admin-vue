@@ -16,7 +16,7 @@ interface Props {
   /** 网址链接 */
   link: string;
   /** 是否外链 */
-  isBlank?: Boolean;
+  isBlank?: boolean;
 }
 
 const { isBlank = true } = defineProps<Props>();

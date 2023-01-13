@@ -17,7 +17,7 @@
 </template>
 
 <script lang="ts" setup>
-import { Header, Tab, Sidebar, AppMain, Footer } from "./common";
+import { AppMain, Footer, Header, Sidebar, Tab } from "./common";
 
 defineOptions({ name: "Layout" });
 </script>

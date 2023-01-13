@@ -2,8 +2,8 @@
   <el-breadcrumb separator="/">
     <el-breadcrumb-item v-for="item in breadcrumbs" :key="item.key" :to="{ path: item.path }">
       <el-icon v-if="item.icon" :size="15" class="vertical-bottom"
-        ><component :is="Icons[item.icon as unknown as IconType]"></component
-      ></el-icon>
+        ><component :is="Icons[item.icon as unknown as IconType]"
+      /></el-icon>
       <span class="pl-2px">{{ item.title }}</span></el-breadcrumb-item
     >
   </el-breadcrumb>

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 // 捕获错误
-onErrorCaptured(function (err, instance, info) {
+onErrorCaptured((err, instance, info) => {
   console.log("[errorCaptured]", err, instance, info);
   return false; // 终止传播
 });
@@ -13,7 +13,7 @@ onErrorCaptured(function (err, instance, info) {
         <template v-if="Component">
           <Suspense>
             <!-- 主要内容 -->
-            <component :is="Component"></component>
+            <component :is="Component" />
 
             <!-- 加载中状态 -->
             <template #fallback>
