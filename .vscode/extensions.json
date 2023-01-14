@@ -21,6 +21,7 @@
 		"steoates.autoimport", // 为TS提供代码提示
 		"Vue.vscode-typescript-vue-plugin",// vue3 for ts 官方推荐插件
 		"Vue.volar", // vue3官方推荐插件
+    "ZixuanChen.vitest-explorer", // vitest官方插件
     "wix.vscode-import-cost", // 在编译器中显示导入包的大小
     "pranaygp.vscode-css-peek", // 允许在HTML内查看css定义, 且支持跳转
     "Zignd.html-css-class-completion", // 根据工作区定义的css, 在HTML中提供css智能提示
