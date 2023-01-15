@@ -580,6 +580,33 @@ AutoImport({
 }),
 ```
 
+#### 项目依赖的库有bug, 需要修改
+
+开发时, 遇到项目依赖的库有bug, 等不及库作者修复, 可以自行修改打补丁
+ - 注意: pnpm在v7.4.0开始支持打补丁
+
+流程如下:
+ 1. 执行下述命令生成一个依赖库的拷贝(yourPkg必须指定版本)
+  > pnpm patch yourPkg@0.0.1
+  >
+  >You can now edit the following folder: C:\Users\ADMINI~1\AppData\Local\Temp\482a1b2c5aaad6b4abb4d39bab8ef39c\user
+
+ 2. 打开提示的目录, 对库代码进行更改
+ 3. 执行下述命令, 生成库代码的补丁文件(依据你的系统, 决定是否需要为文件路径使用转移符号)
+  > pnpm patch-commit  C:\Users\ADMINI~1\AppData\Local\Temp\482a1b2c5aaad6b4abb4d39bab8ef39c\user
+
+  这会在项目目录下生成`patches/yourPkg@0.0.1.patch`文件, 且在package.json中自动更新如下配置:
+  ```json
+  {
+    "pnpm": {
+      "patchedDependencies": {
+        "yourPkg@0.0.1": "patches/yourPkg@0.0.1.patch"
+      }
+    }
+  }
+  ```
+
+
 ### 提交规范
 
 好的提交规范可以清晰地了解到开发者试图做什么, 并且有助于自动生成更改日志.
