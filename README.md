@@ -637,3 +637,5 @@ feat(components): [HoverLink] 增加悬浮链接组件(使用命令式语气)
 #### 保持git提交历史简介
 
 <a href="https://about.gitlab.com/blog/2018/06/07/keeping-git-commit-history-clean/" class="vp-link" target="_blank" rel="noopener noreferrer">保持 git 提交历史简洁<svg preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24" width="1.2em" height="1.2em" class="link-icon"><path fill="currentColor" d="M10 6v2H5v11h11v-5h2v6a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h6zm11-3v8h-2V6.413l-7.793 7.794l-1.414-1.414L17.585 5H13V3h8z"></path></svg></a>
+
+如果你更喜欢中文, 项目也对此作好了翻译, <a href="./doc/git-commit-history-clean-cn.md" target="_blank">点这里浏览</a>
