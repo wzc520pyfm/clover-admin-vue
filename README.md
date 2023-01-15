@@ -67,6 +67,43 @@ pnpm test:e2e
 pnpm lint
 ```
 
+### Docker部署
+
+ - 构建镜像
+  > docker build -t clover-admin-vue:v0.0.0 -f docker/Dockerfile .
+
+ - 创建并启动容器
+  > docker run --name clover -p 80:80 -d clover-admin-vue:v0.0.0
+
+ - 访问CloverAdmin
+  浏览器访问`http://localhost`
+
+如果您未安装Docker, 以下步骤将从零安装Docker(以Ubuntu20.04为例):
+ - 更新软件包索引, 安装必要依赖, 添加一个新的https软件源
+  > sudo apt update
+  >
+  > sudo apt install apt-transport-https ca-certificates curl gnupg-agent software-properties-common
+
+ - 导入源仓库GPG key
+  > curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+
+ - 添加Docker APT软件源
+  > sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+
+ - 安装最新版本的Docker, 一旦安装完成, Docker服务会自动启动
+  > sudo apt update
+  >
+  > sudo apt install docker-ce docker-ce-cli containerd.io
+
+ - 安装指定版本的Docker
+   - 查看可以的版本
+    > sudo apt update
+    >
+    > apt list -a docker-ce
+   - 安装(可用的Docker版本看起来是`5:19.03.9~3-0~ubuntu-focal`)
+    > sudo apt install docker-ce=<VERSION> docker-ce-cli=<VERSION> containerd.io
+
+
 ## 项目配置
 
 ### 目录结构
