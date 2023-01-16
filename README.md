@@ -110,15 +110,28 @@ pnpm lint
 ```tree
 clover-admin
 |-- .devcontainer
-|-- .vsocde
+|   |-- devcontainer.json
+|   |-- Dockerfile
+|-- .husky
+|-- .vscode
+|   |-- clover.code-snippets
+|   |-- extensions.json
+|   |-- setting.json
 |-- build
 |   |-- config
 |   |-- plugins
+|   |   |-- compress.ts
+|   |   |-- html.ts
 |   |   |-- mock.ts             // mock插件
 |   |   |-- unplugin.ts         // vue宏增强、自动导入、注册注册声明、Icon封装、UI组件
+|   |   |-- visualizer.ts
 |   |-- utils
 |-- cypress
 |-- doc
+|-- docker
+|   |-- .dockerignore
+|   |-- Dockerfile
+|   |-- nginx.conf
 |-- mock
 |-- public
 |-- src
@@ -138,12 +151,40 @@ clover-admin
 |   |-- layout                  // 布局组件
 |   |-- plugins
 |   |-- router
+|   |   |-- guard
+|   |   |-- helper
+|   |   |-- modules
+|   |   |-- routes
 |   |-- sdk
 |   |-- service
+|   |   |-- api
+|   |   |-- request
 |   |-- stores
 |   |-- styles
+|   |   |-- css
+|   |   |-- less
+|   |   |-- scss
 |   |-- typings
+|   |   |-- api.d.ts
+|   |   |-- auto-import.d.ts
+|   |   |-- business.d.ts
+|   |   |-- components.d.ts
+|   |   |-- env.d.ts
+|   |   |-- expose.d.ts
+|   |   |-- global.d.ts
+|   |   |-- package.d.ts
+|   |   |-- route.d.ts
+|   |   |-- router.d.ts
+|   |   |-- system.d.ts
+|   |   |-- vue.d.ts
 |   |-- utils
+|   |   |-- auth
+|   |   |-- common
+|   |   |-- crypto
+|   |   |-- filters
+|   |   |-- router
+|   |   |-- service
+|   |   |-- storage
 |   |-- views
 |   |-- App.vue
 |   |-- globalProperties.ts
@@ -161,6 +202,8 @@ clover-admin
 |-- .npmignore
 |-- .npmrc
 |-- .prettierrc.json
+|-- commitlint.config.js
+|-- commitlint.config.ts
 |-- cypress.config.ts
 |-- index.html
 |-- LICENSE
@@ -173,6 +216,7 @@ clover-admin
 |-- tsconfig.vitest.json
 |-- uno.config.ts
 |-- vite.config.ts
+|-- vitest.config.ts
 ```
 
 ### vscode

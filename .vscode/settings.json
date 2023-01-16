@@ -157,7 +157,8 @@
     "esbuild",
     "Prefixs",
     "typeof",
-    "composables"
+    "composables",
+    "devcontainer"
   ],
   "commentTranslate.source": "Bing", // 翻译源
   "commentTranslate.targetLanguage": "zh-CN" // 翻译的目标语言
