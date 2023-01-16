@@ -1,4 +1,4 @@
-import Layout from "@/layout/index.vue";
+import Layout from "@/layout";
 
 const about: AuthRoute.Route[] = [
   {
@@ -6,7 +6,7 @@ const about: AuthRoute.Route[] = [
     path: "/about",
     component: Layout,
     redirect: "/about/index",
-    meta: { title: "关于", hidden: true, order: 7 },
+    meta: { title: "关于", hidden: true, order: 8 },
     children: [
       {
         path: "index",
