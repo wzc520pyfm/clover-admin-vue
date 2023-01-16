@@ -21,7 +21,7 @@ FROM nginx:alpine as prod
 # 在当前容器创建文件夹
 RUN mkdir /clover
 # 从builder中复制/clover-admin-vue/dist到/clover-admin-vue
-COPY --from=builder /clover-admin-vue/dist /clvoer-admin-vue
+COPY --from=builder /clover-admin-vue/dist /clover-admin-vue
 # 从builder中复制/clover-admin-vue/docker/nginx.conf到/etc/nginx/nginx.conf(此即服务器上的nginx配置文件位置)
 COPY --from=builder /clover-admin-vue/docker/nginx.conf /etc/nginx/nginx.conf
 # 向外界暴露容器的80端口
