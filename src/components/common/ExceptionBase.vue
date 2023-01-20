@@ -22,7 +22,7 @@ type Props = {
 
 defineProps<Props>();
 
-const routeHomePath = "/home";
+const routeHomePath = "/";
 </script>
 
 <style scoped></style>

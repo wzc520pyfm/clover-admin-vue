@@ -1,5 +1,5 @@
 import { router, routes as staticRoutes } from "@/router";
-import { getCacheRoutes, transformRouteToMenu } from "@/utils";
+import { getCacheRoutes, transformRoutePathToRouteName, transformRouteToMenu } from "@/utils";
 import type { RouteRecordRaw } from "vue-router";
 import { useTabStore } from "../tab";
 import { useAuthStore } from "../auth";
@@ -26,7 +26,7 @@ export const useRouteStore = defineStore("route-store", {
   state: (): RouteState => ({
     authRouteMode: "static", // 权限路由模式(此字段预留): 前端静态指定/后端动态获取
     isInitAuthRoute: false,
-    routeHomeName: "home_index",
+    routeHomeName: transformRoutePathToRouteName(import.meta.env.VITE_ROUTE_HOME_PATH),
     menus: [],
     cacheRoutes: [],
   }),
