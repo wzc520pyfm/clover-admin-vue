@@ -4,7 +4,7 @@
     :tooltip-content="isFullscreen ? '窗口' : '全屏'"
     @click="toggle"
   >
-    <el-icon class="text-22px vertical-middle"><i-ep-full-screen /></el-icon>
+    <el-icon class="text-22px vertical-middle dark:text-dark_info"><i-ep-full-screen /></el-icon>
   </hover-container>
 </template>
 

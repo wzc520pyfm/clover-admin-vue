@@ -38,6 +38,7 @@ export default defineConfig({
   theme: {
     colors: {
       dark: "#18181c",
+      dark_info: "#d5d5d6",
     },
   },
 });
