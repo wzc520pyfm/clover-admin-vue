@@ -1,6 +1,6 @@
 <template>
   <hover-container tooltip-content="github" class="w-40px h-full" @click="handleClickLink">
-    <i-mdi-github class="text-22px" />
+    <i-mdi-github class="text-22px dark:text-dark_info" />
   </hover-container>
 </template>
 

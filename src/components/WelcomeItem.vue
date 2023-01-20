@@ -1,10 +1,10 @@
 <template>
   <div class="item">
-    <i>
+    <i class="dark:text-white dark:bg-dark">
       <slot name="icon" />
     </i>
     <div class="details">
-      <h3>
+      <h3 class="dark:text-white">
         <slot name="heading" />
       </h3>
       <slot />
