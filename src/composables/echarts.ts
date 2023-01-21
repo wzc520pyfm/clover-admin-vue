@@ -9,7 +9,7 @@ import {
   ToolboxComponent,
   TooltipComponent,
 } from "echarts/components";
-import { LabelLayout } from "echarts/features";
+import { LabelLayout, UniversalTransition } from "echarts/features";
 import { CanvasRenderer } from "echarts/renderers";
 import { useElementSize } from "@vueuse/core";
 import { useThemeStore } from "@/stores";
@@ -25,6 +25,7 @@ echarts.use([
   PieChart,
   ToolboxComponent,
   LegendComponent,
+  UniversalTransition,
   CanvasRenderer,
   LabelLayout,
 ]);
