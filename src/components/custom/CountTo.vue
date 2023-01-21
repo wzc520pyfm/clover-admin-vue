@@ -19,7 +19,7 @@ interface Props {
   /** 动画时长 */
   duration?: number;
   /** 自动播放 */
-  autoplay?: number;
+  autoplay?: boolean;
   /** 进制 */
   decimals?: number;
   /** 前缀 */
