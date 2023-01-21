@@ -8,6 +8,7 @@ specifiers:
   '@element-plus/icons-vue': ^2.0.10
   '@esbuild-kit/cjs-loader': ^2.4.1
   '@iconify/json': ^2.1.131
+  '@iconify/vue': ^4.0.2
   '@rushstack/eslint-patch': ^1.1.4
   '@types/ali-oss': ^6.16.6
   '@types/jsdom': ^20.0.0
@@ -95,6 +96,7 @@ devDependencies:
   '@commitlint/config-conventional': 17.4.0
   '@esbuild-kit/cjs-loader': 2.4.1
   '@iconify/json': 2.1.131
+  '@iconify/vue': 4.0.2_vue@3.2.41
   '@rushstack/eslint-patch': 1.2.0
   '@types/ali-oss': 6.16.6
   '@types/jsdom': 20.0.0
@@ -1867,6 +1869,15 @@ packages:
       local-pkg: 0.4.2
     transitivePeerDependencies:
       - supports-color
+    dev: true
+
+  /@iconify/vue/4.0.2_vue@3.2.41:
+    resolution: {integrity: sha512-LRp+mYh8N0bcX4lustHtI5o1aEoio9HN3/19uIzVOvI78qopKBjzsDK5hkEZYDSc6+LKG8hfLxTxpW8CejXGZg==}
+    peerDependencies:
+      vue: '>=3'
+    dependencies:
+      '@iconify/types': 2.0.0
+      vue: 3.2.41
     dev: true
 
   /@istanbuljs/schema/0.1.3:

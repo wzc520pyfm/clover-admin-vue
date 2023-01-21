@@ -5,14 +5,20 @@ const plugin = [
     name: "plugin",
     path: "/plugin",
     component: Layout,
-    redirect: "/plugin/about",
+    redirect: "/plugin/icon",
     meta: { title: "插件", order: 2, icon: "MagicStick" },
     children: [
+      {
+        path: "icon",
+        name: "plugin_icon",
+        component: () => import("@/views/plugin/icon/index.vue"),
+        meta: { title: "图标", icon: "Star" },
+      },
       {
         path: "about",
         name: "plugin_about",
         component: () => import("@/views/plugin/oss/index.vue"),
-        meta: { title: "OSS", icon: "Files" },
+        meta: { title: "OSS(无后端不可用)", icon: "Files" },
       },
       {
         path: "map",

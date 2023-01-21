@@ -5,6 +5,7 @@ import "swiper/css/pagination";
 import "vue3-lottie/dist/style.css";
 import "nprogress/nprogress.css"; // progress bar style
 import "element-plus/theme-chalk/dark/css-vars.css";
+import "virtual:svg-icons-register";
 import "../styles/css/main.css";
 
 /** import static assets: css, js, font and so on. */

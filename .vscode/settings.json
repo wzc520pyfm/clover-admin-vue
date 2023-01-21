@@ -110,7 +110,7 @@
   "iconify.includes": ["ep", "mdi"], // 默认引入工作区的iconify图标集id, 但建议全量本地安装iconify图标集(约120M), 只有实际使用的图标才会打包到生产环境, see: https://github.com/antfu/unplugin-icons
   "typescript.updateImportsOnFileMove.enabled": "always", // 自动更新导入路径
   "workbench.iconTheme": "material-icon-theme", // 图标主题
-  "workbench.colorTheme": "Material Theme Ocean High Contrast", // 全局色彩主题
+  "workbench.colorTheme": "One Dark Pro", // 全局色彩主题
   // 配置默认的格式化程序
   "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -161,7 +161,8 @@
     "Prefixs",
     "typeof",
     "composables",
-    "devcontainer"
+    "devcontainer",
+    "preffix"
   ],
   "commentTranslate.source": "Bing", // 翻译源
   "commentTranslate.targetLanguage": "zh-CN" // 翻译的目标语言
