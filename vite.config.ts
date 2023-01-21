@@ -42,7 +42,7 @@ export default defineConfig(({ mode }) => {
     },
     // 依赖优化选项
     optimizeDeps: {
-      include: ["swiper", "swiper/vue", "@better-scroll/core"], // 需要强制预构建的包
+      include: ["swiper", "swiper/vue", "@better-scroll/core", "echarts"], // 需要强制预构建的包
     },
     // 构建选项
     build: {

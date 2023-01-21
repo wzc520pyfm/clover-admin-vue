@@ -15,6 +15,12 @@ const plugin = [
         meta: { title: "图标", icon: "Star" },
       },
       {
+        path: "echarts",
+        name: "plugin_echarts",
+        component: () => import("@/views/plugin/echarts/index.vue"),
+        meta: { title: "图表", icon: "PieChart" },
+      },
+      {
         path: "about",
         name: "plugin_about",
         component: () => import("@/views/plugin/oss/index.vue"),

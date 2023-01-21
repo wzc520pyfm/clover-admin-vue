@@ -163,7 +163,9 @@
     "composables",
     "devcontainer",
     "preffix",
-    "unref"
+    "unref",
+    "Nullishable",
+    "echarts"
   ],
   "commentTranslate.source": "Bing", // 翻译源
   "commentTranslate.targetLanguage": "zh-CN" // 翻译的目标语言

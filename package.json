@@ -30,6 +30,7 @@
     "ali-oss": "^6.17.1",
     "axios": "^1.2.2",
     "crypto-js": "^4.1.1",
+    "echarts": "^5.4.1",
     "element-plus": "^2.2.19",
     "form-data": "^4.0.0",
     "nprogress": "^0.2.0",
