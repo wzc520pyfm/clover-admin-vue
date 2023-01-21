@@ -1,4 +1,4 @@
-import Layout from "@/layout/index.vue";
+import Layout from "@/layout";
 /** 跟路由 */
 export const ROOT_ROUTE = {
   name: "root",
