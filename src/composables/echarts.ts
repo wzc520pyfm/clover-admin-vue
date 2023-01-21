@@ -2,15 +2,32 @@ import type { ComputedRef, Ref } from "vue";
 import * as echarts from "echarts/core";
 import { LineChart, PieChart } from "echarts/charts";
 import type { LineSeriesOption, PieSeriesOption } from "echarts/charts";
-import { LegendComponent, ToolboxComponent } from "echarts/components";
+import type { GridComponentOption, TooltipComponentOption } from "echarts/components";
+import {
+  GridComponent,
+  LegendComponent,
+  ToolboxComponent,
+  TooltipComponent,
+} from "echarts/components";
 import { LabelLayout } from "echarts/features";
 import { CanvasRenderer } from "echarts/renderers";
 import { useElementSize } from "@vueuse/core";
 import { useThemeStore } from "@/stores";
 
-export type ECOption = echarts.ComposeOption<LineSeriesOption | PieSeriesOption>;
+export type ECOption = echarts.ComposeOption<
+  LineSeriesOption | PieSeriesOption | TooltipComponentOption | GridComponentOption
+>;
 
-echarts.use([LineChart, PieChart, ToolboxComponent, LegendComponent, CanvasRenderer, LabelLayout]);
+echarts.use([
+  TooltipComponent,
+  GridComponent,
+  LineChart,
+  PieChart,
+  ToolboxComponent,
+  LegendComponent,
+  CanvasRenderer,
+  LabelLayout,
+]);
 
 /**
  * ECharts hooks
@@ -27,7 +44,7 @@ export function useECharts(
   const domRef = $ref<HTMLElement>();
 
   const initialSize = { width: 0, height: 0 };
-  const { width, height } = useElementSize(domRef, initialSize);
+  const { width, height } = useElementSize($$(domRef), initialSize);
 
   let chart: UT.Nullable<echarts.ECharts> = null;
 
