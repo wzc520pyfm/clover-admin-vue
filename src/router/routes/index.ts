@@ -1,9 +1,8 @@
-import Layout from "@/layout";
 /** 跟路由 */
 export const ROOT_ROUTE = {
   name: "root",
   path: "/",
-  redirect: "/home/index",
+  redirect: import.meta.env.VITE_ROUTE_HOME_PATH,
   meta: {
     title: "Root",
   },
