@@ -12,7 +12,7 @@
     >
       <slot name="tab" />
     </div>
-    <div class="h-full z-1003">
+    <div class="h-full w-220px z-1003">
       <slot name="sidebar" />
     </div>
     <div class="pt-100px pb-48px w-full overflow-auto">
