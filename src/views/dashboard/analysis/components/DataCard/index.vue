@@ -9,7 +9,7 @@
         >
           <span style="grid-area: title" class="text-14px font-bold">{{ item.title }}</span>
           <div style="grid-area: blank" />
-          <div style="grid-area: icon" class="flex items-center">
+          <div style="grid-area: icon" class="flex-y-center">
             <svg-icon :icon="item.icon" class="text-24px" />
           </div>
           <count-to
@@ -17,12 +17,12 @@
             :prefix="item.numberPrefix"
             :start-value="1"
             :end-value="item.number"
-            class="flex justify-end text-26px text-white font-bold dark:text-dark"
+            class="flex-x-end text-26px text-white font-bold dark:text-dark"
           />
           <span style="grid-area: secondary-title" class="text-14px">{{
             item.secondaryTitle
           }}</span>
-          <span style="grid-area: secondary-number" class="flex justify-end text-16px">{{
+          <span style="grid-area: secondary-number" class="flex-x-end text-16px">{{
             item.secondaryNumber
           }}</span>
         </gradient-bg>
