@@ -1,10 +1,10 @@
 <template>
   <div class="wh-full flex gap-5" size="large">
     <el-card header="statistics" class="flex-1">
-      <div ref="lineRef" class="h-400px" />
+      <div ref="lineRef" class="h-360px" />
     </el-card>
     <el-card header="Customer Feedback">
-      <div ref="pieRef" class="wh-450px" />
+      <div ref="pieRef" class="h-360px min-w-360px" />
     </el-card>
   </div>
 </template>
@@ -151,7 +151,7 @@ const pieOptions = ref<ECOption>({
       emphasis: {
         label: {
           show: true,
-          fontSize: "36",
+          fontSize: "28",
         },
       },
       labelLine: {
