@@ -112,10 +112,6 @@ export function useECharts(
     () => updateTheme()
   );
 
-  onMounted(() => {
-    render();
-  });
-
   onUnmounted(() => {
     destroy();
     stopSizeWatch();
