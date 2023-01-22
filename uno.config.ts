@@ -20,6 +20,7 @@ export default defineConfig({
     "flex-center": "flex justify-center items-center",
     "flex-x-center": "flex justify-center",
     "flex-y-center": "flex items-center",
+    "flex-x-end": "flex justify-end",
     "flex-1-hidden": "flex-1 overflow-hidden",
     "flex-col": "flex flex-col",
     "flex-col-center": "flex-center flex-col",
