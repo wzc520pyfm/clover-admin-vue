@@ -115,7 +115,6 @@ function capitalLatter(word: string) {
 .el-table {
   :deep(.el-table__header) .cell {
     font-weight: bold;
-    color: black;
   }
 }
 </style>

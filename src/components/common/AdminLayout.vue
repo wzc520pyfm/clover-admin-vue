@@ -12,10 +12,13 @@
     >
       <slot name="tab" />
     </div>
-    <div class="h-full z-1003" :style="{ width: !sidebarCollapse ? '220px' : '64px' }">
+    <div
+      class="h-full z-1003 base-transition"
+      :style="{ width: !sidebarCollapse ? '220px' : '64px' }"
+    >
       <slot name="sidebar" />
     </div>
-    <div class="pt-100px pb-48px w-full overflow-auto">
+    <div class="pt-100px pb-48px w-full overflow-auto base-transition">
       <slot />
     </div>
     <div

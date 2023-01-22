@@ -1,6 +1,6 @@
 <template>
   <div class="global-sidebar h-full flex-col dark:bg-dark">
-    <GlobalLogo :show-title="!sidebarCollapse" class="h-56px py-10px px-5px" />
+    <GlobalLogo :show-title="!sidebarCollapse" class="h-56px py-10px px-5px base-transition" />
     <el-scrollbar>
       <el-menu
         popper-effect="light"

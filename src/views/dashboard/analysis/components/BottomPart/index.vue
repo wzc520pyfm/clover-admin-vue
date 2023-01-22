@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-500px">
+  <div class="min-h-500px w-full">
     <el-card class="h-full">
       <el-tabs model-value="home" stretch class="h-full flex-col">
         <el-tab-pane v-for="item in statisticsTables" :key="item.id" class="h-full" :name="item.id">
