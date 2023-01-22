@@ -5,7 +5,7 @@
       <el-menu
         popper-effect="light"
         :collapse="sidebarCollapse"
-        class="flex-1 b-0 p-5px"
+        class="flex-1 b-0 p-5px!"
         router
         :default-active="activeRoute"
       >
@@ -65,6 +65,11 @@ const activeRoute = computed(() => route.path);
 :deep(.el-menu-item),
 :deep(.el-sub-menu) {
   margin-top: 6px;
+  border-radius: var(--el-border-radius-base);
+
+  .el-sub-menu__title {
+    border-radius: var(--el-border-radius-base);
+  }
 }
 
 :deep(.el-menu-item).is-active {
