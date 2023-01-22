@@ -1,5 +1,5 @@
 <template>
-  <div class="h-full flex gap-5" size="large">
+  <div class="wh-full flex gap-5" size="large">
     <el-card header="statistics" class="flex-1">
       <div ref="lineRef" class="h-400px" />
     </el-card>
