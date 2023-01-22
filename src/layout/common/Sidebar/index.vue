@@ -48,6 +48,9 @@ const activeRoute = computed(() => route.path);
   :deep(.el-sub-menu__title) {
     justify-content: center;
   }
+  :deep(.ellipsis) {
+    padding-right: 0px;
+  }
 }
 
 .el-menu {
