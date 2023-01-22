@@ -1,5 +1,6 @@
 <template>
-  <div class="flex h-full">
+  <div class="flex h-full min-w-120">
+    <div v-if="isMobile && !sidebarCollapse" class="drawer-bg" @click="toggleSidebarCollapse" />
     <div
       class="fixed w-full h-56px z1001 bg-white base-transition"
       :style="{ paddingLeft: `${!sidebarCollapse ? 220 : 64}px` }"
@@ -31,11 +32,24 @@
 </template>
 
 <script lang="ts" setup>
+import { useBasicLayout } from "@/composables";
 import { useAppStore } from "@/stores";
 
 defineOptions({ name: "AdminLayout" });
 
-const { sidebarCollapse } = $(useAppStore());
+const { sidebarCollapse, toggleSidebarCollapse } = $(useAppStore());
+const { isMobile } = $(useBasicLayout());
 </script>
 
-<style scoped></style>
+<style scoped>
+.drawer-bg {
+  background: #000;
+  opacity: 0.3;
+  width: calc(100% - 220px);
+  top: 0;
+  height: 100%;
+  position: absolute;
+  z-index: 999;
+  margin-left: 220px;
+}
+</style>
