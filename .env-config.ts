@@ -10,12 +10,12 @@ const serviceEnv: ServiceEnv = {
   dev: [
     /**
      * 代理:
-     *  - 将http://127.0.0.1:5574/oss-api/xx代理到http://127.0.0.1:5976/clover-api/xx
+     *  - 将http://127.0.0.1:5574/clover-api/xx代理到http://127.0.0.1:5976/api/xx
      */
     {
-      url: "http://127.0.0.1:5976",
-      urlPattern: "/oss-api",
-      rewritten: "/clover-api",
+      url: "http://server.wzc520pyf.cn",
+      urlPattern: "/clover-api",
+      rewritten: "/api",
     },
   ],
   test: [],

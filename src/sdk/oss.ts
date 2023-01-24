@@ -6,10 +6,10 @@ function getSTS(): Promise<Credentials> {
   return new Promise((resolve, reject) => {
     // get STS token from server
     // see: https://help.aliyun.com/document_detail/32077.html
-    fetch("/oss-api/ali-oss/v1/get-sts")
+    fetch("/clover-api/v1/file/ali-oss-sts", { method: "post" })
       .then((res) => res.json())
       .then((result) => {
-        resolve(result);
+        resolve(result.data.list[0]);
       })
       .catch((e) => {
         console.log(e);
