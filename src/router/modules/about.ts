@@ -14,7 +14,7 @@ const about: AuthRoute.Route[] = [
         component: () => import("@/views/about/index.vue"),
         meta: {
           title: "关于",
-          icon: "Warning",
+          icon: "ep-warning",
         },
       },
     ],

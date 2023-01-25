@@ -6,7 +6,7 @@ const component = [
     path: "/component",
     component: Layout,
     redirect: "/component/table",
-    meta: { title: "组件示例", order: 5, icon: "Menu" },
+    meta: { title: "组件示例", order: 5, icon: "ep-menu" },
     children: [
       {
         path: "table",
@@ -14,7 +14,7 @@ const component = [
         component: () => import("@/views/component/table/index.vue"),
         meta: {
           title: "表格",
-          icon: "Grid",
+          icon: "ep-grid",
         },
       },
     ],
