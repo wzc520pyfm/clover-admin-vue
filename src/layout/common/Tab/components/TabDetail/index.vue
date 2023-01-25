@@ -15,9 +15,7 @@
     >
       <template #label>
         <span class="flex-y-center gap-1">
-          <el-icon class="vertical-middle"
-            ><component :is="Icons[item.meta.icon as unknown as IconType]"
-          /></el-icon>
+          <el-icon class="vertical-middle"><LayoutIcon :icon-name="item.meta.icon" /></el-icon>
           <span>{{ item.meta.title }}</span>
         </span>
       </template>
@@ -28,9 +26,7 @@
 <script lang="ts" setup>
 import { useTabStore } from "@/stores";
 import type { TabPaneName, TabsPaneContext } from "element-plus";
-import * as Icons from "@element-plus/icons-vue";
-
-type IconType = keyof typeof Icons;
+import { LayoutIcon } from "../../../Icon";
 
 defineOptions({ name: "TabDetail" });
 

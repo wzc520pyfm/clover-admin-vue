@@ -6,7 +6,7 @@ const functionRoute = [
     path: "/function",
     component: Layout,
     redirect: "/function/request",
-    meta: { title: "功能示例", order: 6, icon: "StarFilled" },
+    meta: { title: "功能示例", order: 6, icon: "ep-star-filled" },
     children: [
       {
         path: "request",
@@ -14,7 +14,7 @@ const functionRoute = [
         component: () => import("@/views/function/request/index.vue"),
         meta: {
           title: "网络请求",
-          icon: "Promotion",
+          icon: "ep-promotion",
         },
       },
     ],

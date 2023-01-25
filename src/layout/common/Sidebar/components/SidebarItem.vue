@@ -2,16 +2,14 @@
   <el-menu-item v-if="!menu.children" :index="menu.routePath">
     <!-- <i-ep-location /> -->
     <!-- see: https://github.com/element-plus/element-plus/issues/5588 -->
-    <el-icon v-if="menu?.icon"><component :is="Icons[menu.icon as unknown as IconType]" /></el-icon>
+    <el-icon v-if="menu?.icon"><LayoutIcon :icon-name="menu.icon" /></el-icon>
     <template #title>
       <span class="ellipsis">{{ menu.label }}</span>
     </template>
   </el-menu-item>
   <el-sub-menu v-else :key="menu.key" :index="menu.routePath">
     <template #title>
-      <el-icon v-if="menu?.icon"
-        ><component :is="Icons[menu.icon as unknown as IconType]"
-      /></el-icon>
+      <el-icon v-if="menu?.icon"><LayoutIcon :icon-name="menu.icon" /></el-icon>
       <span class="ellipsis">{{ menu.label }}</span>
     </template>
     <el-menu-item-group>
@@ -20,10 +18,8 @@
   </el-sub-menu>
 </template>
 
-<script lang="ts" setup>
-import * as Icons from "@element-plus/icons-vue";
-
-type IconType = keyof typeof Icons;
+<script lang="tsx" setup>
+import { LayoutIcon } from "../../Icon";
 
 type MenuProps = {
   menu: GlobalMenuOption;

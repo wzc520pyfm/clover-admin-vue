@@ -6,14 +6,14 @@ const multiMenu: AuthRoute.Route[] = [
     path: "/multi-menu",
     component: Layout,
     redirect: "/multi-menu/first",
-    meta: { title: "多级菜单", icon: "Reading", order: 7 },
+    meta: { title: "多级菜单", icon: "ep-reading", order: 7 },
     children: [
       {
         path: "first",
         name: "multi-menu_first",
         component: Blank,
         redirect: "/multi-menu/first/second",
-        meta: { title: "一级菜单", icon: "Reading" },
+        meta: { title: "一级菜单", icon: "ep-reading" },
         children: [
           {
             path: "second",
@@ -21,7 +21,7 @@ const multiMenu: AuthRoute.Route[] = [
             component: () => import("@/views/multi-menu/first/second/index.vue"),
             meta: {
               title: "二级菜单",
-              icon: "Reading",
+              icon: "ep-reading",
             },
           },
           {
@@ -31,7 +31,7 @@ const multiMenu: AuthRoute.Route[] = [
             redirect: "/multi-menu/first/second-new/third",
             meta: {
               title: "二级菜单(有子菜单)",
-              icon: "Reading",
+              icon: "ep-reading",
             },
             children: [
               {
@@ -40,7 +40,7 @@ const multiMenu: AuthRoute.Route[] = [
                 component: () => import("@/views/multi-menu/first/second-new/third/index.vue"),
                 meta: {
                   title: "三级菜单",
-                  icon: "Reading",
+                  icon: "ep-reading",
                 },
               },
             ],

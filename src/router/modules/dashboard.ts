@@ -6,7 +6,7 @@ const dashboard = [
     path: "/dashboard",
     component: Layout,
     redirect: "/dashboard/analysis",
-    meta: { title: "仪表盘", order: 1, icon: "House" },
+    meta: { title: "仪表盘", order: 1, icon: "ep-house" },
     children: [
       {
         path: "analysis",
@@ -15,7 +15,7 @@ const dashboard = [
         meta: {
           title: "分析页",
           key: "root",
-          icon: "House",
+          icon: "ep-house",
         },
       },
     ],
