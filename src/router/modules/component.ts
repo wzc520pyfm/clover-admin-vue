@@ -17,6 +17,15 @@ const component = [
           icon: "ep-grid",
         },
       },
+      {
+        path: "step-form",
+        name: "component_step-form",
+        component: () => import("@/views/component/step-form/index.vue"),
+        meta: {
+          title: "分步表单",
+          icon: "ep-finished",
+        },
+      },
     ],
   },
 ];
