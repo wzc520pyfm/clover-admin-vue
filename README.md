@@ -459,7 +459,7 @@ const about = [
         component: () => import("@/views/about/index.vue"), /** 页面组件 */
         meta: {
           title: "关于", /** 侧边菜单中显示的label */
-          icon: "Warning", /** 侧边菜单中显示的icon (暂时只支持使用element-plus的icon) */
+          icon: "ep-warning", /** 侧边菜单中显示的icon */
         },
       },
     ],
@@ -468,6 +468,12 @@ const about = [
 
 export default about;
 ```
+
+icon配置支持element-plus内置icon、iconify图标(需先在vite的unplugin中引入)以及本地图标，如下：
+ - 使用element-plus内置的图标：`icon: "ep-icon-name"` (将`icon-name`替换为你的图标名, ep为element-plus图标在iconify的图标集前缀)
+ - 使用iconify中mdi图表集的图标: `icon: "mdi-icon-name"` (将`icon-name`替换为你的图标名, mdi为图表集的前缀)
+ - 使用本地图标: `icon: "local-icon-name"` (将`icon-name`替换为`@/assets/svg-icon`目录下的文件名)
+
 3. 页面写在`./src/views`中
 在`./src/views`中新建目录about, 在about目录中新建index.vue:
 ```vue
