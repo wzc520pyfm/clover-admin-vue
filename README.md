@@ -219,6 +219,11 @@ clover-admin
 |-- vitest.config.ts
 ```
 
+如果你觉得项目根目录太过于庞大，你可以开启VsCode的文件嵌套功能(fileNesting.enabled)，因为根目录中大多为配置文件，不同的软件包提供的配置文件格式不统一（不单单是json，软件包为提供更好的定制能力，将配置文件格式定为ts、js等），且部分软件包不支持更改配置文件目录，因此，根目录庞大不是本项目文件组织的问题，此问题更应该归由IDE解决。
+
+推荐插件: antfu.file-nesting
+
+
 ### vscode
 项目期望保持一致的开发体验, 配置了一系列vscode配置:
 1. 项目级的vscode扩展
@@ -264,6 +269,8 @@ const count = $ref(0)
 const doubled = computed(() => count * 2)
 </script>
 ```
+
+请务必使用`<script lang='ts' setup>`或者`<script lang='ts'>`, 不要再写纯JS, 当使用TS时, TypeScript可以和ESLint很好地配合提供类型检查,但当混入纯JS时他们无法很好地工作, 目前前端社区没有好的解决方案。
 
 #### 为vue注册全局属性
 1. 在`./src/globalProperties.ts`中
