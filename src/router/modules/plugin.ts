@@ -38,6 +38,12 @@ const plugin = [
         component: () => import("@/views/plugin/swiper/index.vue"),
         meta: { title: "Swiper", icon: "ep-film" },
       },
+      {
+        path: "clipboard",
+        name: "plugin_clipboard",
+        component: () => import("@/views/plugin/clipboard/index.vue"),
+        meta: { title: "剪切板", icon: "mdi-clipboard-text" },
+      },
     ],
   },
 ];
