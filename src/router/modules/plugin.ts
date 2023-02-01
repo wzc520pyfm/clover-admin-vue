@@ -1,4 +1,4 @@
-import Layout from "@/layout";
+import { Blank, Layout } from "@/layout";
 
 const plugin = [
   {
@@ -37,6 +37,20 @@ const plugin = [
         name: "plugin_swiper",
         component: () => import("@/views/plugin/swiper/index.vue"),
         meta: { title: "Swiper", icon: "ep-film" },
+      },
+      {
+        path: "editor",
+        name: "plugin_editor",
+        component: Blank,
+        meta: { title: "编辑器", icon: "mdi-circle-edit-outline" },
+        children: [
+          {
+            path: "markdown",
+            name: "plugin_editor_markdown",
+            component: () => import("@/views/plugin/editor/markdown/index.vue"),
+            meta: { title: "Markdown", icon: "mdi-language-markdown-outline" },
+          },
+        ],
       },
     ],
   },
