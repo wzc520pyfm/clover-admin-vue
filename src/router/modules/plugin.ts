@@ -42,6 +42,7 @@ const plugin = [
         path: "editor",
         name: "plugin_editor",
         component: Blank,
+        redirect: "/plugin/editor/markdown",
         meta: { title: "编辑器", icon: "mdi-circle-edit-outline" },
         children: [
           {
