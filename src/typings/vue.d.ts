@@ -10,6 +10,7 @@ declare module "vue" {
 
     // 全局注册的自定义指令的类型(声明在此只是暂时的hack办法, 在未来应该声明在GlobalDirectives中), see: https://github.com/johnsoncodehk/volar/issues/465
     vPermission: import("@/directives/permission").PermissionDirective;
+    vClipboard: import("@/directives/clipboard").ClipboardDirective;
   }
   // 暂不生效, see: https://github.com/johnsoncodehk/volar/issues/465
   // export interface GlobalDirectives { }
