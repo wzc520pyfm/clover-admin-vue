@@ -64,6 +64,7 @@ specifiers:
   unplugin-icons: ^0.14.12
   unplugin-vue-components: ^0.22.9
   unplugin-vue-macros: ^0.16.4
+  vditor: ^3.9.0
   vite: ^3.1.8
   vite-plugin-compression2: ^0.4.3
   vite-plugin-html: ^3.2.0
@@ -91,6 +92,7 @@ dependencies:
   pinia: 2.0.23_lrjaoqkmph6q2hmgd3qeuy6rom
   qs: 6.11.0
   swiper: 8.4.5
+  vditor: 3.9.0
   vue: 3.2.41
   vue-router: 4.1.6_vue@3.2.41
   vue3-lottie: 2.4.0_vue@3.2.41
@@ -4361,6 +4363,10 @@ packages:
   /destroy/1.2.0:
     resolution: {integrity: sha512-2sJGJTaXIIaR1w4iJSNoN0hnMY7Gpc/n8D4qSCJw8QqFWXf7cuAgnEHxBpweaVcPevC2l3KpjYCx3NypQQgaJg==}
     engines: {node: '>= 0.8', npm: 1.2.8000 || >= 1.4.16}
+    dev: false
+
+  /diff-match-patch/1.0.5:
+    resolution: {integrity: sha512-IayShXAgj/QMXgB0IWmKx+rOPuGMhqm5w6jvFxmVenXKIzRqTAAsbBPT3kWQeGANj3jGgvcvv4yK6SxqYmikgw==}
     dev: false
 
   /diff/4.0.2:
@@ -9720,6 +9726,12 @@ packages:
     resolution: {integrity: sha512-BNGbWLfd0eUPabhkXUVm0j8uuvREyTh5ovRa/dyow/BqAbZJyC+5fU+IzQOzmAKzYqYRAISoRhdQr3eIZ/PXqg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npm.taobao.org/vary/-/vary-1.1.2.tgz}
     engines: {node: '>= 0.8'}
     dev: true
+
+  /vditor/3.9.0:
+    resolution: {integrity: sha512-CLLtrexUY/LGN1Lp1iu242Uq9GuNP98UTXFRY9hjTNFkpVH9L4M3jrQ9yIZ711zYwsl78GxKeskuU7WieA96ow==}
+    dependencies:
+      diff-match-patch: 1.0.5
+    dev: false
 
   /verror/1.10.0:
     resolution: {integrity: sha512-ZZKSmDAEFOijERBLkmYfJ+vmk3w+7hOLYDNkRCuRuMJGEmqYNCNLyBBFwWKVMhfwaEF3WOd0Zlw86U/WC/+nYw==}
