@@ -65,12 +65,12 @@ const uploadRequest = (options: any) => {
   result
     .then(async (res) => {
       onSuccess(res, file);
-      window.$message.success("上传成功");
+      window.$message?.success("上传成功");
       getFiles();
     })
     .catch((err) => {
       onError(err, file);
-      window.$message.success("上传出错");
+      window.$message?.success("上传出错");
     });
 };
 

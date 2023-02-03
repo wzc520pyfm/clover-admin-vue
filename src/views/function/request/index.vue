@@ -37,7 +37,7 @@ const requestNoData = async () => {
   const { data } = await fetchExampleNoData();
   console.log("responseData", data);
   if (data) {
-    window.$message.success("获取成功");
+    window.$message?.success("获取成功");
   }
 };
 

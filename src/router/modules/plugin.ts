@@ -21,8 +21,8 @@ const plugin = [
         meta: { title: "图表", icon: "ep-pie-chart" },
       },
       {
-        path: "about",
-        name: "plugin_about",
+        path: "oss",
+        name: "plugin_oss",
         component: () => import("@/views/plugin/oss/index.vue"),
         meta: { title: "OSS(无后端不可用)", icon: "ep-files" },
       },
@@ -37,6 +37,12 @@ const plugin = [
         name: "plugin_swiper",
         component: () => import("@/views/plugin/swiper/index.vue"),
         meta: { title: "Swiper", icon: "ep-film" },
+      },
+      {
+        path: "clipboard",
+        name: "plugin_clipboard",
+        component: () => import("@/views/plugin/clipboard/index.vue"),
+        meta: { title: "剪切板", icon: "mdi-clipboard-text" },
       },
       {
         path: "editor",

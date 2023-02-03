@@ -12,6 +12,7 @@ specifiers:
   '@rushstack/eslint-patch': ^1.1.4
   '@types/ali-oss': ^6.16.6
   '@types/jsdom': ^20.0.0
+  '@types/justified-layout': ^4.1.0
   '@types/node': ^16.11.68
   '@types/qs': ^6.9.7
   '@typescript-eslint/eslint-plugin': ^5.48.1
@@ -45,6 +46,7 @@ specifiers:
   form-data: ^4.0.0
   husky: ^8.0.3
   jsdom: ^20.0.1
+  justified-layout: ^4.1.0
   less: ^4.1.3
   npm-run-all: ^4.1.5
   nprogress: ^0.2.0
@@ -85,6 +87,7 @@ dependencies:
   echarts: 5.4.1
   element-plus: 2.2.19_vue@3.2.41
   form-data: 4.0.0
+  justified-layout: 4.1.0
   nprogress: 0.2.0
   pinia: 2.0.23_lrjaoqkmph6q2hmgd3qeuy6rom
   qs: 6.11.0
@@ -104,6 +107,7 @@ devDependencies:
   '@rushstack/eslint-patch': 1.2.0
   '@types/ali-oss': 6.16.6
   '@types/jsdom': 20.0.0
+  '@types/justified-layout': 4.1.0
   '@types/node': 16.18.2
   '@types/qs': 6.9.7
   '@typescript-eslint/eslint-plugin': 5.48.1_6g544psa3dzs5ktrr6nphml6fa
@@ -2193,6 +2197,10 @@ packages:
 
   /@types/json5/0.0.29:
     resolution: {integrity: sha512-dRLjCWHYg4oaA77cxO64oO+7JwCwnIzkZPdrrC71jQmQtlhM556pwKo5bUzqvZndkVbeFLIIi+9TC40JNF5hNQ==}
+    dev: true
+
+  /@types/justified-layout/4.1.0:
+    resolution: {integrity: sha512-D8u3yfJjx1xjRJxWUVJlTmFxSN0ph5BpkQo9dTIO1LpYFu0WS1XcWJoNAKJZql+jyiZB5eHt0UKxC1wsmO3/LQ==}
     dev: true
 
   /@types/lodash-es/4.17.6:
@@ -6660,6 +6668,10 @@ packages:
 
   /jstoxml/2.2.9:
     resolution: {integrity: sha512-OYWlK0j+roh+eyaMROlNbS5cd5R25Y+IUpdl7cNdB8HNrkgwQzIS7L9MegxOiWNBj9dQhA/yAxiMwCC5mwNoBw==}
+    dev: false
+
+  /justified-layout/4.1.0:
+    resolution: {integrity: sha512-M5FimNMXgiOYerVRGsXZ2YK9YNCaTtwtYp7Hb2308U1Q9TXXHx5G0p08mcVR5O53qf8bWY4NJcPBxE6zuayXSg==}
     dev: false
 
   /kind-of/3.2.2:

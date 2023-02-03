@@ -1,5 +1,5 @@
 <template>
-  <el-card class="min-h-full">
+  <el-card class="min-h-full w-full">
     <h1>This is an AliOSS Example page</h1>
     <oss-share-pic />
     <oss-example />
@@ -16,8 +16,7 @@ defineOptions({ name: "PluginOss" });
 .el-card {
   #ep.el-card-rounded();
   .el-card__body {
-    display: grid;
-    gap: 2rem;
+    width: 100%;
   }
 }
 </style>

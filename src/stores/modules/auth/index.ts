@@ -1,4 +1,4 @@
-import { getToken, getUserInfo } from "@/utils/auth";
+import { getToken, getUserInfo, setUserInfo } from "@/utils/auth";
 
 interface AuthState {
   userInfo: Auth.UserInfo;
@@ -18,5 +18,14 @@ export const useAuthStore = defineStore("auth-store", {
   actions: {
     /** 登录 */
     async login(userName: string, password: string) {},
+    /** 设置用户权限 */
+    setUserAuthRole(role: Auth.RoleType) {
+      const userInfo = {
+        ...this.userInfo,
+        userRole: role,
+      };
+      setUserInfo(userInfo);
+      this.userInfo = getUserInfo();
+    },
   },
 });

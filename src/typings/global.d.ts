@@ -1,6 +1,10 @@
 interface Window {
   $loadingBar?: any; // progress bar
-  $message?: import("element-plus").ElMessage; // element-plus的ElMessage
+  $message?: typeof import("element-plus").ElMessage extends import("element-plus/es/utils").SFCInstallWithContext<
+    infer P
+  >
+    ? P
+    : never; // element-plus的ElMessage
 }
 
 type ConstantOptions<T> = {
