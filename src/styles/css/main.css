@@ -1,6 +1,7 @@
 /* 全局生效的css */
 @import './base.css';
 @import './transition.css';
+@import './nprogress.css';
 
 #app {
   width: 100%;
