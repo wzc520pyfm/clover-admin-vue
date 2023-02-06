@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full">
+  <div class="w-full pb-5">
     <el-card class="w-full" header="markdown插件">
       <github-link link="https://github.com/Vanessa219/vditor" />
       <div ref="domRef" mt-10px />
