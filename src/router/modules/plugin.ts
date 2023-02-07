@@ -65,6 +65,12 @@ const plugin = [
           },
         ],
       },
+      {
+        path: "video",
+        name: "plugin_video",
+        component: () => import("@/views/plugin/video/index.vue"),
+        meta: { title: "视频", icon: "mdi-video-wireless-outline" },
+      },
     ],
   },
 ];

@@ -168,6 +168,7 @@
     "echarts",
     "vnode",
     "vditor",
+    "xgplayer",
     "wangeditor"
   ],
   "commentTranslate.source": "Bing", // 翻译源
