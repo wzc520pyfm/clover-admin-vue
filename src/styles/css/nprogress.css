@@ -1,0 +1,5 @@
+#nprogress .bar {
+  background-color: rgb(128, 250, 80);
+  filter: drop-shadow(0, 0, 5px rgb(167, 241, 138));
+}
+

@@ -57,6 +57,12 @@ const plugin = [
             component: () => import("@/views/plugin/editor/markdown/index.vue"),
             meta: { title: "Markdown", icon: "mdi-language-markdown-outline" },
           },
+          {
+            path: "quill",
+            name: "plugin_editor_quill",
+            component: () => import("@/views/plugin/editor/quill/index.vue"),
+            meta: { title: "富文本", icon: "mdi-file-document-edit-outline" },
+          },
         ],
       },
       {
