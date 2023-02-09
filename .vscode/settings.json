@@ -96,6 +96,7 @@
     "views/about": "Vue",
     "views/auth-demo": "Vue",
     "views/component": "Vue",
+    "views/dashboard": "Vue",
     "views/login": "Vue",
     "views/multi-menu": "Vue",
     "views/exception": "Vue",

@@ -1,6 +1,6 @@
 # clover-admin-vue
 
-一个使用Vue3，Vite3，Typescript，Pinia，Unocss，Element-plus，pnpm的中后台模板，易上手，可配置，多功能。
+一个使用Vue3，Vite3，Typescript，Pinia，Unocss，Element-plus，pnpm的中后台模板，易上手，可配置，多功能，有点潮。
 
 ## Recommended IDE Setup
 
@@ -630,6 +630,118 @@ const serviceEnv: ServiceEnv = {
   prod: []
 }
 ```
+
+### 设计模式
+项目鼓励使用设计模式解决实际问题, 下面例举一些场景.
+
+注意: 具体属于哪种设计模式也取决于看待问题的角度, 比如组件, 可以认为是工厂模式(传入简单的参数即可获取到一段模板), 也可以认为是门面模式(组件内部会执行复杂的逻辑, 而使用者无需关心它们).
+* 策略模式: 见`@/utils/common/pattern.ts`
+  * use:
+  ```ts
+  // 策略模式会执行所有条件为true的策略
+  const actions = [
+    [
+      true,
+      () => "执行"
+    ],
+    [
+      false,
+      () => "不执行"
+    ]
+  ]
+  exeStrategyActions(actions);
+  ```
+  * 在axios里面无法使用useRouter和useRoute, 我们可以通过globalRouter来操作router, 我们可以依据是否在axios为策略, 执行不同的获取router方式.
+* 中介模式: 在引入三方库时(比如crypto), 我们会对其做封装, 之后使用我们的封装对象来对三方库进行操作, 这便是中介模式.
+* 代理模式: 我们使用的vue就是代理模式的好例子!
+* 门面模式: 我们将复杂操作封装, 提供简单调用, 便是门面模式.
+* 适配器模式: 我们定义了一个处理接口返回值的函数, 但有一些三方接口与我们后端接口返回结果不一致, 导致接口处理函数不能工作, 这时就可提供一个处理三方接口返回值的适配器函数.
+* 原型模式: 有时我们需要一个数组,我们会对其内部做处理但不希望影响原数组, 此时就可以利用原型模式获取原数组一个copy(数组常常使用slice方法获取副本).
+* 工厂模式: 我们为组件传入一些参数即可或得一段html模板, 这便是一种工程模式.
+* 责任链模式: 为实现某种功能, 依次尝试可使用的方法. 见`@utils/common/responsibilitiesChain.ts`
+  * use: 提供灵活的调用方式
+  ```ts
+  // 示例1: 按照添加顺序, 进行链处理
+  const canBuyChain = new CustomChain();
+  // 按照添加顺序组成责任链
+  canBuyChain.append(
+    new ResponsibilitiesChainNode(
+      () => false, // 条件
+      () => "一号" // 条件匹配时执行的动作
+    )
+  );
+  canBuyChain.append(
+    new ResponsibilitiesChainNode(
+      () => true,
+      () => "二号"
+    )
+  );
+  canBuyChain.append(
+    new ResponsibilitiesChainNode(
+      () => true,
+      () => "三号"
+    )
+  );
+  // 一旦执行成功就返回
+  const res = canBuyChain.execute(); // 二号
+  ```
+  ```ts
+  // 示例2: 灵活设置链处理顺序
+  const canBuyChain2 = new CustomChain();
+  const chain1 = new ResponsibilitiesChainNode(
+    () => true,
+    () => "哦耶1"
+  );
+  const chain2 = new ResponsibilitiesChainNode(
+    () => true,
+    () => "哦耶2"
+  );
+  const chain3 = new ResponsibilitiesChainNode(
+    () => true,
+    () => "哦耶3" // 在最后一个chain设置的成功函数的返回值会返回给链外
+  );
+  chain1.setNext(chain2);
+  chain2.setNext(chain3);
+  canBuyChain2.append(chain1);
+  // 执行到底返回最后结果, 遇到失败则结束
+  const res2 = canBuyChain2.executeAll(); // 哦耶3
+  // 执行到底返回全部结果, 遇到失败则结束
+  const res22 = canBuyChain2.executeAllSettled(); // ["哦耶1", "哦耶2", "哦耶3"]
+  ```
+  ```ts
+  // 示例3: 支持自定义chainNode类
+  class MyChainNode1 extends ResponsibilitiesChain {
+    public canHandle(): boolean {
+      return false;
+    }
+    public doHandle() {
+      return "一号节点执行成功";
+    }
+    public errHandle() {
+      return;
+    }
+  }
+  class MyChainNode2 extends ResponsibilitiesChain {
+    public canHandle(): boolean {
+      return true;
+    }
+    public doHandle() {
+      return "二号节点执行成功";
+    }
+    public errHandle() {
+      return;
+    }
+  }
+  const myChainNode1 = new MyChainNode1();
+  const myChainNode2 = new MyChainNode2();
+
+  const myChain = new CustomChain();
+  myChain.append(myChainNode1);
+  myChain.append(myChainNode2);
+
+  const myRes = myChain.execute();
+  ```
+  你也可以查看`@/views/component/complex-form/components/ResponsibilityValidatorForm.vue`, 在这里提供了一个小游戏来解释责任链的使用
 
 
 ### 三方功能库
