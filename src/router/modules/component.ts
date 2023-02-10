@@ -26,6 +26,15 @@ const component = [
           icon: "ep-finished",
         },
       },
+      {
+        path: "complex-form",
+        name: "component_complex-form",
+        component: () => import("@/views/component/complex-form/index.vue"),
+        meta: {
+          title: "复杂表单",
+          icon: "mdi-form-select",
+        },
+      },
     ],
   },
 ];
