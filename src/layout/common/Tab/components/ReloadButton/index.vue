@@ -1,6 +1,6 @@
 <template>
   <hover-container class="w-64px h-full" tooltip-content="重新加载" @click="handleRefresh">
-    <el-icon class="text-22px vertical-middle"
+    <el-icon class="text-22px vertical-middle dark:text-dark_info"
       ><i-ep-refresh-right :class="{ 'animate-spin': loading }"
     /></el-icon>
   </hover-container>
