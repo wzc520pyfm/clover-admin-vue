@@ -2,6 +2,7 @@
 
 一个使用Vue3，Vite3，Typescript，Pinia，Unocss，Element-plus，pnpm的中后台模板，易上手，可配置，多功能，有点潮。
 
+
 ## Recommended IDE Setup
 
 [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
@@ -562,6 +563,7 @@ export const mockRequest = createRequest({ baseURL: "/mock" }, {
 });
 ```
 现在, 当你使用mockRequest发起请求时, 当后端返回的statusCode不为0时, 将弹出el-message错误提示, 提示内容就是msg字段的内容.
+
 7. 默认情况下, 发起请求将为你返回其data内容:
 ```vue
 <script lang="ts" setup>
@@ -749,6 +751,12 @@ const serviceEnv: ServiceEnv = {
 * BatterScroll: https://better-scroll.github.io/docs/zh-CN/
 * Swiper: https://swiperjs.com/
 * 高德地图: https://lbs.amap.com/
+* ECharts：https://echarts.apache.org/zh/index.html
+* Iconify：https://icones.netlify.app/
+* AliOSS：https://help.aliyun.com/product/31815.html
+* markdown编辑器：https://github.com/Vanessa219/vditor
+* 富文本编辑器：https://github.com/wangeditor-team/wangEditor
+* 视频播放器：https://github.com/bytedance/xgplayer
 
 ### 常见问题
 #### 安装Cypress太慢
