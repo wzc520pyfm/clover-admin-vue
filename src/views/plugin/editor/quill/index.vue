@@ -34,4 +34,12 @@ onMounted(() => renderWangEditor());
 .el-card {
   #ep.el-card-rounded();
 }
+:deep(.w-e-toolbar) {
+  background: inherit !important;
+  border-color: #999 !important;
+}
+:deep(.w-e-text-container) {
+  background: inherit;
+  border-color: #999 !important;
+}
 </style>
