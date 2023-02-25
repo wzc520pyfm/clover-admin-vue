@@ -360,6 +360,17 @@ Components({
 <el-icon :size="400"><i-local-403 /></el-icon>
 ```
 
+#### 动态渲染图标
+本项目支持动态渲染图标集图标和本地图标, 参见如下示例:
+```html
+<!-- iconify图标(动态渲染) -->
+<svg-icon icon="mdi-github" />
+<!-- 本地图标(动态渲染) -->
+<svg-icon local-icon="link-icon" />
+```
+
+tip: 如果在使用svg-icon组件动态渲染本地图标后, 出现icon颜色不跟随父级而改变, 这是由于本地图标中的fill属性造成了覆盖, 删除本地图标中的fill属性即可.
+
 
 ### 使用unocss
 本项目使用unocss, 当需要编写css时, 可去官方查找相应的css类名: https://uno.antfu.me/, 或者也可以参考[tailwindcss](https://www.tailwindcss.cn/)和[WindiCSS](https://windicss.org/).
