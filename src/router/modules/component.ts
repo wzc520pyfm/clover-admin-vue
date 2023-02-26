@@ -27,12 +27,21 @@ const component = [
         },
       },
       {
-        path: "complex-form",
+        path: "complex-complex-form",
         name: "component_complex-form",
         component: () => import("@/views/component/complex-form/index.vue"),
         meta: {
           title: "复杂表单",
           icon: "mdi-form-select",
+        },
+      },
+      {
+        path: "complex-verify",
+        name: "component_verify",
+        component: () => import("@/views/component/verify/index.vue"),
+        meta: {
+          title: "验证组件",
+          icon: "local-verify",
         },
       },
     ],
