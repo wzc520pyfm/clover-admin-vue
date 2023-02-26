@@ -1,7 +1,7 @@
 <template>
   <div
     ref="wrapElRef"
-    class="darg-verify"
+    class="darg-verify dark:bg-dark!"
     :style="getWrapStyleRef"
     @mousemove="handleDragMoving"
     @touchmove="handleDragMoving"
@@ -78,7 +78,7 @@ const getWrapStyleRef = computed(() => {
     width: w,
     height: `${h}px`,
     lineHeight: `${h}px`,
-    borderRadius: circle ? `${h / 2}px` : 0,
+    borderRadius: circle ? `${h / 2}px` : null,
     ...wrapStyle,
   };
 });
@@ -86,7 +86,7 @@ const getBarStyleRef = computed(() => {
   const h = Number.parseInt(height as string);
   return {
     height: `${h}px`,
-    borderRadius: circle ? `${h / 2}px 0 0 ${h / 2}px` : 0,
+    borderRadius: circle ? `${h / 2}px 0 0 ${h / 2}px` : null,
     ...barStyle,
   };
 });
@@ -263,11 +263,11 @@ const RenderAction = () => {
       {getSlot(slots, "actionIcon", isPassing) ||
         (isPassing ? (
           <el-icon>
-            <Check class={`darg-verify-action__icon`} />
+            <Check class={`darg-verify-action__icon dark:text-dark`} />
           </el-icon>
         ) : (
           <el-icon>
-            <DArrowRight class={`darg-verify-action__icon`} />
+            <DArrowRight class={`darg-verify-action__icon dark:text-dark`} />
           </el-icon>
         ))}
     </div>
@@ -331,16 +331,6 @@ defineExpose({
     top: 0;
     font-size: 12px;
     text-size-adjust: none;
-    background-color: -webkit-gradient(
-      linear,
-      left top,
-      right top,
-      color-stop(0, #333),
-      color-stop(0.4, #333),
-      color-stop(0.5, #fff),
-      color-stop(0.6, #333),
-      color-stop(1, #333)
-    );
     animation: slidetounlock 3s infinite;
     background-clip: text;
     user-select: none;

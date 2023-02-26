@@ -22,8 +22,8 @@
   <div class="flex-center p-4">
     <drag-verify ref="el4" circle @success="handleSuccess">
       <template #actionIcon="isPassing">
-        <el-icon v-if="isPassing"><i-ep-check /></el-icon>
-        <el-icon v-else><i-ep-grape /></el-icon>
+        <el-icon v-if="isPassing"><i-ep-check class="dark:text-dark" /></el-icon>
+        <el-icon v-else><i-ep-grape class="dark:text-dark" /></el-icon>
       </template>
     </drag-verify>
     <el-button type="primary" class="ml-2" @click="handleBtnClick(el4)">还原</el-button>
