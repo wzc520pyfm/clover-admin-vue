@@ -18,7 +18,7 @@
 <script setup lang="tsx">
 import { getSlot } from "@/utils";
 import { Check, DArrowRight } from "@element-plus/icons-vue";
-import { useEventListener } from "@vueuse/core";
+import { useEventListener, useTimeoutFn } from "@vueuse/core";
 
 export interface PassingData {
   isPassing: boolean;
@@ -215,7 +215,7 @@ function resume() {
   const contentEl = unref(contentElRef);
   if (!actionEl || !barEl || !contentEl) return;
   state.toLeft = true;
-  setTimeout(() => {
+  useTimeoutFn(() => {
     state.toLeft = false;
     actionEl.style.left = "0";
     barEl.style.width = "0";
