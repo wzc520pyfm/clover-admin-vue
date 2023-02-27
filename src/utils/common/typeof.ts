@@ -36,3 +36,6 @@ export function isMap(data: unknown) {
 export function isFile(data: unknown) {
   return Object.prototype.toString.call(data) === EnumDataType.file;
 }
+export function isFunction(val: unknown) {
+  return typeof val === EnumDataType.function;
+}
