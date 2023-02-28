@@ -7,4 +7,8 @@ declare namespace Expose {
   interface DragVerify {
     resume: () => void;
   }
+
+  interface ImgRotateVerify {
+    resume: () => void;
+  }
 }

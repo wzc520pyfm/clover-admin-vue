@@ -1,47 +1,49 @@
 <template>
-  <div class="flex-center p-4">
-    <drag-verify ref="el1" @success="handleSuccess" />
-    <el-button type="primary" class="ml-2" @click="handleBtnClick(el1)">还原</el-button>
-  </div>
-  <div class="flex-center p-4">
-    <drag-verify ref="el2" circle @success="handleSuccess" />
-    <el-button type="primary" class="ml-2" @click="handleBtnClick(el2)">还原</el-button>
-  </div>
-  <div class="flex-center p-4">
-    <drag-verify
-      ref="el3"
-      text="拖动以进行校验"
-      success-text="校验成功"
-      :bar-style="{
-        backgroundColor: '#018ffb',
-      }"
-      @success="handleSuccess"
-    />
-    <el-button type="primary" class="ml-2" @click="handleBtnClick(el3)">还原</el-button>
-  </div>
-  <div class="flex-center p-4">
-    <drag-verify ref="el4" circle @success="handleSuccess">
-      <template #actionIcon="isPassing">
-        <el-icon v-if="isPassing"><i-ep-check class="dark:text-dark" /></el-icon>
-        <el-icon v-else><i-ep-grape class="dark:text-dark" /></el-icon>
-      </template>
-    </drag-verify>
-    <el-button type="primary" class="ml-2" @click="handleBtnClick(el4)">还原</el-button>
-  </div>
-  <div class="flex-center p-4">
-    <drag-verify ref="el5" @success="handleSuccess">
-      <template #text="isPassing">
-        <div v-if="isPassing">
-          <el-icon><i-ep-check /></el-icon>
-          成功
-        </div>
-        <div v-else>
-          拖动
-          <el-icon><i-ep-grape /></el-icon>
-        </div>
-      </template>
-    </drag-verify>
-    <el-button type="primary" class="ml-2" @click="handleBtnClick(el5)">还原</el-button>
+  <div>
+    <div class="flex-center p-4">
+      <drag-verify ref="el1" @success="handleSuccess" />
+      <el-button type="primary" class="ml-2" @click="handleBtnClick(el1)">还原</el-button>
+    </div>
+    <div class="flex-center p-4">
+      <drag-verify ref="el2" circle @success="handleSuccess" />
+      <el-button type="primary" class="ml-2" @click="handleBtnClick(el2)">还原</el-button>
+    </div>
+    <div class="flex-center p-4">
+      <drag-verify
+        ref="el3"
+        text="拖动以进行校验"
+        success-text="校验成功"
+        :bar-style="{
+          backgroundColor: '#018ffb',
+        }"
+        @success="handleSuccess"
+      />
+      <el-button type="primary" class="ml-2" @click="handleBtnClick(el3)">还原</el-button>
+    </div>
+    <div class="flex-center p-4">
+      <drag-verify ref="el4" circle @success="handleSuccess">
+        <template #actionIcon="isPassing">
+          <el-icon v-if="isPassing"><i-ep-check class="dark:text-dark" /></el-icon>
+          <el-icon v-else><i-ep-grape class="dark:text-dark" /></el-icon>
+        </template>
+      </drag-verify>
+      <el-button type="primary" class="ml-2" @click="handleBtnClick(el4)">还原</el-button>
+    </div>
+    <div class="flex-center p-4">
+      <drag-verify ref="el5" @success="handleSuccess">
+        <template #text="isPassing">
+          <div v-if="isPassing">
+            <el-icon><i-ep-check /></el-icon>
+            成功
+          </div>
+          <div v-else>
+            拖动
+            <el-icon><i-ep-grape /></el-icon>
+          </div>
+        </template>
+      </drag-verify>
+      <el-button type="primary" class="ml-2" @click="handleBtnClick(el5)">还原</el-button>
+    </div>
   </div>
 </template>
 
