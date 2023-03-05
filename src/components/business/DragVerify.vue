@@ -32,7 +32,7 @@ interface Props {
   isSlot?: boolean;
   width?: number | string;
   height?: number | string;
-  circle: boolean;
+  circle?: boolean;
   wrapStyle?: any;
   barStyle?: any;
   contentStyle?: any;
