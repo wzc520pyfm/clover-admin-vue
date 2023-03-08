@@ -17,9 +17,7 @@ defineOptions({ name: "ComponentVerify" });
 .el-card {
   #ep.el-card-rounded();
   :deep(.el-card__body) {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    #cm.flex-center-wrap();
   }
 }
 </style>
