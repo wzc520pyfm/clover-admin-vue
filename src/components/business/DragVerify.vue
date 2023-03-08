@@ -54,7 +54,22 @@ const {
   successText = "验证通过",
 } = defineProps<Props>();
 
-const emit = defineEmits(["success", "update:value", "change", "start", "move", "end"]);
+interface Emits {
+  (e: "success", data: { isPassing: boolean; time: string }): void;
+  (e: "update:value", isPassing: boolean): void;
+  (e: "change", isPassing: boolean): void;
+  (e: "start", event: MouseEvent | TouchEvent): void;
+  (
+    e: "move",
+    data: {
+      event: MouseEvent | TouchEvent;
+      moveDistance: number;
+      moveX: number;
+    }
+  ): void;
+  (e: "end", event: MouseEvent | TouchEvent): void;
+}
+const emit = defineEmits<Emits>();
 
 const slots = useSlots();
 const state = reactive({
