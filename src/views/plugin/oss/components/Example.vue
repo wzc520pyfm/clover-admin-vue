@@ -107,9 +107,7 @@ const deleteFile = async (index: number, row: ObjectMeta) => {
   getFiles();
 };
 
-onMounted(() => {
-  getFiles();
-});
+getFiles();
 </script>
 
 <style lang="less" scoped></style>

@@ -26,13 +26,13 @@
       v-for="(item, index) in pics"
       :key="index"
       class="img-card h-fit absolute"
-      :style="`top: ${justifiedLayoutResult?.boxes[index].top}px;left: ${justifiedLayoutResult?.boxes[index].left}px;`"
+      :style="`top: ${justifiedLayoutResult?.boxes[index]?.top}px;left: ${justifiedLayoutResult?.boxes[index]?.left}px;`"
       shadow="hover"
     >
       <el-image
         :src="`${item.url}?x-oss-process=image/resize,h_200/auto-orient,1/quality,q_90/format,jpg`"
         class="block!"
-        :style="`width: ${justifiedLayoutResult?.boxes[index].width}px;height: ${justifiedLayoutResult?.boxes[index].height}px;aspect-ratio: ${justifiedLayoutResult?.boxes[index].aspectRatio};`"
+        :style="`width: ${justifiedLayoutResult?.boxes[index]?.width}px;height: ${justifiedLayoutResult?.boxes[index]?.height}px;aspect-ratio: ${justifiedLayoutResult?.boxes[index]?.aspectRatio};`"
       >
         <template #error>
           <div class="wh-100px flex-center flex-wrap">
@@ -174,9 +174,7 @@ function resetJustifiedLayout(picBox: Box[]) {
 
 watch(picContainerWidth, () => resetJustifiedLayout(picBox));
 
-onMounted(() => {
-  initPics();
-});
+initPics();
 </script>
 
 <style lang="less" scoped>
