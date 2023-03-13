@@ -13,6 +13,8 @@ export enum EnumStorageKey {
   "refresh-token" = "__REFRESH_TOKEN__",
   /** 用户信息 */
   "user-info" = "__USER_INFO__",
+  /** 多页签路由信息 */
+  "multi-tab-routes" = "__MULTI_TAB_ROUTES__",
 }
 
 /** 数据类型 */
