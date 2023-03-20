@@ -1,6 +1,6 @@
 <template>
   <div class="h-full">
-    <el-card class="h-full" header="图标使用示例">
+    <el-card class="min-h-full" header="图标使用示例">
       <el-space direction="vertical" alignment="normal" class="w-full">
         <div>
           <h3>element图标集</h3>
