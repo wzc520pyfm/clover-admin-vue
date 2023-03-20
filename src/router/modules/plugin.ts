@@ -71,6 +71,21 @@ const plugin = [
         component: () => import("@/views/plugin/video/index.vue"),
         meta: { title: "视频", icon: "mdi-video-wireless-outline" },
       },
+      {
+        path: "excel",
+        name: "plugin_excel",
+        component: Blank,
+        redirect: "/plugin/excel/import",
+        meta: { title: "Excel", icon: "mdi-microsoft-excel" },
+        children: [
+          {
+            path: "import",
+            name: "plugin_excel_import",
+            component: () => import("@/views/plugin/excel/import/index.vue"),
+            meta: { title: "导入", icon: "mdi-file-import-outline" },
+          },
+        ],
+      },
     ],
   },
 ];
