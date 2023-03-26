@@ -1,6 +1,13 @@
 import { useRouterPush } from "@/composables";
 import type { RouteLocationNormalized, RouteLocationNormalizedLoaded, Router } from "vue-router";
-import { getTabRouteByVueRoute, isInTabRoutes } from "./helpers";
+import {
+  clearTabRoutes,
+  getIndexInTabRoutesByRouteName,
+  getTabRouteByVueRoute,
+  getTabRoutes,
+  isInTabRoutes,
+  setTabRoutes,
+} from "./helpers";
 interface TabState {
   /** 多页签数据 */
   tabs: GlobalTabRoute[];
@@ -30,6 +37,15 @@ export const useTabStore = defineStore("tab-store", {
     },
   },
   actions: {
+    /** 重置Tab状态 */
+    resetTabStore() {
+      clearTabRoutes();
+      this.$reset();
+    },
+    /** 缓存页签路由数据 */
+    cacheTabRoutes() {
+      setTabRoutes(this.tabs);
+    },
     /**
      * 设置激活的页签
      * @param fullPath - 路由fullPath
@@ -67,6 +83,33 @@ export const useTabStore = defineStore("tab-store", {
       }
     },
     /**
+     * 清空多页签
+     * @param excludes - 保留的多页签的path
+     */
+    async clearTab(excludes: string[] = []) {
+      const { routerPush } = useRouterPush(false);
+
+      const homePath = this.homeTab.fullPath;
+      const remain = [homePath, ...excludes];
+      const hasActive = remain.includes(this.activeTab);
+      const updateTabs = this.tabs.filter((tab) => remain.includes(tab.fullPath));
+      if (hasActive) this.tabs = updateTabs;
+      if (!hasActive && updateTabs.length) {
+        const activePath = updateTabs[updateTabs.length - 1].fullPath;
+        const navigationFailure = await routerPush(activePath);
+        if (!navigationFailure) {
+          this.tabs = updateTabs;
+          this.setActiveTab(activePath);
+        }
+      }
+    },
+    /**
+     * 清除所有多页签
+     */
+    clearAllTab() {
+      this.clearTab();
+    },
+    /**
      * 点击单个tab
      * @param fullPath - 路由fullPath
      */
@@ -93,8 +136,12 @@ export const useTabStore = defineStore("tab-store", {
     },
     /** 初始化Tab状态 */
     initTabStore(currentRoute: RouteLocationNormalizedLoaded) {
-      const tabs: GlobalTabRoute[] = [];
-      tabs.unshift(this.homeTab);
+      // const tabs: GlobalTabRoute[] = []; // 不缓存多页签
+      const tabs: GlobalTabRoute[] = getTabRoutes(); // 缓存多页签
+      const hasHome = getIndexInTabRoutesByRouteName(tabs, this.homeTab.name as string) > -1;
+      if (!hasHome && this.homeTab.name !== "root") {
+        tabs.unshift(this.homeTab);
+      }
 
       const isHome = currentRoute.fullPath === this.homeTab.fullPath;
       if (!isHome) {

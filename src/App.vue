@@ -1,4 +1,8 @@
 <script setup lang="ts">
+import { useGlobalEvents } from "@/composables";
+
+useGlobalEvents();
+
 // 捕获错误
 onErrorCaptured((err, instance, info) => {
   console.log("[errorCaptured]", err, instance, info);
