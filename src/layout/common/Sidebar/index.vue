@@ -31,7 +31,7 @@ const { sidebarCollapse } = $(useAppStore());
 
 const route = useRoute();
 const routeStore = useRouteStore();
-const menus: GlobalMenuOption[] = routeStore.menus.flat(1);
+const menus = computed(() => routeStore.menus.flat(1));
 const activeRoute = computed(() => route.path);
 </script>
 

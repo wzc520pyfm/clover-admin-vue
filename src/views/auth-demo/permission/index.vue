@@ -2,7 +2,7 @@
   <div class="h-full">
     <el-card
       class="h-full"
-      header="您可以在此变更权限以查看权限指令的效果, 但这里的权限变更不会触发路由的重新加载, 仅做演示"
+      header="您可以在此变更权限以查看权限指令的效果, 权限变更同时也会影响侧边菜单"
     >
       <el-button type="primary">所有用户可见</el-button>
       <el-button v-permission="'admin'" type="success">管理员可见</el-button>

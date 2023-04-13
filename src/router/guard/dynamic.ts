@@ -11,8 +11,7 @@ export async function generateDynamicRoutes(
   next: NavigationGuardNext
 ) {
   const route = useRouteStore();
-  // const isLogin = Boolean(/** getToken() */ true);
-  const isLogin = Boolean(getToken());
+  const isLogin = Boolean(/** getToken() */ true);
 
   // 初始化权限路由
   if (!route.isInitAuthRoute) {
