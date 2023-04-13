@@ -19,6 +19,15 @@ export const constantRoutes = [
       title: "登录",
     },
   },
+  {
+    name: "404",
+    path: "/404",
+    component: () => import("@/views/system-view/not-found/index.vue"),
+    meta: {
+      title: "未找到",
+      singleLayout: "blank",
+    },
+  },
   // 匹配无效路径的路由
   {
     name: "not-found-page",

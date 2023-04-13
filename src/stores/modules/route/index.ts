@@ -1,6 +1,11 @@
-import { router, routes as staticRoutes } from "@/router";
-import { getCacheRoutes, transformRoutePathToRouteName, transformRouteToMenu } from "@/utils";
-import type { RouteRecordRaw } from "vue-router";
+import { constantRoutes, router, routes as staticRoutes } from "@/router";
+import {
+  getCacheRoutes,
+  getConstantRouteNames,
+  transformRoutePathToRouteName,
+  transformRouteToMenu,
+} from "@/utils";
+import type { RouteRecordName, RouteRecordRaw } from "vue-router";
 import { useTabStore } from "../tab";
 import { useAuthStore } from "../auth";
 import { filterAuthRoutesByUserPermission } from "@/utils/router/auth";
@@ -31,6 +36,38 @@ export const useRouteStore = defineStore("route-store", {
     cacheRoutes: [],
   }),
   actions: {
+    /** 重置路由store */
+    resetRouteStore() {
+      this.resetRoutes();
+      this.$reset();
+    },
+    /** 重置路由数据, 保留固定路由 */
+    resetRoutes() {
+      const routes = router.getRoutes();
+      routes.forEach((route) => {
+        const name = route.name || "root";
+        if (!this.isConstantRoute(name)) {
+          router.removeRoute(name);
+        }
+      });
+    },
+    /**
+     * 是否是固定路由
+     * @param name - 路由名称
+     */
+    isConstantRoute(name: RouteRecordName) {
+      const constantRouteNames = getConstantRouteNames(constantRoutes);
+      return constantRouteNames.includes(name);
+    },
+    /**
+     * 是否是有效的固定路由
+     * @param name - 路由名称
+     */
+    isValidConstantRoute(name: RouteRecordName) {
+      const NOT_FOUND_PAGE_NAME = "not-found-page";
+      const constantRouteNames = getConstantRouteNames(constantRoutes);
+      return constantRouteNames.includes(name) && name !== NOT_FOUND_PAGE_NAME;
+    },
     /**
      * 处理权限路由
      * @param routes - 权限路由
