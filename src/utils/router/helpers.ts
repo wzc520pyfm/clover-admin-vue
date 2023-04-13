@@ -9,3 +9,23 @@ export function transformRoutePathToRouteName(path: string): string {
 
   return name;
 }
+
+/**
+ * 获取所有固定路由的名称集合
+ * @param routes 固定路由
+ */
+export function getConstantRouteNames(routes: AuthRoute.Route[]) {
+  return routes.flatMap((route) => getConstantRouteName(route));
+}
+
+/**
+ * 获取所有固定路由的名称集合
+ * @param routes 固定路由
+ */
+function getConstantRouteName(route: AuthRoute.Route) {
+  const names = [route.name];
+  if (route.children?.length) {
+    names.push(...route.children!.flatMap((item) => getConstantRouteName(item)));
+  }
+  return names;
+}

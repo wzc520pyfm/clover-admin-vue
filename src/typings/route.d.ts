@@ -10,6 +10,8 @@ declare namespace AuthRoute {
     keepAlive?: boolean;
     /** 图标 */
     icon?: string;
+    /** 需要登录权限 */
+    requiresAuth?: boolean;
     /** 是否在菜单中隐藏此项, 其子菜单不受影响 */
     hidden?: boolean;
     /** 唯一标识, 独立于name的标识, 可用于标识主页路由 */

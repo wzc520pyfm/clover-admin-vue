@@ -1,4 +1,5 @@
 import { useRouteStore } from "@/stores";
+import { getToken } from "@/utils";
 import type { NavigationGuardNext, RouteLocationNormalized } from "vue-router";
 
 /**
@@ -10,14 +11,20 @@ export async function generateDynamicRoutes(
   next: NavigationGuardNext
 ) {
   const route = useRouteStore();
-  const isLogin = Boolean(/** getToken() */ true);
+  // const isLogin = Boolean(/** getToken() */ true);
+  const isLogin = Boolean(getToken());
 
   // 初始化权限路由
   if (!route.isInitAuthRoute) {
     // 未登录
     if (!isLogin) {
-      // 重定向到登录页面
-      next({ name: "login" });
+      const toName = to.name!;
+      if (route.isValidConstantRoute(toName) && !to.meta.requiresAuth) {
+        next();
+      } else {
+        const redirect = to.fullPath;
+        next({ name: "login", query: { redirect } });
+      }
       return false;
     }
     await route.initAuthRoute();
@@ -29,6 +36,12 @@ export async function generateDynamicRoutes(
       next({ path, replace: true, query: to.query, hash: to.hash });
       return false;
     }
+  }
+
+  // 权限路由已经加载完毕，仍然没有匹配到路由，跳转到404页面
+  if (to.name === "not-found-page") {
+    next({ name: "404", replace: true });
+    return false;
   }
 
   return true;
