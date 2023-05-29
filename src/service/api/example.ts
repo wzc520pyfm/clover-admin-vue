@@ -13,5 +13,8 @@ export function fetchExampleNoData() {
 }
 
 export function fetchExampleHeaders() {
-  return mockRequest.get("/example-headers", { entries: ["data", "headers"] });
+  return mockRequest.get("/example-headers", {
+    // axios: { headers: { "Content-Type": "FormData" } },
+    entries: ["data", "headers"],
+  });
 }
