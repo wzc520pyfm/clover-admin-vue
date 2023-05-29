@@ -21,8 +21,11 @@ function filterAuthRouteByUserPermission(
 ): AuthRoute.Route[] {
   const filterRoute = { ...route };
   const hasPermission =
+    /** 路由未声明权限，则默认允许查看 */
     !route.meta.permissions ||
+    /** 超级管路元可查看所有路由 */
     permission === "super" ||
+    /** 路由的权限包含用户的权限，则允许查看 */
     route.meta.permissions.includes(permission);
 
   if (filterRoute.children) {
