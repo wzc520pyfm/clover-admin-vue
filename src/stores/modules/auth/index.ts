@@ -1,5 +1,6 @@
-import { useRouteStore } from "@/stores";
+import { useRouteStore, useTabStore } from "@/stores";
 import { getToken, getUserInfo, setUserInfo } from "@/utils/auth";
+import { router as globalRouter } from "@/router";
 
 interface AuthState {
   userInfo: Auth.UserInfo;
@@ -22,6 +23,7 @@ export const useAuthStore = defineStore("auth-store", {
     /** 设置用户权限 */
     setUserAuthRole(role: Auth.RoleType) {
       const { resetRouteStore, initAuthRoute } = useRouteStore();
+      const { initTabStore } = useTabStore();
 
       const userInfo = {
         ...this.userInfo,
@@ -31,6 +33,7 @@ export const useAuthStore = defineStore("auth-store", {
       this.userInfo = getUserInfo();
       resetRouteStore();
       initAuthRoute();
+      initTabStore(unref(globalRouter.currentRoute));
     },
   },
 });

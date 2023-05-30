@@ -8,6 +8,7 @@ import {
   isInTabRoutes,
   setTabRoutes,
 } from "./helpers";
+import { router } from "@/router";
 interface TabState {
   /** 多页签数据 */
   tabs: GlobalTabRoute[];
@@ -136,8 +137,9 @@ export const useTabStore = defineStore("tab-store", {
     },
     /** 初始化Tab状态 */
     initTabStore(currentRoute: RouteLocationNormalizedLoaded) {
-      // const tabs: GlobalTabRoute[] = []; // 不缓存多页签
-      const tabs: GlobalTabRoute[] = getTabRoutes(); // 缓存多页签
+      // let tabs: GlobalTabRoute[] = []; // 不缓存多页签
+      let tabs: GlobalTabRoute[] = getTabRoutes(); // 缓存多页签
+      const routes = router.getRoutes();
       const hasHome = getIndexInTabRoutesByRouteName(tabs, this.homeTab.name as string) > -1;
       if (!hasHome && this.homeTab.name !== "root") {
         tabs.unshift(this.homeTab);
@@ -153,9 +155,14 @@ export const useTabStore = defineStore("tab-store", {
           tabs.push(currentTab);
         }
       }
+      // tabs不应该包含不存在的路由
+      tabs = tabs.filter((tab) => routes.some((route) => route.name === tab.name));
+      const activeTab = tabs.some((tab) => tab.name === currentRoute.name)
+        ? currentRoute
+        : this.homeTab;
 
       this.tabs = tabs;
-      this.setActiveTab(currentRoute.fullPath); // 设置激活的tab页签
+      this.setActiveTab(activeTab.fullPath); // 设置激活的tab页签
     },
   },
 });
