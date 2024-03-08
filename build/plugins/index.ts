@@ -1,6 +1,4 @@
 import type { PluginOption } from "vite";
-import vue from "@vitejs/plugin-vue";
-import vueJsx from "@vitejs/plugin-vue-jsx";
 import { VitePWA } from "vite-plugin-pwa";
 import unocss from "unocss/vite";
 import unplugin from "./unplugin";
@@ -14,10 +12,6 @@ import visualizer from "./visualizer";
  */
 export function setupVitePlugins(viteEnv: ImportMetaEnv): (PluginOption | PluginOption[])[] {
   const plugins = [
-    vue({
-      reactivityTransform: true,
-    }),
-    vueJsx(),
     VitePWA(), // see: https://github.com/vite-pwa/vite-plugin-pwa
     html(viteEnv),
     ...unplugin(),

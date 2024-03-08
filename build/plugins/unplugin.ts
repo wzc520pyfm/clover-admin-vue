@@ -9,6 +9,9 @@ import { FileSystemIconLoader } from "unplugin-icons/loaders";
 import ElementPlus from "unplugin-element-plus/vite";
 import { createSvgIconsPlugin } from "vite-plugin-svg-icons";
 import { getSrcPath } from "../utils";
+import Vue from "@vitejs/plugin-vue";
+import VueJsx from "@vitejs/plugin-vue-jsx";
+import ReactivityTransform from "@vue-macros/reactivity-transform/vite";
 
 export default function unplugin(): PluginOption[] {
   const srcPath = getSrcPath();
@@ -18,9 +21,15 @@ export default function unplugin(): PluginOption[] {
   const collectionName = "local";
 
   return [
-    VueMacros(), // see: https://vue-macros.sxzz.moe/
+    VueMacros({
+      plugins: {
+        vue: Vue(),
+        vueJsx: VueJsx(),
+      },
+    }), // see: https://vue-macros.sxzz.moe/
+    ReactivityTransform(),
     AutoImport({
-      imports: ["vue", "vue/macros", "vue-router", "pinia"], // 自动导入vue和vue-router相关函数
+      imports: ["vue", "vue-router", "pinia"], // 自动导入vue和vue-router相关函数
       dts: "src/typings/auto-import.d.ts", // 生成 `auto-import.d.ts` 全局声明
       resolvers: [
         ElementPlusResolver(), // 自动导入element-plus相关组件
