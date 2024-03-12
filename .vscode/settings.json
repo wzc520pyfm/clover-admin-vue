@@ -1,7 +1,6 @@
 {
   "editor.codeActionsOnSave": {
-    // 保存时要执行的操作
-    "source.fixAll.eslint": true // 依据eslint格式化代码
+    "source.fixAll.eslint": "explicit" // 依据eslint格式化代码
   },
   "editor.formatOnSave": true, // 保存时格式化代码
   "npm.packageManager": "pnpm", // 使用pnpm作为项目的包管理器
