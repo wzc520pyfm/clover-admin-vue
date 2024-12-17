@@ -1,3 +1,4 @@
+import { camelCase, upperFirst } from "lodash";
 /**
  * 获取缓存的路由对应组件的名称
  * @param routes - 转换后的vue路由
@@ -9,7 +10,9 @@ export function getCacheRoutes(routes: AuthRoute.Route[]) {
     if (hasChildren(route)) {
       (route.children as AuthRoute.Route[]).forEach((item) => {
         if (isKeepAlive(item)) {
-          cacheNames.push(item.name as string);
+          // Convert the name of the route to the name of the component
+          // eg： plugin_echarts => PluginEcharts
+          cacheNames.push(upperFirst(camelCase(item.name)) as string);
         }
       });
     }
