@@ -60,6 +60,7 @@
     "@types/ali-oss": "^6.16.11",
     "@types/jsdom": "^20.0.1",
     "@types/justified-layout": "^4.1.4",
+    "@types/lodash": "^4.17.13",
     "@types/node": "^16.18.87",
     "@types/qs": "^6.9.12",
     "@typescript-eslint/eslint-plugin": "^5.62.0",
