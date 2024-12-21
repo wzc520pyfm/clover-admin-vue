@@ -12,7 +12,7 @@ export function getCacheRoutes(routes: AuthRoute.Route[]) {
         if (isKeepAlive(item)) {
           // Convert the name of the route to the name of the component
           // eg： plugin_echarts => PluginEcharts
-          cacheNames.push(upperFirst(camelCase(item.name)) as string);
+          cacheNames.push(upperFirst(camelCase(item.name as string)));
         }
       });
     }
