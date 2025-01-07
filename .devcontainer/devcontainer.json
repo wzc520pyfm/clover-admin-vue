@@ -49,11 +49,11 @@
 				"VisualStudioExptTeam.intellicode-api-usage-examples",
 				"xabikos.JavaScriptSnippets",
 				"lottiefiles.vscode-lottie",
-        "ZixuanChen.vitest-explorer",
 				"GitHub.copilot",
 				"intellsmi.comment-translate",
-        "WhenSunset.chatgpt-china",
-        "Tobermory.es6-string-html"
+				"WhenSunset.chatgpt-china",
+				"Tobermory.es6-string-html",
+				"vitest.explorer"
 			]
 		}
 	},
