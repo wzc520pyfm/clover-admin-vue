@@ -43,7 +43,6 @@ const removeTab = (name: TabPaneName) => {
 <style scoped>
 .tabs :deep(.el-tabs__header) {
   height: 30px;
-  margin-bottom: -5px;
 }
 .tabs :deep(.el-tabs__nav) {
   display: flex;
